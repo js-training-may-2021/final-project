@@ -1,0 +1,22 @@
+.navList {
+  display: flex;
+  list-style: none;
+}
+
+.navLink {
+  padding: 20px;
+  color: currentColor;
+  transition: all .4s;
+}
+
+.navLink:active,
+.navLink:hover,
+.navLink.activeNavLink {
+  color:darkgreen;
+}
+
+.header {
+  height: 70px;
+  background-color: orangered;
+  color: #fff;
+}
