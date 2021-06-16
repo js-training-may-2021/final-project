@@ -2,9 +2,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Card from '../UI/Card';
 import classes from './PokemonCard.module.css';
-import store from '../../store';
-
-// if pokemon is catched, then btn is disabled
 
 const PokemonCard = (props) => {
 
@@ -14,18 +11,18 @@ const PokemonCard = (props) => {
 
   const catchHandler = (event) => {
     event.preventDefault();
-    dispatch({ type: 'ADD_POKEMON', pokemonId: props.name });
+    const captureDate = new Date();
+    const pokemonObj = { ...props.pokemon, isСaught: true, captureDate: captureDate };
+    dispatch({ type: 'ADD_POKEMON', pokemonObj: pokemonObj });
     console.log(catchedPokemons);
   };
 
   return (
     <Card className={classes.pokemonCard}>
       <div className={classes.innerCard}>
-        <div className={classes.imgContainer}>
-          <img src={props.img} alt="img" />
-        </div>
-        <h2 className={classes.cardHeading}>{props.name}</h2>
-        <button className={classes.cardBtn} onClick={catchHandler} disabled={catchedPokemons.includes(props.name)}>Catch!</button>
+        <img className={classes.cardImg} src={props.pokemon.img} alt={props.pokemon.name} />
+        <h2 className={classes.cardHeading}>{props.pokemon.name}</h2>
+        <button className={classes.cardBtn} onClick={catchHandler} disabled={catchedPokemons.findIndex(pokemon => pokemon.name === props.pokemon.name) > -1}>Catch!</button>
       </div>
     </Card>
   );

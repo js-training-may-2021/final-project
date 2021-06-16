@@ -5,18 +5,21 @@
 
 .navLink {
   padding: 20px;
-  color: currentColor;
   transition: all .4s;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: currentColor;
 }
 
 .navLink:active,
 .navLink:hover,
 .navLink.activeNavLink {
-  color:darkgreen;
+  color:#212121;
+  font-weight: bolder;
 }
 
 .header {
-  height: 70px;
-  background-color: orangered;
+  height: 50px;
+  background-color: #FF5722;
   color: #fff;
 }

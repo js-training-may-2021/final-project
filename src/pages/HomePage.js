@@ -5,10 +5,9 @@ import { useSelector } from 'react-redux';
 import classes from './HomePage.module.css';
 
 import PokemonCard from "../components/PokemonCard/PokemonCard";
+import Spinner from '../components/UI/Spinner';
 
 const HomePage = () => {
-
-  // const catchedPokemons = useSelector(state => state.catchedPokemons);
 
   const [pokemonsList, setPokemonsList] = useState([]);
   const [isLoading, setIsloading] = useState(true);
@@ -16,27 +15,37 @@ const HomePage = () => {
   useEffect(() => {
     setIsloading(true);
     async function getPokemonList() {
-      fetch(`https://pokeapi.co/api/v2/pokemon/`).
-        then(res => res.json()).
-        then(res => {
+      fetch(`https://pokeapi.co/api/v2/pokemon/`)
+        .then(res => res.json())
+        .then(res => {
           setPokemonsList(res.results);
           setIsloading(false);
-        }).
-        catch(err => err.message);
+        })
+        .catch(err => err.message);
     }
     getPokemonList();
   }, []);
 
+  const getPokemonId = (pokemonUrl) => {
+    let copyUrl = pokemonUrl;
+    copyUrl = copyUrl.slice(0, copyUrl.length - 1);
+    return +copyUrl.slice(copyUrl.lastIndexOf('/') + 1);
+  }
+
   const content = isLoading ?
-    <p>Loading...</p> :
+    <Spinner /> :
     pokemonsList.map(pokemon => {
       return (
-        <li key={pokemon.url}>
+        <li key={getPokemonId(pokemon.url)}>
           <Link to={`/pokemon-detail/${pokemon.name}`} className={classes.link}>
             <PokemonCard
-              name={pokemon.name}
-              img='https://img.icons8.com/cotton/2x/image.png'
-              isCaught={true} />
+              pokemon={{
+                name: pokemon.name,
+                id: getPokemonId(pokemon.url),
+                img: `https://raw.githubusercontent.com/js-training-may-2021/final-project/main/pokemons/${getPokemonId(pokemon.url)}.png`,
+                isСaught: false
+              }}
+            />
           </Link>
         </li>
       );
@@ -51,3 +60,7 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+            //  {/* name={pokemon.name}
+            //   img={`https://raw.githubusercontent.com/js-training-may-2021/final-project/main/pokemons/${getPokemonId(pokemon.url)}.png`}
+            //   isCaught={true}  */}
