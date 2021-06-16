@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { BrowserRouter as Router, Route, Link, NavLink, Switch, Redirect } from "react-router-dom";
 //import { browserHistory } from "react-router";
@@ -9,11 +9,6 @@ import './App.css';
 import Header from "./components/header";
 import Main from "./components/main";
 import Tabs from "./components/tabs";
-import Catalog from "./components/catalog";
-import CatalogItems from "./components/catalog-items";
-import Pagination from "./components/pagination";
-import LargeCard from "./components/large-card";
-//import SmallCard from "./components/small-card";
 
 import HomePage from "./pages/index";
 import CaughtPage from "./pages/caught";
@@ -21,9 +16,10 @@ import CardPage from "./pages/card";
 
 //import CaughtPokemonsContext from "./contexts/caught-pokemons";
 
-//import pokemons from "./db.json";
+import pokemons from './db.json';
+const parsedPokemons = pokemons.pokemons;
 
-//console.log(pokemons);
+console.log('parsed on top level: ', parsedPokemons);
 
 const customHistory = createBrowserHistory();
 
@@ -45,21 +41,31 @@ const poookemons = [
 const c = [
   {
     isCaught: "12.03.1999",
+    id: 1
+  },
+  {
+    isCaught: "12.03.1999",
+    id: 2
+  },
+  {
+    isCaught: "12.03.1999",
     id: 3
   }
 ];
 
-const p = "2";
+const p = 2;
 
+const t = 'caught-only';
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      error: null,
-      isLoaded: false,
-      data: poookemons
+      data: parsedPokemons,
+      caught: c,
+      chosenPage: p,
+      chosenTab: t,
     };
   }
 
@@ -78,13 +84,16 @@ class App extends React.Component {
           
           <Switch>
             <Route path="/caught">
-              <CaughtPage />
+              <CaughtPage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab={"caught-only"} />
             </Route>
             <Route path="/home">
-              <HomePage />
+              <HomePage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab="all" />
+            </Route>
+            <Route exact path="/">
+              <HomePage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab="all" />
             </Route>
             <Route path="/card">
-              <CardPage />
+              <CardPage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab={this.state.chosenTab} chosenId="2" />
             </Route>
           </Switch>
    

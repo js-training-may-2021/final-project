@@ -14,19 +14,17 @@ export const makeArrayFromValue = (value) => {
 };
 
 export const getPokemonStatus = (id, caughtArray) => {
-  const pokemon = caughtArray.filter((item) => item.id === id);
-  if (pokemon.length > 0) {
-    return pokemon[0].isCaught;
-  } else return 'нет';
+  const pokemon = caughtArray.find((item) => parseInt(item.id, 10) === parseInt(id, 10));
+  return pokemon ? pokemon.isCaught : 'нет';
 };
 
 export const getPokemonTitle = (id, data) => {
-  const pokemon = data.filter((item) => item.id === id);
-  return pokemon[0].name;
+  const pokemon = data.find((item) => parseInt(item.id, 10) === parseInt(id, 10));
+  return pokemon ? pokemon.name : '';
 };
 
-export const checkStatus = (pokemon, caughtArray) => {
-  const filtered =  caughtArray.filter((item) => item.id === pokemon.id);
+export const checkStatus = (id, caughtArray) => {
+  const filtered =  caughtArray.filter((item) => parseInt(item.id, 10) === parseInt(id, 10));
   return filtered.length > 0 ? filtered[0].isCaught : 'null';
 };
 
@@ -37,4 +35,10 @@ export const getPortion = (data, chosenPage) => {
   let endPoint = startPoint + 1;
   const result = data.slice((startPoint - 1) * 12, (endPoint - 1) * 12);
   return result;
+};
+
+export const findCommonItems = (array1, array2) => {
+  const ids = array2.map((item) => parseInt(item.id, 10));
+  let filtered = array1.filter((item) => ids.includes(parseInt(item.id, 10)));
+  return filtered;
 };
