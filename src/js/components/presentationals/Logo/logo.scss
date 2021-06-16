@@ -1,0 +1,14 @@
+@import '../../../../styles/variables';
+
+.logo {  
+  margin: 0 40px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+@media (max-width: $mobileWidth) {
+  .logo {
+    margin: 0 20px 5px;
+    font-size: 1.5rem;
+  }
+}

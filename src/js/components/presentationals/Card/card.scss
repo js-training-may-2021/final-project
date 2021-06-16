@@ -1,0 +1,12 @@
+@import '../../../../styles/variables';
+
+.card {
+  width: 240px;
+  margin: 20px 0;
+  padding: 20px;
+
+  &__title {
+    color: map-get($colorScheme, "text");
+    word-wrap: break-word;
+  }
+}

@@ -20,16 +20,31 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: [
-          'style-loader',
           MiniCssExtractLoader.loader,
           'css-loader',
           'sass-loader',
         ],
+      },      
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: 'images/[hash][ext][query]'
+        }
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf)$/,
+        type: "asset/resource",
+        generator: {
+          filename: 'fonts/[hash][ext][query]'
+        }
       },
     ],
   },
   devServer: {
     historyApiFallback: true,
+		hot: true,
+		open: true
   },
   plugins: [
     new MiniCssExtractLoader({

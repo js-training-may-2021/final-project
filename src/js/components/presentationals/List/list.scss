@@ -1,0 +1,11 @@
+@import '../../../../styles/variables';
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* @media (min-width: $mobileWidth) {
+
+} */
