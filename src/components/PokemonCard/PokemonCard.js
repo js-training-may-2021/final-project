@@ -5,7 +5,7 @@ import classes from './PokemonCard.module.css';
 
 const PokemonCard = (props) => {
 
-  const catchedPokemons = useSelector(state => state.catchedPokemons);
+  const catchedPokemons = useSelector(store => store.catch.catchedPokemons);
 
   const dispatch = useDispatch();
 
@@ -14,7 +14,6 @@ const PokemonCard = (props) => {
     const captureDate = new Date();
     const pokemonObj = { ...props.pokemon, isСaught: true, captureDate: captureDate };
     dispatch({ type: 'ADD_POKEMON', pokemonObj: pokemonObj });
-    console.log(catchedPokemons);
   };
 
   return (

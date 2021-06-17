@@ -7,26 +7,34 @@ import PokemonCard from "../components/PokemonCard/PokemonCard";
 
 const MyPokemons = () => {
 
-  const catchedPokemons = useSelector(state => state.catchedPokemons);
+  const catchedPokemons = useSelector(state => state.catch.catchedPokemons);
 
-  const content = catchedPokemons.map(pokemon => {
-    return (
-      <li key={pokemon.id}>
-        <Link to={`/pokemon-detail/${pokemon.name}`} className={classes.link}>
-          <PokemonCard
-            pokemon={{
-              name: pokemon.name,
-              id: pokemon.id,
-              img: pokemon.img
-            }}
-          />
-        </Link>
-      </li>
-    );
-  });
+  const content =
+    !catchedPokemons.length ?
+      <p className={classes.text}>You don't have any pokemons yet</p> :
+      <ul className={classes.pokemonList}>
+        {catchedPokemons.map(pokemon => {
+          return (
+            <li key={pokemon.id}>
+              <Link to={`/pokemon-detail/${pokemon.name}`} className={classes.link}>
+                <PokemonCard
+                  pokemon={{
+                    name: pokemon.name,
+                    id: pokemon.id,
+                    img: pokemon.img
+                  }}
+                />
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
 
   return (
-    <ul className={classes.pokemonList}>{content}</ul>
+    <main>
+      {/* <ul className={classes.pokemonList}>{content}</ul> */}
+      {content}
+    </main>
   );
 };
 

@@ -7,8 +7,7 @@ import Spinner from '../components/UI/Spinner';
 
 const PokemonDetailPage = (props) => {
 
-  const catchedPokemons = useSelector(state => state.catchedPokemons);
-
+  const catchedPokemons = useSelector(state => state.catch.catchedPokemons);
   const [currentPokemon, setCurrentPokemon] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
@@ -38,7 +37,7 @@ const PokemonDetailPage = (props) => {
     <Spinner /> :
     <PokemonProfile pokemon={currentPokemon} />;
 
-  return <div>{content}</div>
+  return <main>{content}</main>
 };
 
 export default PokemonDetailPage;

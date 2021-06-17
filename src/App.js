@@ -10,23 +10,21 @@ function App() {
   return (
     <>
       <MainHeader />
-      <main>
-        <Switch>
-          <Route path='/' exact>
-            <HomePage />
-          </Route>
-          <Route path='/my-pokemons' exact>
-            <MyPokemons />
-          </Route>
-          <Route path='/pokemon-detail/:pokemonId' exact>
-            <PokemonDetailPage />
-          </Route>
-          <Route path='/'>
-            <Redirect to='/' />
-          </Route>
-        </Switch>
-      </main>
-      <MainFooter />
+      <Switch>
+        <Route path='/' exact>
+          <HomePage />
+        </Route>
+        <Route path='/my-pokemons' exact>
+          <MyPokemons />
+        </Route>
+        <Route path='/pokemon-detail/:pokemonId' exact>
+          <PokemonDetailPage />
+        </Route>
+        <Route path='/'>
+          <Redirect to='/' />
+        </Route>
+      </Switch>
+      {/* <MainFooter /> */}
     </>
   );
 }
