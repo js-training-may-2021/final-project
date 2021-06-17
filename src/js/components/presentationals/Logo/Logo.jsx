@@ -1,12 +1,14 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import {AppRoute} from '../../../utils';
 import './logo.scss';
 
 const Logo = () => {
   return (    
     <div className="logo">
-      <a className="logo__link" href="./index.html">POKEDEX</a>
+      <Link className="logo__link" to={AppRoute.MAIN}>POKEDEX</Link>
     </div>
   );
 }
 
-export default Logo;
+export default React.memo(Logo);

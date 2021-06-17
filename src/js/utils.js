@@ -1,5 +1,5 @@
 export const AppRoute = {
   MAIN: '/',
-  DETAIL: '/detail',
+  DETAIL: '/detail/:id',
   CAUGHT: '/caught'
 }
