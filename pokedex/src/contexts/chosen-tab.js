@@ -2,7 +2,6 @@ import { createContext } from "react";
 
 const ChosenTabContext = createContext('all');
 
-export default ChosenTabContext;
+ChosenTabContext.displayName = 'Chosen Tab Context';
 
-export const ChosenTabProvider = ChosenTabContext.Provider;
-export const ChosenTabConsumer = ChosenTabContext.Consumer;
+export default ChosenTabContext;

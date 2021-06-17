@@ -5,6 +5,11 @@ import React, { Component } from "react";
 import LargeCard from "../../components/large-card";
 import Button from '../../components/button';
 
+import CaughtPokemonsContext from "../../contexts/caught-pokemons";
+import ChosenCardContext from "../../contexts/chosen-card";
+import ChosenTabContext from "../../contexts/chosen-tab";
+import ChosenPageContext from "../../contexts/chosen-page";
+
 const cb = () => {
   
   console.log('back!');
@@ -28,13 +33,19 @@ class CardPage extends Component {
 
   render() {
 
-    console.log();
-
     return (
       <>
-        <Button classNames="back" text="&larr;&nbsp;&nbsp;Вернуться к&nbsp;списку" isDisabled="false" buttonType="come-back" />
-        <LargeCard id={this.state.chosenId} data={this.state.data} caught={this.state.caught} />
-      </>
+        <CaughtPokemonsContext.Consumer>
+          {(context) => {
+            return (
+              <>
+                <Button classNames="back" text="&larr;&nbsp;&nbsp;Вернуться к&nbsp;списку" isDisabled="false" buttonType="come-back" />
+                <LargeCard id={this.state.chosenId} data={this.state.data} caught={context._currentValue2} />
+              </>
+            )
+          }}
+        </CaughtPokemonsContext.Consumer> 
+     </> 
     );
 
   }

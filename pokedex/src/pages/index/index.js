@@ -4,6 +4,11 @@ import Catalog from "../../components/catalog";
 import CatalogItems from "../../components/catalog-items";
 import Pagination from "../../components/pagination";
 
+import CaughtPokemonsContext from "../../contexts/caught-pokemons";
+import ChosenCardContext from "../../contexts/chosen-card";
+import ChosenTabContext from "../../contexts/chosen-tab";
+import ChosenPageContext from "../../contexts/chosen-page";
+
 //import AllPokemonsContext from "../../contexts/all-pokemons";
 //import CaughtPokemonsContext from "../../contexts/caught-pokemons";
 class HomePage extends Component {
@@ -14,24 +19,59 @@ class HomePage extends Component {
       caught: this.props.caught,
       chosenPage: this.props.chosenPage,
       chosenTab: this.props.chosenTab,
-      data: this.props.data
+      data: this.props.data,
     };
   }
 
   render() {
-    const quantity = this.state.data.length;
-    const len = Math.ceil(quantity / 12);
 
-    return (
+    
+
+    /*return (
       <>
         <h3>Всего покемонов: {quantity}</h3>
           <Catalog>
-     
-          <CatalogItems data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} catalogType={this.state.chosenTab} />
-            <Pagination len={len} chosenPage={this.state.chosenPage} />
-  
+            <CatalogItems data={this.props.data} caught={this.props.caught} chosenPage={this.props.chosenPage} catalogType={this.props.chosenTab} />
+            <Pagination len={len} chosenPage={this.props.chosenPage} />
           </Catalog>
       </>
+    );
+    */
+
+    
+
+    return (
+     
+        <>
+<ChosenPageContext.Consumer>
+                          {(p) => {
+                            return (
+
+
+        <CaughtPokemonsContext.Consumer>
+            {(c) => {
+              const quantity = this.props.data.length;
+              const len = Math.ceil(quantity / 12);
+              console.log(this.props);
+
+              return (
+                <>
+                  <h3>Всего покемонов: {quantity}</h3> 
+                      <Catalog>
+                        <CatalogItems data={this.props.data} caught={c._currentValue2} chosenPage={p._currentValue2} catalogType={this.props.chosenTab} />
+
+                         <Pagination len={len} chosenPage={p._currentValue2} />
+      
+                      </Catalog>
+                </> 
+              )
+            }}
+          </CaughtPokemonsContext.Consumer>  
+          )
+                          }
+}
+                        </ChosenPageContext.Consumer>
+        </> 
     );
 
   }

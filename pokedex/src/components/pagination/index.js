@@ -1,5 +1,5 @@
 import PageLink from '../page-link';
-import { makeClassList, makeArrayFromValue } from '../../utils';
+import { makeClassList, makeArrayFromValue, isPageInList } from '../../utils';
 
 const makeLinksMarkup = (array, chosen) => {
   return array.map((item) => {
@@ -17,8 +17,9 @@ const Pagination = (props) => {
 
   } else {
  
-    let arr = makeArrayFromValue(props.len);
-    let linksMarkup = makeLinksMarkup(arr, +props.chosenPage);
+    const arr = makeArrayFromValue(props.len);
+    const correctPage = isPageInList(props.chosenPage, props.len);
+    const linksMarkup = makeLinksMarkup(arr, correctPage);
 
     return (
       <div className="pagination">

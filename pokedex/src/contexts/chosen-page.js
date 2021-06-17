@@ -2,7 +2,6 @@ import { createContext } from "react";
 
 const ChosenPageContext = createContext(1);
 
-export default ChosenPageContext;
+ChosenPageContext.displayName = 'Chosen Page Context';
 
-export const ChosenPageProvider = ChosenPageContext.Provider;
-export const ChosenPageConsumer = ChosenPageContext.Consumer;
+export default ChosenPageContext;

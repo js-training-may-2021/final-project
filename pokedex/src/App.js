@@ -2,24 +2,36 @@
 import React, { Component } from "react";
 //import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import { BrowserRouter as Router, Route, Link, NavLink, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Router, Route, Link, NavLink, Switch, Redirect } from "react-router-dom";
 //import { browserHistory } from "react-router";
+import pokemons from './db.json';
+import CaughtPokemonsContext from "./contexts/caught-pokemons";
+import ChosenCardContext from "./contexts/chosen-card";
+import ChosenTabContext from "./contexts/chosen-tab";
+import ChosenPageContext from "./contexts/chosen-page";
 
 import './App.css';
 import Header from "./components/header";
 import Main from "./components/main";
 import Tabs from "./components/tabs";
 
+
+
 import HomePage from "./pages/index";
 import CaughtPage from "./pages/caught";
 import CardPage from "./pages/card";
 
-//import CaughtPokemonsContext from "./contexts/caught-pokemons";
 
-import pokemons from './db.json';
+
+console.log('this is caught context on high level! ', CaughtPokemonsContext);
+console.log('this is card-id context! ', ChosenCardContext);
+console.log('this is tab context! ', ChosenTabContext);
+console.log('this is page context on high level! ', ChosenPageContext);
+
+
 const parsedPokemons = pokemons.pokemons;
 
-console.log('parsed on top level: ', parsedPokemons);
+//console.log('parsed on top level: ', parsedPokemons);
 
 const customHistory = createBrowserHistory();
 
@@ -55,7 +67,7 @@ const c = [
 
 const p = 2;
 
-const t = 'caught-only';
+const t = 'all';
 
 class App extends React.Component {
 
@@ -63,8 +75,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: parsedPokemons,
-      caught: c,
-      chosenPage: p,
+      //caught: c,
+      //chosenPage: p,
+      caught: CaughtPokemonsContext,
+      chosenPage: ChosenPageContext,
       chosenTab: t,
     };
   }
@@ -72,11 +86,14 @@ class App extends React.Component {
   render() {
     return (
       <>
+        <CaughtPokemonsContext.Provider value={this.state.caught}>
+        <ChosenPageContext.Provider value={this.state.chosenPage}>
+
         <Header />
         <Main>
           
           <Router history={customHistory}>
-
+          
           <Tabs>
             <NavLink to="/home" activeClassName="tab-active" className="tab">Все покемоны</NavLink>
             <NavLink to="/caught" activeClassName="tab-active" className="tab">Пойманные</NavLink>
@@ -96,10 +113,13 @@ class App extends React.Component {
               <CardPage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab={this.state.chosenTab} chosenId="2" />
             </Route>
           </Switch>
-   
+    
           </Router>
         
-        </Main>    
+        </Main> 
+
+        </ChosenPageContext.Provider>
+        </CaughtPokemonsContext.Provider>   
       </>
     );
   }

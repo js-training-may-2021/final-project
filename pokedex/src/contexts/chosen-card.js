@@ -1,8 +1,7 @@
 import { createContext } from "react";
 
-const ChosenCardContext = createContext();
+const ChosenCardContext = createContext('');
+
+ChosenCardContext.displayName = 'Chosen Card Context';
 
 export default ChosenCardContext;
-
-export const ChosenCardProvider = ChosenCardContext.Provider;
-export const ChosenCardConsumer = ChosenCardContext.Consumer;

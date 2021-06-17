@@ -42,3 +42,7 @@ export const findCommonItems = (array1, array2) => {
   let filtered = array1.filter((item) => ids.includes(parseInt(item.id, 10)));
   return filtered;
 };
+
+export const isPageInList = (number, len) => {
+  return number > len ? len : number;
+}
