@@ -10,11 +10,16 @@ const catchReducer = (state = { catchedPokemons: [] }, action) => {
   return state;
 };
 
-const homePagePaginationReducer = (state = { numberOfPokemonsToRender: 20 }, action) => {
-  if (action.type === "LOAD_MORE") {
-    // return { numberOfPokemonsToRender: action.payload };
-    return { numberOfPokemonsToRender: state.numberOfPokemonsToRender + 20 };
+const homePagePaginationReducer = (state = { pokemons: [], isLoading: false, error: false }, action) => {
+  if (action.type === "SET_POKEMONS") {
+    return { pokemons: [...state.pokemons, ...action.payload], isLoading: false, error: false };
   }
+  if (action.type === "START_LOADING_POKEMONS") {
+    return { ... state, isLoading: true };
+  }
+  // if (action.type = "ERROR") {
+  //   return { ... state, error: true }
+  // }
   return state;
 };
 

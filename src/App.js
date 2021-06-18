@@ -24,7 +24,7 @@ function App() {
           <Redirect to='/' />
         </Route>
       </Switch>
-      {/* <MainFooter /> */}
+      <MainFooter />
     </>
   );
 }

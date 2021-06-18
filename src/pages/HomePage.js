@@ -6,51 +6,52 @@ import classes from './HomePage.module.css';
 import PokemonCard from "../components/PokemonCard/PokemonCard";
 import Spinner from '../components/UI/Spinner';
 
-const HomePage = () => {
-
-  const [pokemonsList, setPokemonsList] = useState([]);
-  const [isLoading, setIsloading] = useState(true);
-  const mainRef = useRef();
-  const btnRef = useRef();
-  const pokemonsToRender = useSelector(store => store.homePagination.numberOfPokemonsToRender);
-  const dispatch = useDispatch();
-
-  async function getPokemonList(limit, needToLoadMore) {
-    fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=0`)
-      .then(res => res.json())
-      .then(res => {
-        setPokemonsList(res.results);
-        setIsloading(false);
-        // if (needToLoadMore) {
-        dispatch({ type: 'LOAD_MORE' });
-        // }
-
-      })
-      .catch(err => err.message);
-  };
-
-  useEffect(() => {
-    setIsloading(true);
-    getPokemonList(pokemonsToRender);
-    console.log("useEffect: ", pokemonsToRender);
-  }, []);
-
-  const loadMoreHandler = () => {
-    // dispatch({ type: 'LOAD_MORE' });
-    getPokemonList(pokemonsToRender, true);
-    console.log("clickHandler: ", pokemonsToRender);
-  }
-
-  // TODO: mb more elegant way
   const getPokemonId = (pokemonUrl) => {
     let copyUrl = pokemonUrl;
     copyUrl = copyUrl.slice(0, copyUrl.length - 1);
     return +copyUrl.slice(copyUrl.lastIndexOf('/') + 1);
   };
 
-  const content = isLoading ?
-    <Spinner /> :
-    pokemonsList.map(pokemon => {
+const HomePage = () => {
+
+  // const [isLoading, setIsloading] = useState(false);
+  // const mainRef = useRef();
+  // const btnRef = useRef();
+  const pokemons = useSelector(store => store.homePagination.pokemons);
+  const isLoading = useSelector(store => store.homePagination.isLoading);
+  const error = useSelector(store => store.homePagination.error);
+  const dispatch = useDispatch();
+
+  function getPokemonList(offset) {
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`)
+      .then(res => res.json())
+      .then(res => {
+        dispatch({ type: "START_LOADING_POKEMONS"});
+        dispatch({ type: "SET_POKEMONS", payload: res.results});
+      })
+      .catch(err => dispatch({ type: "ERROR" }));
+  };
+
+  useEffect(() => {
+    if (!pokemons.length) {
+     dispatch({ type: "START_LOADING_POKEMONS"});
+     getPokemonList(0);
+    }
+  }, []);
+
+  const loadMoreHandler = () => getPokemonList(pokemons.length);
+
+  let content;
+
+  // if (isLoading) {
+  //   content = <Spinner />;
+  // } else 
+  if (error) {
+    content = <p className={classes.error}>Something went wrong</p>
+  } else {
+    content = <>
+    <ul className={classes.pokemonList}>
+      {pokemons.map(pokemon => {
       return (
         <li key={getPokemonId(pokemon.url)}>
           <Link to={`/pokemon-detail/${pokemon.name}`} className={classes.link}>
@@ -65,12 +66,15 @@ const HomePage = () => {
           </Link>
         </li>
       );
-    });
+    })}
+    </ul>
+    <button className={classes.btn} onClick={loadMoreHandler}>Load more...</button>
+    </>
+  }
 
   return (
-    <main ref={mainRef}>
-      <ul className={classes.pokemonList}>{content}</ul>
-      <button className={classes.btn} onClick={loadMoreHandler} ref={btnRef}>Load more...</button>
+    <main className={classes.main}>
+      {content}
     </main>
   );
 };

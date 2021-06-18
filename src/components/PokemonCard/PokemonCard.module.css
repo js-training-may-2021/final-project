@@ -1,7 +1,7 @@
 .pokemonCard {
   width: 300px;
   height: 450px;
-  padding: 10px;
+  /* padding: 10px; */
   background-color: #BDBDBD;
 }
 
@@ -29,6 +29,8 @@
 }
 
 .cardBtn {
+  font-family: 'Bangers', cursive;
+  font-size: 20px;
   background-color: #689F38;
   color: #fff;
   text-transform: uppercase;

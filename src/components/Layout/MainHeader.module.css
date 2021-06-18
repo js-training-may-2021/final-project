@@ -1,25 +1,35 @@
 .navList {
+  width: 90vw;
+  max-width: 1530px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
+  justify-content: flex-end;
   list-style: none;
+  padding: 0;
 }
 
 .navLink {
-  padding: 20px;
+  padding: 5px 10px;
+  margin-left: 20px;
   transition: all .4s;
   text-transform: uppercase;
   text-decoration: none;
   color: currentColor;
+  transition: transform .3s;
 }
 
 .navLink:active,
 .navLink:hover,
 .navLink.activeNavLink {
-  color:#212121;
-  font-weight: bolder;
+  border-bottom: 2px solid #fff;
 }
 
 .header {
-  height: 50px;
-  background-color: #FF5722;
+  padding-top: 10px;
+  height: 60px;
+  background-color: #ff5722;
   color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
