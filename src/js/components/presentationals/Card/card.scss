@@ -4,6 +4,12 @@
   width: 240px;
   margin: 20px 0;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+	&--caught {
+		opacity: 0.5;
+	}
 
   &__title {
     color: map-get($colorScheme, "text");

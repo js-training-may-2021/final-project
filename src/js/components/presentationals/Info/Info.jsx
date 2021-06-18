@@ -6,8 +6,21 @@ import './info.scss';
 
 const ButtonWrapped = withToggle(Button);
 
-const Info = ({pokemon}) => {
-	const {id, name, isCaught, date} = pokemon;
+const Info = (props) => {
+  const {
+    pokemon,
+    isToggleChecked,
+    onButtonClick,
+    onToggleClick,
+  } = props;
+
+	const {id, name, catchDate} = pokemon;
+
+  const showCatchDate = () => {
+    return (
+      <p className="info__text">CAUGHT: <span className="info__data">{catchDate}</span></p>
+    );
+  };
 
   return (
     <Fragment>
@@ -15,10 +28,14 @@ const Info = ({pokemon}) => {
       <article className="page__info info">
         <h1 className="info__title">{name[0].toUpperCase() + name.slice(1)}</h1>
         <p className="info__text">ID: <span className="info__data">{id}</span></p>
-        <p className="info__text">STATUS: <span className="info__data">{isCaught ? `Caught` : `Not caught`}</span></p>
-        {isCaught ? `<p className="info__text">CAUGHT: <span className="info__data">${date}</span></p>` : ``}
+        <p className="info__text">STATUS: <span className="info__data">{isToggleChecked ? `Caught` : `Not caught`}</span></p>
+        {isToggleChecked ? showCatchDate() : ``}
 				<ButtonWrapped
-					isToggleChecked={isCaught}
+          isToggleChecked={isToggleChecked}
+          onClick={() => {
+            onButtonClick(pokemon);
+            onToggleClick();
+          }}
 				/>
       </article>
     </Fragment>
@@ -30,8 +47,11 @@ Info.propTypes = {
 		id: PropTypes.number.isRequired,
 		name: PropTypes.string.isRequired,
 		isCaught: PropTypes.bool.isRequired,
-		date: PropTypes.oneOfType([() => null, PropTypes.instanceOf(Date)]),
+		catchDate: PropTypes.oneOfType([() => null, PropTypes.instanceOf(Date)]),
 	}).isRequired,
+  isToggleChecked: PropTypes.bool.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
+  onToggleClick: PropTypes.func,
 }
 
 export default React.memo(Info);

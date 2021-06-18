@@ -1,6 +1,7 @@
 .page {
   &__main {
     width: 100%;
+    min-width: 220px;
     max-width: $desktopWidth;
     margin: 0 auto;
 
@@ -13,9 +14,12 @@
   }
 
   &__title {
-    min-width: $mobileWidth;
     margin: 40px;
     line-height: 2rem;
+  }
+
+  &__text { 
+    margin: 40px;
   }
 
   &__img {
@@ -28,6 +32,10 @@
     &__title {
       margin: 20px;
       font-size: 1.5rem;
+    }
+
+    &__text {      
+      margin: 20px;
     }
 
     &__img {

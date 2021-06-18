@@ -2,20 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './button.scss';
 
-const Button = ({isToggleChecked}) => {
+const Button = (props) => {
+  const {
+    isToggleChecked,
+    onClick,
+    onToggleClick,
+  } = props;
+
 	return (
 		<button
-			className="card__button button"
+			className={"card__button button" + (isToggleChecked ? " button--checked" : "")}
 			type="button"
-			disabled={isToggleChecked}
+      onClick={() => {
+        onClick();
+        onToggleClick();
+      }}
 		>
-			Catch!
+			{isToggleChecked ? `Release` : `Catch!`}
 		</button>
 	);
 };
 
 Button.propTypes = {
-	isToggleChecked: PropTypes.bool,
+  isToggleChecked: PropTypes.bool.isRequired,
+	onClick: PropTypes.func,
+  onToggleClick: PropTypes.func,
 }
 
 export default React.memo(Button);
