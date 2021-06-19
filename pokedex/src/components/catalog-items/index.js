@@ -14,19 +14,19 @@ const makeCardsMarkup = (data, caught, chosenPage = 1, catalogType) => {
   
   let copy = [...data];
 
-  console.log('copy while cards rendering 1: ', copy);
+  //console.log('copy while cards rendering 1: ', copy);
 
   if (catalogType === 'caught-only') {
       copy = findCommonItems(data, caught);
   }
 
-  console.log('copy while cards rendering 2: ', copy);
+  //console.log('copy while cards rendering 2: ', copy);
 
   if (copy.length > MAX_ITEMS_IN_PORTION) {
     copy = getPortion(copy, chosenPage);
   }
 
-  console.log('copy while cards rendering 3: ', copy);
+  //console.log('copy while cards rendering 3: ', copy);
 
   const markup = copy.map((item) => {
     const status = checkStatus(item.id, caught);

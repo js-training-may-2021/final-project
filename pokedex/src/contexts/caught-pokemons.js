@@ -1,51 +1,56 @@
 import { createContext } from "react";
 
+const d = new Date().toDateString();
+
+const d2 = new Date(2019, 10, 28, 15, 20, 0, 0).toDateString();
+
 const c = [
     { 
-    isCatched: "10/12/2019", id: 25
+    isCaught: "10/12/2019", id: 76
   },
   { 
-    isCatched: "10/12/2019", id: 80
+    isCaught: d, id: 80
   },
   { 
-    isCatched: "10/12/2019", id: 67
+    isCaught: d2, id: 67
+  },/*
+      { 
+    isCaught: "10/12/2019", id: 5
+  },
+  { 
+    isCaught: "10/12/2019", id: 8
+  },
+  { 
+    isCaught: "10/12/2019", id: 7
   },
       { 
-    isCatched: "10/12/2019", id: 5
+    isCaught: "10/12/2019", id: 20
   },
   { 
-    isCatched: "10/12/2019", id: 8
+    isCaught: "10/12/2019", id: 89
   },
   { 
-    isCatched: "10/12/2019", id: 7
+    isCaught: "10/12/2019", id: 63
   },
       { 
-    isCatched: "10/12/2019", id: 20
+    isCaught: "10/12/2019", id: 12
   },
   { 
-    isCatched: "10/12/2019", id: 89
+    isCaught: "10/12/2019", id: 45
   },
   { 
-    isCatched: "10/12/2019", id: 63
+    isCaught: "10/12/2019", id: 14
   },
       { 
-    isCatched: "10/12/2019", id: 12
+    isCaught: "10/12/2019", id: 2
   },
   { 
-    isCatched: "10/12/2019", id: 45
+    isCaught: "10/12/2019", id: 9
   },
   { 
-    isCatched: "10/12/2019", id: 14
+    isCaught: "10/12/2019", id: 11
   },
-      { 
-    isCatched: "10/12/2019", id: 2
-  },
-  { 
-    isCatched: "10/12/2019", id: 9
-  },
-  { 
-    isCatched: "10/12/2019", id: 11
-  },
+  */
 ];
 
 const CaughtPokemonsContext = createContext(c);

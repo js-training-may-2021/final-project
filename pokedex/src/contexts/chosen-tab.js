@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const ChosenTabContext = createContext('all');
+const ChosenTabContext = createContext('/caught');
 
 ChosenTabContext.displayName = 'Chosen Tab Context';
 

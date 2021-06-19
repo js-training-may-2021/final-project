@@ -1,24 +1,10 @@
 import React, { Component } from "react";
-//import { useHistory } from "react-router-dom";
-//import { browserHistory } from "react-router";
 
 import LargeCard from "../../components/large-card";
-import Button from '../../components/button';
+import BackLink from '../../components/back-link';
 
 import CaughtPokemonsContext from "../../contexts/caught-pokemons";
-import ChosenCardContext from "../../contexts/chosen-card";
-import ChosenTabContext from "../../contexts/chosen-tab";
-import ChosenPageContext from "../../contexts/chosen-page";
-
-const cb = () => {
-  
-  console.log('back!');
-  //BrowserHistory.goBack();
-};
-
-
-//const history = useHistory();
-
+//import ChosenPageContext from "../../contexts/chosen-page";
 class CardPage extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +12,6 @@ class CardPage extends Component {
       caught: this.props.caught,
       chosenPage: this.props.chosenPage,
       chosenTab: this.props.chosenTab,
-      chosenId: this.props.chosenId,
       data: this.props.data
     };
   }
@@ -36,11 +21,11 @@ class CardPage extends Component {
     return (
       <>
         <CaughtPokemonsContext.Consumer>
-          {(context) => {
+          {(c) => {
             return (
               <>
-                <Button classNames="back" text="&larr;&nbsp;&nbsp;Вернуться к&nbsp;списку" isDisabled="false" buttonType="come-back" />
-                <LargeCard id={this.state.chosenId} data={this.state.data} caught={context._currentValue2} />
+                <BackLink tab="/caught" />
+                <LargeCard id="90" data={this.state.data} caught={c._currentValue2} />
               </>
             )
           }}

@@ -2,7 +2,8 @@ import { getPokemonTitle, getPokemonStatus } from '../../utils';
 
 const LargeCard = (props) => {
 
-  const imgUrl = '../../images/' + props.id + '.png';
+  const imgPicture = props.id > 720 ? 'nophoto.gif' : props.id + '.png';
+  const imgUrl = '../../images/' + imgPicture;
   const status = getPokemonStatus(props.id, props.caught);
   const name = getPokemonTitle(props.id, props.data);
 

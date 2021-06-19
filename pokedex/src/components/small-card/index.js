@@ -1,32 +1,43 @@
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Button from '../button';
-//import CaughtPokemonsContext from "../../contexts/caught-pokemons";
 import { CATCH_BTN_NAME_OFF, CATCH_BTN_NAME } from '../../constants';
+class SmallCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: this.props.title,
+      id: this.props.id,
+      isCaught: this.props.isCaught,
+    };
+  }
 
-const SmallCard = (props) => {
+  render() {
 
-  const imgUrl = '../../images/' + props.id + '.png';
-  const status = props.isCaught !== 'null';
-  const btnText = !status ? CATCH_BTN_NAME : CATCH_BTN_NAME_OFF;
-  const pageUrl = '/card';
+    const imgPicture = this.state.id > 720 ? 'nophoto.gif' : this.state.id + '.png';
+    const imgUrl = '../../images/' + imgPicture;
+    const status = this.state.isCaught !== 'null';
+    const btnText = !status ? CATCH_BTN_NAME : CATCH_BTN_NAME_OFF;
 
-  return (
-    
-    <div className="card-small">
-      <a className="card-small-info" href={pageUrl}>
-        <img src={imgUrl} className="card-small-picture" alt={props.title} />
-        <p>{props.title}</p>
-      </a>
+    return (
+      <div className="card-small">
+
+        <Link to={`/card/${this.state.id}`} className="card-small-info">
+          <img src={imgUrl} className="card-small-picture" alt={this.state.title} />
+          <p>{this.state.title}</p>
+        </Link>
+
         <Button 
         classNames="catch-button" 
         text={btnText} 
         isDisabled={status} 
         buttonType="catch-pokemon" 
-        buttonId={props.id} 
+        buttonId={this.state.id} 
         />
+ 
     </div>
-
-  );
-  
-};
+    )
+  }
+}
 
 export default SmallCard;
