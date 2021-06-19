@@ -14,6 +14,7 @@ import './App.css';
 import Header from "./containers/header";
 import Main from "./containers/main";
 import Tabs from "./containers/tabs";
+import MenuLink from "./components/menu-link";
 import Logo from "./components/logo";
 import HomePage from "./pages/index";
 import CaughtPage from "./pages/caught";
@@ -38,6 +39,7 @@ class App extends React.Component {
       <>
         <CaughtPokemonsContext.Provider value={this.state.caught}>
         <ChosenPageContext.Provider value={this.state.chosenPage}>
+        <ChosenTabContext.Provider value={this.state.chosenTab}>
 
         <Header>
           <Logo></Logo>
@@ -45,32 +47,45 @@ class App extends React.Component {
 
         <Main>
           
-          <Router history={customHistory}>
           
-          <Tabs>
-            <NavLink to="/home" activeClassName="tab-active" className="tab">Все покемоны</NavLink>
-            <NavLink to="/caught" activeClassName="tab-active" className="tab">Пойманные</NavLink>
-          </Tabs>
+          
+          <ChosenTabContext.Consumer>
+            {(t) => {
+              return (
+
+                <Router history={customHistory}>
+
+                  <Tabs>
+                    <MenuLink url="/home" title="Все покемоны" />
+                    <MenuLink url="/caught" title="Пойманные" />
+                  </Tabs>
+
+                  <Route path="/caught">
+                    <CaughtPage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab={"caught-only"} />
+                  </Route>
+                  <Route path="/home">
+                    <HomePage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab="/home" />
+                  </Route>
+                  <Route exact path="/">
+                    <HomePage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab="/home" />
+                  </Route>
+                  <Route path="/card/:id">
+                    <CardPage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab={this.state.chosenTab} />
+                  </Route>
+        
+                </Router>
+
+              )
+            }}
+          </ChosenTabContext.Consumer>
+          
           
          
-            <Route path="/caught">
-              <CaughtPage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab={"caught-only"} />
-            </Route>
-            <Route path="/home">
-              <HomePage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab="/home" />
-            </Route>
-            <Route exact path="/">
-              <HomePage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab="/home" />
-            </Route>
-            <Route path="/card/:id">
-              <CardPage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab={this.state.chosenTab} />
-            </Route>
-          
-    
-          </Router>
+            
         
         </Main> 
 
+        </ChosenTabContext.Provider>
         </ChosenPageContext.Provider>
         </CaughtPokemonsContext.Provider>   
       </>

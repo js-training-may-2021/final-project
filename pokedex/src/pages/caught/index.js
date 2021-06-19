@@ -5,7 +5,9 @@ import CatalogItems from "../../components/catalog-items";
 import Pagination from "../../components/pagination";
 
 import CaughtPokemonsContext from "../../contexts/caught-pokemons";
+import ChosenTabContext from "../../contexts/chosen-tab";
 import ChosenPageContext from "../../contexts/chosen-page";
+
 class CaughtPage extends Component {
   constructor(props) {
     super(props);
@@ -20,16 +22,14 @@ class CaughtPage extends Component {
   render() {
 
     return (
-      <>
-        <ChosenPageContext.Consumer>
+    <>
+      <ChosenPageContext.Consumer>
           {(p) => {
             return (
               <CaughtPokemonsContext.Consumer>
                 {(c) => {
                   const quantity = c._currentValue2.length;
                   const len = Math.ceil(quantity / 12);
-                  //console.log('caught page: ', c._currentValue2, this.props);
-                  //console.log(p._currentValue2, c._currentValue2);
                   return (
                     <>
                       <h3>Всего поймано покемонов: {quantity}</h3> 

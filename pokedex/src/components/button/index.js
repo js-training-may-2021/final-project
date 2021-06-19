@@ -1,16 +1,12 @@
-//import React, { Component } from 'react';
 import CaughtPokemonsContext from "../../contexts/caught-pokemons";
 
 const Button = (props) => {
 
   const catchPokemon = (evt, id) => {
     evt.preventDefault();
-    console.log('pokemon is catched! ', id);
     alert('Покемон ' + id + ' пойман!');
     const date = new Date().toDateString();
-    console.log(CaughtPokemonsContext._currentValue2);
     CaughtPokemonsContext._currentValue2.push({isCatched: date, id: id});
-    console.log(CaughtPokemonsContext._currentValue2);
   };
 
   if (!!props.isDisabled) {

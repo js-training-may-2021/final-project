@@ -5,8 +5,9 @@ import CatalogItems from "../../components/catalog-items";
 import Pagination from "../../components/pagination";
 
 import CaughtPokemonsContext from "../../contexts/caught-pokemons";
-//import ChosenTabContext from "../../contexts/chosen-tab";
+import ChosenTabContext from "../../contexts/chosen-tab";
 import ChosenPageContext from "../../contexts/chosen-page";
+
 class HomePage extends Component {
 
   constructor(props) {
