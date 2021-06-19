@@ -10,9 +10,6 @@ import Caught from '../Caught/Caught.jsx';
 
 const App = (props) => {
   const {
-    pokemons,
-    caughtPokemons,
-    activePokemon,
     onCardClick,
     onButtonClick,
   } = props;
@@ -22,21 +19,18 @@ const App = (props) => {
       <Switch>
         <Route exact path={AppRoute.MAIN}>
           <Main
-						pokemons={pokemons.slice(0, 50)}
             onCardClick={onCardClick}
             onButtonClick={onButtonClick}
 					/>
         </Route>
         <Route exact path={AppRoute.CAUGHT}>
-          <Caught 
-						caughtPokemons={caughtPokemons}
+          <Caught
             onCardClick={onCardClick}
             onButtonClick={onButtonClick}
           />
         </Route>
         <Route exact path={AppRoute.DETAIL}>
           <Detail
-						activePokemon={activePokemon}
             onButtonClick={onButtonClick}
 					/>
         </Route>
@@ -46,33 +40,9 @@ const App = (props) => {
 }
 
 App.propTypes = {
-	pokemons: PropTypes.arrayOf(PropTypes.shape({
-		id: PropTypes.number.isRequired,
-		name: PropTypes.string.isRequired,
-		isCaught: PropTypes.bool.isRequired,
-		catchDate: PropTypes.oneOfType([() => null, PropTypes.instanceOf(Date)]),
-	})),
-	caughtPokemons: PropTypes.arrayOf(PropTypes.shape({
-		id: PropTypes.number.isRequired,
-		name: PropTypes.string.isRequired,
-		isCaught: PropTypes.bool.isRequired,
-		catchDate: PropTypes.oneOfType([() => null, PropTypes.instanceOf(Date)]),
-	})),
-	activePokemon: PropTypes.shape({
-		id: PropTypes.number.isRequired,
-		name: PropTypes.string.isRequired,
-		isCaught: PropTypes.bool.isRequired,
-		catchDate: PropTypes.oneOfType([() => null, PropTypes.instanceOf(Date)]),
-	}),
   onCardClick: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,
 };
-
-const mapStateToProps = state => ({
-  pokemons: state.pokemons,
-  caughtPokemons: state.caughtPokemons,
-  activePokemon: state.activePokemon,
-});
 
 const mapDispatchToProps = dispatch => ({
   onCardClick(pokemon) {
@@ -83,4 +53,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapDispatchToProps)(App);

@@ -1,12 +1,18 @@
-import React from 'react';
+export const POKEMONS_PER_PAGE = 10;
 
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+let currentPage = 1;
+
+export const getCurrentPage = () => {
+	return currentPage++;
+};
 
 export const AppRoute = {
   MAIN: '/',
   DETAIL: '/detail/:id',
   CAUGHT: '/caught'
 };
+
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 export const getCatchDate = () => {
   const date = new Date();
@@ -16,12 +22,4 @@ export const getCatchDate = () => {
   const year = date.getFullYear();
 
   return `${day} ${month} ${year}`
-};
-
-export const checkPokemons = (pokemons, text) => {
-  if (pokemons.length === 0) {
-    return (
-      <p className="page__text">{text}</p>
-    );
-  }
 };

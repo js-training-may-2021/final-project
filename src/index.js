@@ -5,10 +5,11 @@ import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import {reducer, loadPokemons} from './js/store/reducer.js';
 import App from './js/components/containers/App/App.jsx';
+import {getCurrentPage} from './js/utils.js';
 import './styles/index.scss';
 
 const store = createStore(reducer, applyMiddleware(thunk));
-store.dispatch(loadPokemons());
+store.dispatch(loadPokemons(getCurrentPage()));
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,9 +1,9 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import Header from '../../presentationals/Header/Header.jsx';
 import Footer from '../../presentationals/Footer/Footer.jsx';
 import List from '../../presentationals/List/List.jsx';
-import {checkPokemons} from '../../../utils.js';
 
 const Caught = (props) => {
   const {
@@ -17,12 +17,13 @@ const Caught = (props) => {
 			<Header />
 			<main className="page__main">
 				<h1 className="page__title">CAUGHT POKEMONS</h1>
-        {checkPokemons(caughtPokemons, `You haven't caught any pokemons yet.`)}  
-				<List
-					pokemons={caughtPokemons}
-          onCardClick={onCardClick}
-          onButtonClick={onButtonClick}
-				/>
+				{caughtPokemons.length === 0 ?
+					<p className="page__text">You haven&apos;t caught any pokemons yet.</p> :
+					<List
+						pokemons={caughtPokemons}
+						onCardClick={onCardClick}
+						onButtonClick={onButtonClick}
+					/>}
 			</main>
 			<Footer />
 		</Fragment>
@@ -38,6 +39,10 @@ Caught.propTypes = {
 	})),
   onCardClick: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,
-}
+};
 
-export default React.memo(Caught);
+const mapStateToProps = state => ({
+	caughtPokemons: state.caughtPokemons,
+});
+
+export default connect(mapStateToProps)(Caught);

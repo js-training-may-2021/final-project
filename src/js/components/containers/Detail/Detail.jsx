@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import Header from '../../presentationals/Header/Header.jsx';
 import Info from '../../presentationals/Info/Info.jsx';
 import withToggle from '../../hocs/withToggle/withToggle.jsx';
@@ -34,6 +35,10 @@ Detail.propTypes = {
 		catchDate: PropTypes.oneOfType([() => null, PropTypes.instanceOf(Date)]),
 	}).isRequired,
   onButtonClick: PropTypes.func.isRequired,
-}
+};
 
-export default React.memo(Detail);
+const mapStateToProps = state => ({
+	activePokemon: state.activePokemon,
+});
+
+export default connect(mapStateToProps)(Detail);
