@@ -6,8 +6,6 @@ import Pagination from "../../components/pagination";
 
 import CaughtPokemonsContext from "../../contexts/caught-pokemons";
 import ChosenPageContext from "../../contexts/chosen-page";
-
-console.log('this is caught context on low level! ', CaughtPokemonsContext);
 class CaughtPage extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +18,6 @@ class CaughtPage extends Component {
   }
 
   render() {
-    console.log(this.props);
 
     return (
       <>
@@ -31,8 +28,8 @@ class CaughtPage extends Component {
                 {(c) => {
                   const quantity = c._currentValue2.length;
                   const len = Math.ceil(quantity / 12);
-                  console.log('caught page: ', c._currentValue2, this.props);
-                  console.log(p._currentValue2, c._currentValue2);
+                  //console.log('caught page: ', c._currentValue2, this.props);
+                  //console.log(p._currentValue2, c._currentValue2);
                   return (
                     <>
                       <h3>Всего поймано покемонов: {quantity}</h3> 

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 import LargeCard from "../../components/large-card";
 import BackLink from '../../components/back-link';
 
 import CaughtPokemonsContext from "../../contexts/caught-pokemons";
-//import ChosenPageContext from "../../contexts/chosen-page";
 class CardPage extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +12,8 @@ class CardPage extends Component {
       caught: this.props.caught,
       chosenPage: this.props.chosenPage,
       chosenTab: this.props.chosenTab,
-      data: this.props.data
+      data: this.props.data,
+      id: this.props.location.id
     };
   }
 
@@ -25,7 +26,7 @@ class CardPage extends Component {
             return (
               <>
                 <BackLink tab="/caught" />
-                <LargeCard id="90" data={this.state.data} caught={c._currentValue2} />
+                <LargeCard data={this.state.data} caught={c._currentValue2} id={this.state.id} />
               </>
             )
           }}
@@ -36,4 +37,4 @@ class CardPage extends Component {
   }
 }
 
-export default CardPage;
+export default withRouter(CardPage);

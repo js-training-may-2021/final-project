@@ -20,9 +20,13 @@ class SmallCard extends Component {
     const btnText = !status ? CATCH_BTN_NAME : CATCH_BTN_NAME_OFF;
 
     return (
-      <div className="card-small">
+      <div className="card-small" key={this.state.id}>
 
-        <Link to={`/card/${this.state.id}`} className="card-small-info">
+        <Link to={{
+          pathname: `/card/${this.state.id}`,
+          id: this.state.id
+          }} 
+          className="card-small-info">
           <img src={imgUrl} className="card-small-picture" alt={this.state.title} />
           <p>{this.state.title}</p>
         </Link>

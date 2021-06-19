@@ -2,12 +2,15 @@
 import React from "react";
 import { createBrowserHistory } from "history";
 import { Router, Route, NavLink } from "react-router-dom";
+
 import pokemons from './db.json';
+
 import CaughtPokemonsContext from "./contexts/caught-pokemons";
 import ChosenTabContext from "./contexts/chosen-tab";
 import ChosenPageContext from "./contexts/chosen-page";
 
 import './App.css';
+
 import Header from "./containers/header";
 import Main from "./containers/main";
 import Tabs from "./containers/tabs";
@@ -59,8 +62,8 @@ class App extends React.Component {
             <Route exact path="/">
               <HomePage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab="/home" />
             </Route>
-            <Route path="/card">
-              <CardPage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab={this.state.chosenTab} chosenId="2" />
+            <Route path="/card/:id">
+              <CardPage data={this.state.data} caught={this.state.caught} chosenPage={this.state.chosenPage} chosenTab={this.state.chosenTab} />
             </Route>
           
     
