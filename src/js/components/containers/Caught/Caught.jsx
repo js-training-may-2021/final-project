@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {getCaughtPokemons} from '../../../store/app/selectors.js';
 import Header from '../../presentationals/Header/Header.jsx';
 import Footer from '../../presentationals/Footer/Footer.jsx';
 import List from '../../presentationals/List/List.jsx';
@@ -42,7 +43,7 @@ Caught.propTypes = {
 };
 
 const mapStateToProps = state => ({
-	caughtPokemons: state.caughtPokemons,
+	caughtPokemons: getCaughtPokemons(state),
 });
 
 export default connect(mapStateToProps)(Caught);

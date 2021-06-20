@@ -1,7 +1,8 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {loadPokemons} from '../../../store/reducer.js';
+import {getPokemons, getLoadingStatus, getErrorMessage} from '../../../store/data/selectors.js';
+import {loadPokemons} from '../../../store/data/reducer.js';
 import Header from '../../presentationals/Header/Header.jsx';
 import Footer from '../../presentationals/Footer/Footer.jsx';
 import List from '../../presentationals/List/List.jsx';
@@ -57,9 +58,9 @@ Main.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  pokemons: state.pokemons,
-	isLoading: state.isLoading,
-	errorMessage: state.errorMessage,
+  pokemons: getPokemons(state),
+	isLoading: getLoadingStatus(state),
+	errorMessage: getErrorMessage(state),
 });
 
 const mapDispatchToProps = dispatch => ({

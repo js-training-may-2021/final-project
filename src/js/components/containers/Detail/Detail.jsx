@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {getActivePokemon} from '../../../store/app/selectors.js';
 import Header from '../../presentationals/Header/Header.jsx';
 import Info from '../../presentationals/Info/Info.jsx';
 import withToggle from '../../hocs/withToggle/withToggle.jsx';
@@ -38,7 +39,7 @@ Detail.propTypes = {
 };
 
 const mapStateToProps = state => ({
-	activePokemon: state.activePokemon,
+	activePokemon: getActivePokemon(state),
 });
 
 export default connect(mapStateToProps)(Detail);

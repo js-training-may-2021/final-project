@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {ActionCreator} from '../../../store/reducer.js';
+import {ActionCreator as AppActionCreator} from '../../../store/app/reducer.js';
 import {AppRoute} from '../../../utils';
 import Main from '../Main/Main.jsx';
 import Detail from '../Detail/Detail.jsx';
@@ -44,15 +44,13 @@ App.propTypes = {
   onButtonClick: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = () => ({});
-
 const mapDispatchToProps = dispatch => ({
   onCardClick(pokemon) {
-    dispatch(ActionCreator.changeActivePokemon(pokemon));
+    dispatch(AppActionCreator.changeActivePokemon(pokemon));
   },
   onButtonClick(pokemon) {
-    dispatch(ActionCreator.updatePokemonStatus(pokemon));
+    dispatch(AppActionCreator.updatePokemonStatus(pokemon));
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
