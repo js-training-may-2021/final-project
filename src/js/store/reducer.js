@@ -14,7 +14,7 @@ const ActionType = {
   UPDATE_POKEMON_STATUS: 'UPDATE_POKEMON_STATUS',
   CHANGE_ACTIVE_POKEMON: 'CHANGE_ACTIVE_POKEMON',
 	CHANGE_ERROR_MESSAGE: 'CHANGE_ERROR_MESSAGE',
-}
+};
 
 const ActionCreator = {
   loadPokemons: pokemons => {
@@ -44,7 +44,7 @@ const ActionCreator = {
       payload: message,
     };
   },
-}
+};
 
 const loadPokemons = (page) => (dispatch, getState) => {
   return axios.get(`http://localhost:3000/pokemons?_page=${page}&_limit=${POKEMONS_PER_PAGE}`)
@@ -103,6 +103,6 @@ const reducer = (state = initialState, action) => {
   }
 
   return state;
-}
+};
 
 export {reducer, loadPokemons, ActionCreator};

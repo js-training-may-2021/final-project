@@ -32,7 +32,7 @@ Detail.propTypes = {
 		id: PropTypes.number.isRequired,
 		name: PropTypes.string.isRequired,
 		isCaught: PropTypes.bool.isRequired,
-		catchDate: PropTypes.oneOfType([() => null, PropTypes.instanceOf(Date)]),
+		catchDate: PropTypes.string,
 	}).isRequired,
   onButtonClick: PropTypes.func.isRequired,
 };

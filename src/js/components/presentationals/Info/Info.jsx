@@ -40,18 +40,18 @@ const Info = (props) => {
       </article>
     </Fragment>
   );
-}
+};
 
 Info.propTypes = {
 	pokemon: PropTypes.shape({
 		id: PropTypes.number.isRequired,
 		name: PropTypes.string.isRequired,
 		isCaught: PropTypes.bool.isRequired,
-		catchDate: PropTypes.oneOfType([() => null, PropTypes.instanceOf(Date)]),
+		catchDate: PropTypes.string,
 	}).isRequired,
   isToggleChecked: PropTypes.bool.isRequired,
   onButtonClick: PropTypes.func.isRequired,
-  onToggleClick: PropTypes.func,
-}
+  onToggleClick: PropTypes.func.isRequired,
+};
 
 export default React.memo(Info);

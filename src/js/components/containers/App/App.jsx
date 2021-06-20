@@ -37,12 +37,14 @@ const App = (props) => {
       </Switch>
     </BrowserRouter>
   );
-}
+};
 
 App.propTypes = {
   onCardClick: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
   onCardClick(pokemon) {
@@ -53,4 +55,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

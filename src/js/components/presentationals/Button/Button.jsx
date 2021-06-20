@@ -25,8 +25,8 @@ const Button = (props) => {
 
 Button.propTypes = {
   isToggleChecked: PropTypes.bool.isRequired,
-	onClick: PropTypes.func,
-  onToggleClick: PropTypes.func,
-}
+	onClick: PropTypes.func.isRequired,
+  onToggleClick: PropTypes.func.isRequired,
+};
 
 export default React.memo(Button);

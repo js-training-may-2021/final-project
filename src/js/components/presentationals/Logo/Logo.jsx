@@ -9,6 +9,6 @@ const Logo = () => {
       <Link className="logo__link" to={AppRoute.MAIN}>POKEDEX</Link>
     </div>
   );
-}
+};
 
 export default React.memo(Logo);

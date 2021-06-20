@@ -15,11 +15,9 @@ const List = (props) => {
   } = props;
 
 	const handleScroll = () => {		
-    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) {
-      return;
-    } else {
+    if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
 			onScroll();
-		}
+    }
 	};
 
 	useEffect(() => {
@@ -50,11 +48,11 @@ List.propTypes = {
 		id: PropTypes.number.isRequired,
 		name: PropTypes.string.isRequired,
 		isCaught: PropTypes.bool.isRequired,
-		date: PropTypes.oneOfType([() => null, PropTypes.instanceOf(Date)]),
-	})),
-  onCardClick: PropTypes.func,
-  onButtonClick: PropTypes.func,
-  onScroll: PropTypes.func,
-}
+		date: PropTypes.string,
+	})).isRequired,
+  onCardClick: PropTypes.func.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
+  onScroll: PropTypes.func.isRequired,
+};
 
 export default React.memo(List);

@@ -29,10 +29,10 @@ const withToggle = Component => {
   }
 
   WithToggle.propTypes = {
-    isToggleChecked: PropTypes.bool,
+    isToggleChecked: PropTypes.bool.isRequired,
   };
 
   return WithToggle;
-}
+};
 
 export default withToggle;

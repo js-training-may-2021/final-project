@@ -44,7 +44,7 @@ Main.propTypes = {
 		id: PropTypes.number.isRequired,
 		name: PropTypes.string.isRequired,
 		isCaught: PropTypes.bool.isRequired,
-		catchDate: PropTypes.instanceOf(Date),
+		catchDate: PropTypes.string,
 	})),
 	errorMessage: PropTypes.string,
   onCardClick: PropTypes.func.isRequired,
