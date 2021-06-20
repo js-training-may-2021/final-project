@@ -18,7 +18,7 @@ const Button = (props) => {
         onToggleClick();
       }}
 		>
-			{isToggleChecked ? `Release` : `Catch!`}
+			{isToggleChecked ? 'Release' : 'Catch!'}
 		</button>
 	);
 };

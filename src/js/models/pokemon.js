@@ -1,7 +1,7 @@
 export default class Pokemon {
   constructor(data) {
-    this.id = data[`id`];
-    this.name = data[`name`];
+    this.id = data['id'];
+    this.name = data['name'];
     this.isCaught = false;
     this.catchDate = null;
   }

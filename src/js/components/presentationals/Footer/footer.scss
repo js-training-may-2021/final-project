@@ -4,5 +4,5 @@
 .footer {
   @include nav-wrap;
   margin-top: auto;
-  background-color: map-get($colorScheme, "footer");
+  background-color: map-get($colorScheme, 'footer');
 }

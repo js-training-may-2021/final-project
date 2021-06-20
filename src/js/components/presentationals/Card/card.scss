@@ -12,7 +12,7 @@
 	}
 
   &__title {
-    color: map-get($colorScheme, "text");
+    color: map-get($colorScheme, 'text');
     word-wrap: break-word;
   }
 }

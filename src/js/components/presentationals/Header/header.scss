@@ -3,5 +3,5 @@
 
 .header {
   @include nav-wrap;
-  background-color: map-get($colorScheme, "header");
+  background-color: map-get($colorScheme, 'header');
 }

@@ -15,8 +15,12 @@ const List = (props) => {
   } = props;
 
 	const handleScroll = () => {		
-    if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
-			onScroll();
+    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) {
+			return;
+    }
+		
+		if (typeof onScroll === 'function') {
+      onScroll();
     }
 	};
 
@@ -52,7 +56,7 @@ List.propTypes = {
 	})).isRequired,
   onCardClick: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,
-  onScroll: PropTypes.func.isRequired,
+  onScroll: PropTypes.func,
 };
 
 export default React.memo(List);

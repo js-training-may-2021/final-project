@@ -1,7 +1,7 @@
 @mixin nav-wrap {  
   padding: 20px 0;
-  background-color: map-get($colorScheme, "footer");
-  color: map-get($colorScheme, "textSecondary");
+  background-color: map-get($colorScheme, 'footer');
+  color: map-get($colorScheme, 'textSecondary');
 
   &__nav-wrap {
     width: 100%;

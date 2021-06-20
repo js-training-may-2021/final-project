@@ -27,14 +27,14 @@ module.exports = {
       },      
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
         generator: {
           filename: 'images/[hash][ext][query]'
         }
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf)$/,
-        type: "asset/resource",
+        type: 'asset/resource',
         generator: {
           filename: 'fonts/[hash][ext][query]'
         }
@@ -42,7 +42,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: ['.js', '.jsx'],
   },
   devServer: {
     historyApiFallback: true,

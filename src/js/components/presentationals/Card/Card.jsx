@@ -21,7 +21,7 @@ const Card = (props) => {
 	return (
 		<li className={"list__card card" + (isToggleChecked ? " card--caught" : "")} onClick={() => onCardClick(pokemon)}>
 			<Link className="card__link-wrap" to={`../../../../detail/${id}`}>
-				<img className="card__img" src={require(`../../../../images/${id < 721 ? id : `default`}.png`)} alt={name[0].toUpperCase() + name.slice(1)} />
+				<img className="card__img" src={require(`../../../../images/${id < 721 ? id : 'default'}.png`)} alt={name[0].toUpperCase() + name.slice(1)} />
         <h2 className="card__title">{name[0].toUpperCase() + name.slice(1)}</h2>
 			</Link>
       <ButtonWrapped

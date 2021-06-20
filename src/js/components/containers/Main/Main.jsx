@@ -6,11 +6,13 @@ import Header from '../../presentationals/Header/Header.jsx';
 import Footer from '../../presentationals/Footer/Footer.jsx';
 import List from '../../presentationals/List/List.jsx';
 import ErrorMessage from '../../presentationals/ErrorMessage/ErrorMessage.jsx';
+import Loader from '../../presentationals/Loader/Loader.jsx';
 import {getCurrentPage} from '../../../utils.js';
 
 const Main = (props) => {
   const {
     pokemons,
+		isLoading,
 		errorMessage,
     onCardClick,
     onButtonClick,
@@ -29,6 +31,7 @@ const Main = (props) => {
 						onButtonClick={onButtonClick}
 						onScroll={() => onScroll(getCurrentPage())}
 					/>}
+					{isLoading && <Loader />}
 					{errorMessage && 
 						<ErrorMessage
 							message={errorMessage}
@@ -46,6 +49,7 @@ Main.propTypes = {
 		isCaught: PropTypes.bool.isRequired,
 		catchDate: PropTypes.string,
 	})),
+	isLoading: PropTypes.bool.isRequired,
 	errorMessage: PropTypes.string,
   onCardClick: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,
@@ -54,13 +58,14 @@ Main.propTypes = {
 
 const mapStateToProps = state => ({
   pokemons: state.pokemons,
+	isLoading: state.isLoading,
 	errorMessage: state.errorMessage,
 });
 
 const mapDispatchToProps = dispatch => ({
 	onScroll(page) {
     dispatch(loadPokemons(page));
-	}
+	},
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
