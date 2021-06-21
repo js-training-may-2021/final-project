@@ -2,8 +2,9 @@ import React from "react";
 import {store, getPokemonFromState} from "../store/store";
 import catchPokemonAction from "../store/actions/actions";
 import {Link} from "react-router-dom";
+import {connect} from "react-redux";
 
-export default function Plate(props) {
+function Plate(props) {
   let catchPokemon = function (e) {
     let pokemonId = e.target.getAttribute("pokemonid");
     let date = new Date();
@@ -51,3 +52,12 @@ export default function Plate(props) {
     </div>
   );
 }
+
+let mapStateToProps = function (state, props) {
+  for (let i = 0; i < state.length; i++) {
+    if (state[i].id == props.pokemon.id) {
+      return {pokemon: state[i]};
+    }
+  }
+}
+export default connect(mapStateToProps)(Plate);

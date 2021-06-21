@@ -6,7 +6,7 @@ import {store} from "../store/store";
 export default function Main() {
   return (
     <div className="container" id="plate">
-      <Plates pokemons={store.getState().slice(0, 12)} />
+      <Plates pokemons={store.getState().slice(0, 20)} />
     </div>
   );
 }
