@@ -2,23 +2,33 @@
   "pokemons": [
     {
       "name": "bulbasaur",
-      "id": 1
+      "id": 1,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "ivysaur",
-      "id": 2
+      "id": 2,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "venusaur",
-      "id": 3
+      "id": 3,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "charmander",
-      "id": 4
+      "id": 4,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "charmeleon",
-      "id": 5
+      "id": 5,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "charizard",
@@ -26,11 +36,15 @@
     },
     {
       "name": "squirtle",
-      "id": 7
+      "id": 7,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "wartortle",
-      "id": 8
+      "id": 8,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "blastoise",
@@ -38,15 +52,21 @@
     },
     {
       "name": "caterpie",
-      "id": 10
+      "id": 10,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "metapod",
-      "id": 11
+      "id": 11,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "butterfree",
-      "id": 12
+      "id": 12,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "weedle",
@@ -74,7 +94,9 @@
     },
     {
       "name": "rattata",
-      "id": 19
+      "id": 19,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "raticate",

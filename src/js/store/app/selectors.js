@@ -2,10 +2,10 @@ import NameSpace from '../name-space.js';
 
 const NAME_SPACE = NameSpace.APP;
 
-export const getCaughtPokemons = (state) => {
-  return state[NAME_SPACE].caughtPokemons;
+export const getLoadingStatus = (state) => {
+  return state[NAME_SPACE].isLoading;
 };
 
-export const getActivePokemon = (state) => {
-  return state[NAME_SPACE].activePokemon;
+export const getErrorMessage = (state) => {
+  return state[NAME_SPACE].errorMessage;
 };

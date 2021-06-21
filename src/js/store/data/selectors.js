@@ -6,10 +6,10 @@ export const getPokemons = (state) => {
   return state[NAME_SPACE].pokemons;
 };
 
-export const getLoadingStatus = (state) => {
-  return state[NAME_SPACE].isLoading;
+export const getCaughtPokemons = (state) => {
+  return state[NAME_SPACE].caughtPokemons;
 };
 
-export const getErrorMessage = (state) => {
-  return state[NAME_SPACE].errorMessage;
+export const getActivePokemon = (state) => {
+  return state[NAME_SPACE].activePokemon;
 };

@@ -1,8 +1,8 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {getPokemons, getLoadingStatus, getErrorMessage} from '../../../store/data/selectors.js';
-import {loadPokemons} from '../../../store/data/reducer.js';
+import {getPokemons} from '../../../store/data/selectors.js';
+import {Operation} from '../../../store/data/data.js';
 import Header from '../../presentationals/Header/Header.jsx';
 import Footer from '../../presentationals/Footer/Footer.jsx';
 import List from '../../presentationals/List/List.jsx';
@@ -18,7 +18,12 @@ const Main = (props) => {
     onCardClick,
     onButtonClick,
 		onScroll,
+		loadPokemons,
   } = props;
+
+	useEffect(() => {
+		loadPokemons(getCurrentPage());
+	}, []);
 
 	return (
 		<Fragment>
@@ -55,18 +60,20 @@ Main.propTypes = {
   onCardClick: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,
   onScroll: PropTypes.func.isRequired,
+  loadPokemons: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   pokemons: getPokemons(state),
-	isLoading: getLoadingStatus(state),
-	errorMessage: getErrorMessage(state),
 });
 
 const mapDispatchToProps = dispatch => ({
 	onScroll(page) {
-    dispatch(loadPokemons(page));
+    dispatch(Operation.loadPokemons(page));
 	},
+	loadPokemons(page) {
+    dispatch(Operation.loadPokemons(page));
+	}
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
