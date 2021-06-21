@@ -4,5 +4,14 @@ import db from "../db.json"
 
 let store = createStore(pokemonListReducer, db.pokemons);
 
-export default store;
+export function getPokemonFromState (id) {
+    const pokemons = store.getState();
+    for (let i = 0; i < pokemons.length; i++) {
+      if (pokemons[i].id == id) {
+        return pokemons[i];
+      }
+    }
+  };
+
+export {store};
 

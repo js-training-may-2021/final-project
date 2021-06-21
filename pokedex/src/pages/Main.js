@@ -1,6 +1,6 @@
 import React from "react";
 import Plates from "../components/Plates";
-import store from "../store/store";
+import {store} from "../store/store";
 
 
 export default function Main() {

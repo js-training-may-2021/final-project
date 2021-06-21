@@ -1,6 +1,7 @@
 import React from "react";
-import store from "../store/store";
+import {store, getPokemonFromState} from "../store/store";
 import catchPokemonAction from "../store/actions/actions";
+import {Link} from "react-router-dom";
 
 export default function Plate(props) {
   let catchPokemon = function (e) {
@@ -9,17 +10,8 @@ export default function Plate(props) {
     store.dispatch(catchPokemonAction(pokemonId, date));
   };
 
-  let getPok = function (id) {
-    const pokemons = store.getState();
-    for (let i = 0; i < pokemons.length; i++) {
-      if (pokemons[i].id == id) {
-        return pokemons[i];
-      }
-    }
-  };
-
   let getAtr = function () {
-    let pok = getPok(props.pokemon.id)
+    let pok = getPokemonFromState(props.pokemon.id)
     if (!pok.caught) {
       return {
         className: "btn btn-success",
@@ -37,12 +29,17 @@ export default function Plate(props) {
   };
   return (
     <div className="card col">
+      <Link to={{
+            pathname: "/pokemon",
+            propsSearch: {pokemonId: props.pokemon.id},
+        }} >
       <img
         className="card-img-top"
         src={require(`../pokemons/${props.pokemon.id}.png`).default}
         alt="Picture"
       />
       <h5 className="card-title">Name: {props.pokemon.name} </h5>
+      </Link>
       <button
         className={getAtr().className}
         disabled={getAtr().disabled}

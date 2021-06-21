@@ -9,7 +9,7 @@ export default function pokemonListReducer(state, action) {
             name: newState[i].name,
             id: newState[i].id,
             caught: true,
-            time: action.time,
+            time: `${action.time}`.substring(0, `${action.time}`.indexOf(' GMT')),
           };
         }
       }

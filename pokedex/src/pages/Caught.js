@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Plates from "../components/Plates";
+import {store} from "../store/store";
 
-export default function Caught() {
-    return (
-        <div>
-            <h1>Caught</h1>
-        </div>
-    )
+
+export default function Main() {
+
+    let caughtPokemons = store.getState().filter(pok => pok.caught)
+
+  return (
+    <div className="container" id="plate">
+      <Plates pokemons={caughtPokemons} />
+    </div>
+  );
 }
+
