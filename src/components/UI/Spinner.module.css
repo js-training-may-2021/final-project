@@ -4,7 +4,7 @@
   background-image: url("./spinner-icon.png");
   background-size: cover;
   border-radius: 50%;
-  animation: rotation 1s linear infinite running;
+  animation: rotation 1s cubic-bezier(.37,-0.25,.61,1.26) infinite running;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;

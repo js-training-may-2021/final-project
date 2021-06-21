@@ -21,6 +21,10 @@
   text-decoration: none;
 }
 
+.main {
+  min-height: calc(100vh - 110px);
+}
+
 .text {
   font-size: 1.5rem;
   color: #212121;

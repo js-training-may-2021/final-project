@@ -1,11 +1,11 @@
 import { createStore, combineReducers } from 'redux';
 
 const catchReducer = (state = { catchedPokemons: [] }, action) => {
-  if (action.type === "ADD_POKEMON") {
-    return { catchedPokemons: [...state.catchedPokemons, action.pokemonObj] };
+  if (action.type === "CATCH_POKEMON") {
+    return { catchedPokemons: [...state.catchedPokemons, action.payload] };
   }
-  if (action.type === "REMOVE_POKEMON") {
-    return { catchedPokemones: state.catchedPokemons.filter(pokemon => pokemon.id !== action.pokemonId) };
+  if (action.type === "RELEASE_POKEMON") {
+    return { catchedPokemons: state.catchedPokemons.filter(pokemon => pokemon.id !== action.payload.id) };
   }
   return state;
 };
@@ -15,20 +15,23 @@ const homePagePaginationReducer = (state = { pokemons: [], isLoading: false, err
     return { pokemons: [...state.pokemons, ...action.payload], isLoading: false, error: false };
   }
   if (action.type === "START_LOADING_POKEMONS") {
-    return { ... state, isLoading: true };
+    return { ...state, isLoading: true };
   }
-  // if (action.type = "ERROR") {
-  //   return { ... state, error: true }
-  // }
+  if (action.type === "ERROR") {
+    return { ...state, error: true }
+  }
   return state;
 };
 
-const myPokemonsPaginationReducer = (state = { numberOfPokemonsToRender: 20 }, action) => {
+const myPokemonsPaginationReducer = (state = { numberOfPokemons: 2, error: false }, action) => {
   if (action.type === "LOAD_MORE") {
-    return { numberOfPokemonsToRender: state.numberOfPokemonsToRender + 20 };
+    return { pokemons: state.numberOfPokemons + 2, error: false };
+  }
+  if (action.type === "ERROR") {
+    return { ...state, error: true }
   }
   return state;
-}
+};
 
 const reducer = combineReducers({
   catch: catchReducer,

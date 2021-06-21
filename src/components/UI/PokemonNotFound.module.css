@@ -1,0 +1,36 @@
+.container {
+  position: relative;
+  height: 100vh - 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+.text {
+  margin-top: 100px;
+  margin-bottom: 30px;
+  color: #757575;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.btn {
+  display: block;
+  border: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #689F38;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #d9ecc8;
+}

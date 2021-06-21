@@ -8,7 +8,7 @@ const MainHeader = () => {
       <nav>
         <ul className={classes.navList}>
           <li>
-            <NavLink to='/' className={classes.navLink} activeClassName={classes.activeNavLink}>
+            <NavLink to='/home' className={classes.navLink} activeClassName={classes.activeNavLink}>
               All Pokemons
             </NavLink>
           </li>

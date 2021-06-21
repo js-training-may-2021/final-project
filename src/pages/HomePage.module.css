@@ -52,3 +52,7 @@
   text-align: center;
   padding: 50px;
 }
+
+.main {
+  min-height: calc(100vh - 130px);
+}

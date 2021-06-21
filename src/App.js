@@ -6,12 +6,14 @@ import MainHeader from './components/Layout/MainHeader';
 import MainFooter from './components/Layout/MainFooter';
 import MyPokemons from './pages/MyPokemons';
 
+// import PokemonNotFound from './pages/PokemonNotFound';
+
 function App() {
   return (
     <>
       <MainHeader />
       <Switch>
-        <Route path='/' exact>
+        <Route path='/home' exact>
           <HomePage />
         </Route>
         <Route path='/my-pokemons' exact>
@@ -21,7 +23,7 @@ function App() {
           <PokemonDetailPage />
         </Route>
         <Route path='/'>
-          <Redirect to='/' />
+          <Redirect to='/home' />
         </Route>
       </Switch>
       <MainFooter />
