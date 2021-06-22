@@ -3,14 +3,14 @@
     {
       "name": "bulbasaur",
       "id": 1,
-      "isCaught": true,
-      "catchDate": "22 June 2021"
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "ivysaur",
       "id": 2,
-      "isCaught": true,
-      "catchDate": "22 June 2021"
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "venusaur",
@@ -21,14 +21,14 @@
     {
       "name": "charmander",
       "id": 4,
-      "isCaught": false,
-      "catchDate": null
+      "isCaught": true,
+      "catchDate": "22 June 2021"
     },
     {
       "name": "charmeleon",
       "id": 5,
-      "isCaught": false,
-      "catchDate": null
+      "isCaught": true,
+      "catchDate": "22 June 2021"
     },
     {
       "name": "charizard",
