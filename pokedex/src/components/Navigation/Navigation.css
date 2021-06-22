@@ -1,0 +1,10 @@
+.nav {
+  padding-left: 70px;
+}
+
+@media (max-width: 576px) {
+  .nav {
+    padding: 0;
+    text-align: center;
+  }
+}

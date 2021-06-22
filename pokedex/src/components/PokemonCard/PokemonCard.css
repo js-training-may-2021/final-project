@@ -1,0 +1,9 @@
+.content {
+  margin: 5px auto 10px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}

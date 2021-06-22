@@ -1,0 +1,42 @@
+.card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.text-content {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: large;
+  font-weight: bolder;
+}
+
+@media (max-width: 576px) {
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    font-weight: normal;
+  }
+}
+
+.catched-pokemon {
+  text-decoration: none;
+  color: black;
+}
+
+.pokemon-name {
+  text-transform: capitalize;
+}
