@@ -13,4 +13,3 @@ export default function Plates(props) {
   );
 }
 
-// image={props.pokemons[0].image}

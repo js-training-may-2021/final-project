@@ -1,11 +1,9 @@
 import React from "react";
 import Plates from "../components/Plates";
-import {store} from "../store/store";
+import { connect } from "react-redux";
 
-
-export default function Main() {
-
-    let caughtPokemons = store.getState().filter(pok => pok.caught)
+function Caught(props) {
+  let caughtPokemons = props.pokemons.filter((pok) => pok.caught);
 
   return (
     <div className="container" id="plate">
@@ -14,3 +12,7 @@ export default function Main() {
   );
 }
 
+let mapStateToProps = function (state) {
+  return { pokemons: state };
+};
+export default connect(mapStateToProps)(Caught);

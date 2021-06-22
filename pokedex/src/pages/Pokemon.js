@@ -1,7 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import imgLinks from "../pokemons/imgLinks";
-import { getPokemonFromState } from "../store/store";
 
 export default function Pokemon(props) {
   if (!props.location.propsSearch) {
@@ -9,7 +8,7 @@ export default function Pokemon(props) {
   }
   let status = "didn`t catch";
   let time = "";
-  let pok = getPokemonFromState(props.location.propsSearch.pokemonId);
+  let pok = props.location.propsSearch.pokemon;
 
   if (pok.caught) {
     status = "caught";
