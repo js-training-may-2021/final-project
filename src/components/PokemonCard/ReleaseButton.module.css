@@ -1,13 +1,13 @@
 .btn {
   font-family: 'Bangers', cursive;
   font-size: 20px;
-  background-color: #FF5722;
+  background-color: #689F38;
   color: #fff;
   text-transform: uppercase;
   border-radius: 5px;
   text-align: center;
   padding: 10px 30px;
-  border: 1px solid #FF5722;
+  border: 1px solid #689F38;
   cursor: pointer;
   position: relative;
   left: 50%;
@@ -18,8 +18,8 @@
 
 .btn:hover,
 .btn:active {
-  background-color: #ff7144;
-  border: 1px solid #ff7144;
+  background-color: #8BC34A;
+  border: 1px solid #8BC34A;
 }
 
 .btn:disabled {

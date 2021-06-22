@@ -43,8 +43,6 @@ const HomePage = () => {
 
   if (error) {
     content = <p className={classes.error}>Something went wrong</p>;
-  } else if (isLoading) {
-    content = <Spinner />;
   } else {
     content = <>
       <ul className={classes.pokemonList}>
@@ -53,7 +51,8 @@ const HomePage = () => {
             name: pokemon.name,
             id: getPokemonId(pokemon.url),
             img: `https://raw.githubusercontent.com/js-training-may-2021/final-project/main/pokemons/${getPokemonId(pokemon.url)}.png`,
-            isСaught: false
+            isСaught: false,
+            captureDate: null
           };
           return (
             <li key={getPokemonId(pokemon.url)}>
@@ -73,6 +72,7 @@ const HomePage = () => {
   return (
     <main className={classes.main}>
       {content}
+      {isLoading && !error && <Spinner />}
     </main>
   );
 };

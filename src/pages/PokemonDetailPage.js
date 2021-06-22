@@ -9,7 +9,7 @@ import classes from './PokemonDetailPage.module.css';
 
 const PokemonDetailPage = () => {
 
-  const catchedPokemons = useSelector(state => state.catch.catchedPokemons);
+  const caughtPokemons = useSelector(state => state.catch.caughtPokemons);
   const [currentPokemon, setCurrentPokemon] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [pokemonNotFound, setPokemonNotFound] = useState(false);
@@ -21,7 +21,7 @@ const PokemonDetailPage = () => {
       fetch(`https://pokeapi.co/api/v2/pokemon/${params.pokemonId}`)
         .then(res => {
           if (!res.ok) {
-            throw new Error("Pokemon not found");
+            throw new Error(res.status);
           }
           return res.json();
         })
@@ -30,8 +30,8 @@ const PokemonDetailPage = () => {
             name: res.name,
             id: res.id,
             img: `https://raw.githubusercontent.com/js-training-may-2021/final-project/main/pokemons/${res.id}.png`,
-            isСaught: catchedPokemons.findIndex(pokemon => pokemon.name === res.name) > -1,
-            captureDate: catchedPokemons.find(pokemon => pokemon.name === res.name)?.captureDate.toDateString()
+            isСaught: caughtPokemons.findIndex(pokemon => pokemon.name === res.name) > -1,
+            captureDate: caughtPokemons.find(pokemon => pokemon.name === res.name)?.captureDate
           };
           setCurrentPokemon(transformedPokemonInfo);
           setIsLoading(false);
@@ -42,17 +42,18 @@ const PokemonDetailPage = () => {
         });
     }
     getPokemonData();
-  }, [params, catchedPokemons]);
+  }, [params, caughtPokemons]);
 
   let content;
 
   if (pokemonNotFound) {
     content = <PokemonNotFound />;
-  } else if (isLoading) {
-    content = <Spinner />;
-  } else {
-    content = <PokemonProfile pokemon={currentPokemon} />;
-  }
+  } else
+    if (isLoading) {
+      content = <Spinner />;
+    } else {
+      content = <PokemonProfile pokemon={currentPokemon} />;
+    }
 
   return <main className={classes.main}>{content}</main>
 

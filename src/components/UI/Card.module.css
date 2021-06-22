@@ -1,6 +1,6 @@
 .card {
   border-radius: 5px;
-  box-shadow: 5px 10px 10px 0 rgba(0,0,0,.4);
+  box-shadow: 5px 10px 10px 0 rgba(0,0,0,.4), 1px 1px 10px 0 rgba(0,0,0,.4);
   overflow: hidden;
   width: auto;
 }

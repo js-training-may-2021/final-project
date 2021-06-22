@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import classes from './MyPokemons.module.css';
 
@@ -8,14 +8,21 @@ import ReleaseButton from '../components/PokemonCard/ReleaseButton';
 
 const MyPokemons = () => {
 
-  const catchedPokemons = useSelector(state => state.catch.catchedPokemons);
+  const caughtPokemons = useSelector(state => state.catch.caughtPokemons);
+  const numOfPokemonsToRender = useSelector(state => state.myPokemonsPagination.numberOfPokemons);
+  const dispatch = useDispatch();
+
+  const loadMoreHandler = (event) => {
+    event.preventDefault();
+    dispatch({ type: "LOAD_MORE" });
+  };
 
   const content =
-    !catchedPokemons.length ?
+    !caughtPokemons.length ?
       <p className={classes.text}>You haven't any pokemons yet</p> :
       <>
         <ul className={classes.pokemonList}>
-          {catchedPokemons.map(pokemon => {
+          {caughtPokemons.slice(0, numOfPokemonsToRender).map(pokemon => {
             return (
               <li key={pokemon.id}>
                 <Link to={`/pokemon-detail/${pokemon.name}`} className={classes.link}>
@@ -27,11 +34,14 @@ const MyPokemons = () => {
             );
           })}
         </ul>
-      </>
+      </>;
+
+  const isButtonToRender = caughtPokemons.length > 20 && caughtPokemons.length > numOfPokemonsToRender;
 
   return (
     <main className={classes.main}>
       {content}
+      {isButtonToRender && <button onClick={loadMoreHandler} className={classes.btn}>Load More...</button>}
     </main>
   );
 };
