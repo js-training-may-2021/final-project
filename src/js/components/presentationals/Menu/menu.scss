@@ -5,4 +5,8 @@
   &__item {
     margin-right: 20px;
   }
+
+	&__link--selected {
+		opacity: 0.5;
+	}
 }

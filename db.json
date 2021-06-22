@@ -15,24 +15,26 @@
     {
       "name": "venusaur",
       "id": 3,
-      "isCaught": true,
-      "catchDate": "22 June 2021"
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "charmander",
       "id": 4,
-      "isCaught": true,
-      "catchDate": "22 June 2021"
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "charmeleon",
       "id": 5,
-      "isCaught": true,
-      "catchDate": "22 June 2021"
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "charizard",
-      "id": 6
+      "id": 6,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "squirtle",
@@ -48,7 +50,9 @@
     },
     {
       "name": "blastoise",
-      "id": 9
+      "id": 9,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "caterpie",
@@ -70,27 +74,39 @@
     },
     {
       "name": "weedle",
-      "id": 13
+      "id": 13,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "kakuna",
-      "id": 14
+      "id": 14,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "beedrill",
-      "id": 15
+      "id": 15,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "pidgey",
-      "id": 16
+      "id": 16,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "pidgeotto",
-      "id": 17
+      "id": 17,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "pidgeot",
-      "id": 18
+      "id": 18,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "rattata",
@@ -100,7 +116,9 @@
     },
     {
       "name": "raticate",
-      "id": 20
+      "id": 20,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "spearow",

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {AppRoute} from '../../../utils';
 import './menu.scss';
 
@@ -7,10 +7,10 @@ const Menu = () => {
 	return (
 		<ul className="header__menu menu">
 			<li className="menu__item">
-				<Link className="menu__link" to={AppRoute.MAIN}>ALL</Link>
+				<NavLink className="menu__link" activeClassName="menu__link--selected" exact to={AppRoute.MAIN}>ALL</NavLink>
 			</li>
 			<li className="menu__item">
-				<Link className="menu__link" to={AppRoute.CAUGHT}>CAUGHT</Link>
+				<NavLink className="menu__link" activeClassName=" menu__link--selected" exact to={AppRoute.CAUGHT}>CAUGHT</NavLink>
 			</li>
 		</ul>
 	);
