@@ -3,20 +3,20 @@
     {
       "name": "bulbasaur",
       "id": 1,
-      "isCaught": false,
-      "catchDate": null
+      "isCaught": true,
+      "catchDate": "22 June 2021"
     },
     {
       "name": "ivysaur",
       "id": 2,
-      "isCaught": false,
-      "catchDate": null
+      "isCaught": true,
+      "catchDate": "22 June 2021"
     },
     {
       "name": "venusaur",
       "id": 3,
-      "isCaught": false,
-      "catchDate": null
+      "isCaught": true,
+      "catchDate": "22 June 2021"
     },
     {
       "name": "charmander",
@@ -196,7 +196,9 @@
     },
     {
       "name": "gloom",
-      "id": 44
+      "id": 44,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "vileplume",

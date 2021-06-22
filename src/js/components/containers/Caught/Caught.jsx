@@ -28,17 +28,17 @@ const Caught = (props) => {
 			<Header />
 			<main className="page__main">
 				<h1 className="page__title">CAUGHT POKEMONS</h1>
-				{isLoading && <Loader />}
-				{caughtPokemons.length === 0 ?
+        {isLoading && <Loader />}
+				{errorMessage && 
+					<ErrorMessage
+						message={errorMessage}
+					/>}
+				{!isLoading && !errorMessage && caughtPokemons.length === 0 ?
 					<p className="page__text">You haven&apos;t caught any pokemons yet.</p> :
 					<List
 						pokemons={caughtPokemons}
 						onCardClick={onCardClick}
 						onButtonClick={onButtonClick}
-					/>}
-				{errorMessage && 
-					<ErrorMessage
-						message={errorMessage}
 					/>}
 			</main>
 			<Footer />

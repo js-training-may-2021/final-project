@@ -97,22 +97,25 @@ const Operation = {
 			});
 	},
 
-	updatePokemonStatus: (pokemon) => (dispatch) => {
+	updatePokemonStatus: (pokemon) => (dispatch, getState) => {
 		dispatch(AppActionCreator.changeLoadingStatus(true));
 		dispatch(AppActionCreator.changeErrorMessage(null));
 
-		const getPokemonStatus = () => {
-			if (!pokemon.isCaught) {
-				pokemon.isCaught = true;
-				pokemon.catchDate = getCatchDate();
+		const changePokemonStatus = () => {
+      const pokemons = getPokemons(getState());
+      const currentPokemon = pokemons.find(it => it.id == pokemon.id);
+
+			if (!currentPokemon.isCaught) {
+				currentPokemon.isCaught = true;
+				currentPokemon.catchDate = getCatchDate();
 
 				return {
 					isCaught: true,
 					catchDate: getCatchDate(),
 				};
 			} else {
-				pokemon.isCaught = false;
-				pokemon.catchDate = null;
+				currentPokemon.isCaught = false;
+				currentPokemon.catchDate = null;
 
 				return {
 					isCaught: false,
@@ -121,7 +124,7 @@ const Operation = {
 			}
 		};
 
-		return axios.patch(`http://localhost:3000/pokemons/${pokemon.id}`, getPokemonStatus())
+		return axios.patch(`http://localhost:3000/pokemons/${pokemon.id}`, changePokemonStatus())
 			.then(() => {
 				dispatch(AppActionCreator.changeLoadingStatus(false));
 				dispatch(Operation.loadCaughtPokemons());
