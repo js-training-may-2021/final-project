@@ -21,6 +21,6 @@ let Main = function (props) {
 };
 
 let mapStateToProps = function (state) {
-  return { pokemons: state };
+  return { pokemons: state.pokemonsList };
 };
 export default connect(mapStateToProps)(Main);

@@ -13,6 +13,6 @@ function Caught(props) {
 }
 
 let mapStateToProps = function (state) {
-  return { pokemons: state };
+  return { pokemons: state.pokemonsList };
 };
 export default connect(mapStateToProps)(Caught);

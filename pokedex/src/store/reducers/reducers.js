@@ -1,19 +1,19 @@
 
 export default function pokemonListReducer(state, action) {
-  let newState = [...state];
+  let newArr = [...state.pokemonsList];
   switch (action.type) {
     case "CAUGHT":
-      for (let i = 0; i < newState.length; i++) {
-        if (newState[i].id == action.id) {
-          newState[i] = {
-            name: newState[i].name,
-            id: newState[i].id,
+      for (let i = 0; i < newArr.length; i++) {
+        if (newArr[i].id == action.id) {
+          newArr[i] = {
+            name: newArr[i].name,
+            id: newArr[i].id,
             caught: true,
             time: `${action.time}`.substring(0, `${action.time}`.indexOf(' GMT')),
           };
         }
       }
-      return newState;
+      return Object.assign({}, state, {pokemonsList: newArr});
 
 
     default:
