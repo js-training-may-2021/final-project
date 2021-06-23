@@ -1,0 +1,763 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Detail page with ErrorMessage 1`] = `
+Array [
+  <header
+    className="page__header header"
+  >
+    <nav
+      className="header__nav-wrap"
+    >
+      <div
+        className="logo"
+      >
+        <a
+          className="logo__link"
+          href="/"
+          onClick={[Function]}
+        >
+          POKEDEX
+        </a>
+      </div>
+      <ul
+        className="header__menu menu"
+      >
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current="page"
+            className="menu__link menu__link--selected"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            ALL
+          </a>
+        </li>
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current={null}
+            className="menu__link"
+            href="/caught"
+            onClick={[Function]}
+          >
+            CAUGHT
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>,
+  <main
+    className="page__main page__main--detail"
+  >
+    <p
+      className="page__text page__text--message"
+    >
+      Failed to load pokemon. Please try again later.
+    </p>
+  </main>,
+]
+`;
+
+exports[`Render Detail page with ErrorMessage and caught pokemon 1`] = `
+Array [
+  <header
+    className="page__header header"
+  >
+    <nav
+      className="header__nav-wrap"
+    >
+      <div
+        className="logo"
+      >
+        <a
+          className="logo__link"
+          href="/"
+          onClick={[Function]}
+        >
+          POKEDEX
+        </a>
+      </div>
+      <ul
+        className="header__menu menu"
+      >
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current="page"
+            className="menu__link menu__link--selected"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            ALL
+          </a>
+        </li>
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current={null}
+            className="menu__link"
+            href="/caught"
+            onClick={[Function]}
+          >
+            CAUGHT
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>,
+  <main
+    className="page__main page__main--detail"
+  >
+    <img
+      alt="Ivysaur"
+      className="page__img"
+      src="test-file-stub"
+    />
+    <article
+      className="page__info info"
+    >
+      <h1
+        className="info__title"
+      >
+        Ivysaur
+      </h1>
+      <p
+        className="info__text"
+      >
+        ID: 
+        <span
+          className="info__data"
+        >
+          2
+        </span>
+      </p>
+      <p
+        className="info__text"
+      >
+        STATUS: 
+        <span
+          className="info__data"
+        >
+          Caught
+        </span>
+      </p>
+      <p
+        className="info__text"
+      >
+        CAUGHT: 
+        <span
+          className="info__data"
+        >
+          23 June 2021
+        </span>
+      </p>
+      <button
+        className="card__button button button--checked"
+        onClick={[Function]}
+        type="button"
+      >
+        Release
+      </button>
+    </article>
+    <p
+      className="page__text page__text--message"
+    >
+      Failed to load pokemon. Please try again later.
+    </p>
+  </main>,
+]
+`;
+
+exports[`Render Detail page with ErrorMessage and uncaught pokemon 1`] = `
+Array [
+  <header
+    className="page__header header"
+  >
+    <nav
+      className="header__nav-wrap"
+    >
+      <div
+        className="logo"
+      >
+        <a
+          className="logo__link"
+          href="/"
+          onClick={[Function]}
+        >
+          POKEDEX
+        </a>
+      </div>
+      <ul
+        className="header__menu menu"
+      >
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current="page"
+            className="menu__link menu__link--selected"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            ALL
+          </a>
+        </li>
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current={null}
+            className="menu__link"
+            href="/caught"
+            onClick={[Function]}
+          >
+            CAUGHT
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>,
+  <main
+    className="page__main page__main--detail"
+  >
+    <img
+      alt="Bulbasaur"
+      className="page__img"
+      src="test-file-stub"
+    />
+    <article
+      className="page__info info"
+    >
+      <h1
+        className="info__title"
+      >
+        Bulbasaur
+      </h1>
+      <p
+        className="info__text"
+      >
+        ID: 
+        <span
+          className="info__data"
+        >
+          1
+        </span>
+      </p>
+      <p
+        className="info__text"
+      >
+        STATUS: 
+        <span
+          className="info__data"
+        >
+          Not caught
+        </span>
+      </p>
+      <button
+        className="card__button button"
+        onClick={[Function]}
+        type="button"
+      >
+        Catch!
+      </button>
+    </article>
+    <p
+      className="page__text page__text--message"
+    >
+      Failed to load pokemon. Please try again later.
+    </p>
+  </main>,
+]
+`;
+
+exports[`Render Detail page with Loader 1`] = `
+Array [
+  <header
+    className="page__header header"
+  >
+    <nav
+      className="header__nav-wrap"
+    >
+      <div
+        className="logo"
+      >
+        <a
+          className="logo__link"
+          href="/"
+          onClick={[Function]}
+        >
+          POKEDEX
+        </a>
+      </div>
+      <ul
+        className="header__menu menu"
+      >
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current="page"
+            className="menu__link menu__link--selected"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            ALL
+          </a>
+        </li>
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current={null}
+            className="menu__link"
+            href="/caught"
+            onClick={[Function]}
+          >
+            CAUGHT
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>,
+  <main
+    className="page__main page__main--detail"
+  >
+    <p
+      className="page__text page__text--message"
+    >
+      Loading...
+    </p>
+  </main>,
+]
+`;
+
+exports[`Render Detail page with Loader and caught pokemon 1`] = `
+Array [
+  <header
+    className="page__header header"
+  >
+    <nav
+      className="header__nav-wrap"
+    >
+      <div
+        className="logo"
+      >
+        <a
+          className="logo__link"
+          href="/"
+          onClick={[Function]}
+        >
+          POKEDEX
+        </a>
+      </div>
+      <ul
+        className="header__menu menu"
+      >
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current="page"
+            className="menu__link menu__link--selected"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            ALL
+          </a>
+        </li>
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current={null}
+            className="menu__link"
+            href="/caught"
+            onClick={[Function]}
+          >
+            CAUGHT
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>,
+  <main
+    className="page__main page__main--detail"
+  >
+    <img
+      alt="Ivysaur"
+      className="page__img"
+      src="test-file-stub"
+    />
+    <article
+      className="page__info info"
+    >
+      <h1
+        className="info__title"
+      >
+        Ivysaur
+      </h1>
+      <p
+        className="info__text"
+      >
+        ID: 
+        <span
+          className="info__data"
+        >
+          2
+        </span>
+      </p>
+      <p
+        className="info__text"
+      >
+        STATUS: 
+        <span
+          className="info__data"
+        >
+          Caught
+        </span>
+      </p>
+      <p
+        className="info__text"
+      >
+        CAUGHT: 
+        <span
+          className="info__data"
+        >
+          23 June 2021
+        </span>
+      </p>
+      <button
+        className="card__button button button--checked"
+        onClick={[Function]}
+        type="button"
+      >
+        Release
+      </button>
+    </article>
+    <p
+      className="page__text page__text--message"
+    >
+      Loading...
+    </p>
+  </main>,
+]
+`;
+
+exports[`Render Detail page with Loader and uncaught pokemon 1`] = `
+Array [
+  <header
+    className="page__header header"
+  >
+    <nav
+      className="header__nav-wrap"
+    >
+      <div
+        className="logo"
+      >
+        <a
+          className="logo__link"
+          href="/"
+          onClick={[Function]}
+        >
+          POKEDEX
+        </a>
+      </div>
+      <ul
+        className="header__menu menu"
+      >
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current="page"
+            className="menu__link menu__link--selected"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            ALL
+          </a>
+        </li>
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current={null}
+            className="menu__link"
+            href="/caught"
+            onClick={[Function]}
+          >
+            CAUGHT
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>,
+  <main
+    className="page__main page__main--detail"
+  >
+    <img
+      alt="Bulbasaur"
+      className="page__img"
+      src="test-file-stub"
+    />
+    <article
+      className="page__info info"
+    >
+      <h1
+        className="info__title"
+      >
+        Bulbasaur
+      </h1>
+      <p
+        className="info__text"
+      >
+        ID: 
+        <span
+          className="info__data"
+        >
+          1
+        </span>
+      </p>
+      <p
+        className="info__text"
+      >
+        STATUS: 
+        <span
+          className="info__data"
+        >
+          Not caught
+        </span>
+      </p>
+      <button
+        className="card__button button"
+        onClick={[Function]}
+        type="button"
+      >
+        Catch!
+      </button>
+    </article>
+    <p
+      className="page__text page__text--message"
+    >
+      Loading...
+    </p>
+  </main>,
+]
+`;
+
+exports[`Render Detail page with caught pokemon 1`] = `
+Array [
+  <header
+    className="page__header header"
+  >
+    <nav
+      className="header__nav-wrap"
+    >
+      <div
+        className="logo"
+      >
+        <a
+          className="logo__link"
+          href="/"
+          onClick={[Function]}
+        >
+          POKEDEX
+        </a>
+      </div>
+      <ul
+        className="header__menu menu"
+      >
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current="page"
+            className="menu__link menu__link--selected"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            ALL
+          </a>
+        </li>
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current={null}
+            className="menu__link"
+            href="/caught"
+            onClick={[Function]}
+          >
+            CAUGHT
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>,
+  <main
+    className="page__main page__main--detail"
+  >
+    <img
+      alt="Ivysaur"
+      className="page__img"
+      src="test-file-stub"
+    />
+    <article
+      className="page__info info"
+    >
+      <h1
+        className="info__title"
+      >
+        Ivysaur
+      </h1>
+      <p
+        className="info__text"
+      >
+        ID: 
+        <span
+          className="info__data"
+        >
+          2
+        </span>
+      </p>
+      <p
+        className="info__text"
+      >
+        STATUS: 
+        <span
+          className="info__data"
+        >
+          Caught
+        </span>
+      </p>
+      <p
+        className="info__text"
+      >
+        CAUGHT: 
+        <span
+          className="info__data"
+        >
+          23 June 2021
+        </span>
+      </p>
+      <button
+        className="card__button button button--checked"
+        onClick={[Function]}
+        type="button"
+      >
+        Release
+      </button>
+    </article>
+  </main>,
+]
+`;
+
+exports[`Render Detail page with uncaught pokemon 1`] = `
+Array [
+  <header
+    className="page__header header"
+  >
+    <nav
+      className="header__nav-wrap"
+    >
+      <div
+        className="logo"
+      >
+        <a
+          className="logo__link"
+          href="/"
+          onClick={[Function]}
+        >
+          POKEDEX
+        </a>
+      </div>
+      <ul
+        className="header__menu menu"
+      >
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current="page"
+            className="menu__link menu__link--selected"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            ALL
+          </a>
+        </li>
+        <li
+          className="menu__item"
+        >
+          <a
+            aria-current={null}
+            className="menu__link"
+            href="/caught"
+            onClick={[Function]}
+          >
+            CAUGHT
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>,
+  <main
+    className="page__main page__main--detail"
+  >
+    <img
+      alt="Bulbasaur"
+      className="page__img"
+      src="test-file-stub"
+    />
+    <article
+      className="page__info info"
+    >
+      <h1
+        className="info__title"
+      >
+        Bulbasaur
+      </h1>
+      <p
+        className="info__text"
+      >
+        ID: 
+        <span
+          className="info__data"
+        >
+          1
+        </span>
+      </p>
+      <p
+        className="info__text"
+      >
+        STATUS: 
+        <span
+          className="info__data"
+        >
+          Not caught
+        </span>
+      </p>
+      <button
+        className="card__button button"
+        onClick={[Function]}
+        type="button"
+      >
+        Catch!
+      </button>
+    </article>
+  </main>,
+]
+`;

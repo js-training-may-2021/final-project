@@ -12,7 +12,7 @@ import withToggle from '../../hocs/withToggle/withToggle.jsx';
 
 const InfoWrapped = withToggle(Info);
 
-const Detail = (props) => {
+export const Detail = (props) => {
   const {
     activePokemon,
 		isLoading,

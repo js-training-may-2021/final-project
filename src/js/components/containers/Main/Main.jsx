@@ -10,7 +10,7 @@ import ErrorMessage from '../../presentationals/ErrorMessage/ErrorMessage.jsx';
 import Loader from '../../presentationals/Loader/Loader.jsx';
 import {getCurrentPage} from '../../../utils.js';
 
-const Main = (props) => {
+export const Main = (props) => {
   const {
     pokemons,
 		isLoading,

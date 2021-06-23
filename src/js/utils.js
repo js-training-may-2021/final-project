@@ -1,6 +1,5 @@
 import {createMemoryHistory} from 'history';
-
-export const history = createMemoryHistory();
+import configureStore from 'redux-mock-store';
 
 export const POKEMONS_PER_PAGE = 10;
 
@@ -29,3 +28,6 @@ export const getCatchDate = () => {
 };
 
 export const noop = () => {};
+export const history = createMemoryHistory();
+const mockStore = configureStore();
+export const testStore = mockStore({});

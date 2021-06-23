@@ -9,7 +9,7 @@ import List from '../../presentationals/List/List.jsx';
 import ErrorMessage from '../../presentationals/ErrorMessage/ErrorMessage.jsx';
 import Loader from '../../presentationals/Loader/Loader.jsx';
 
-const Caught = (props) => {
+export const Caught = (props) => {
   const {
     caughtPokemons,
 		isLoading,

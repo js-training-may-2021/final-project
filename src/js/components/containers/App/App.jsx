@@ -10,7 +10,7 @@ import Detail from '../Detail/Detail.jsx';
 import Caught from '../Caught/Caught.jsx';
 import {AppRoute} from '../../../utils';
 
-const App = (props) => {
+export const App = (props) => {
   const {
 		isLoading,
 		errorMessage,
