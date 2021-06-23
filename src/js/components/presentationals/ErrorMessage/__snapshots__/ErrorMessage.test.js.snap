@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ErrorMessage 1`] = `
+<p
+  className="page__text page__text--message"
+>
+  Failed to load caught pokemons. Please try again later.
+</p>
+`;

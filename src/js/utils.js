@@ -1,3 +1,7 @@
+import {createMemoryHistory} from 'history';
+
+export const history = createMemoryHistory();
+
 export const POKEMONS_PER_PAGE = 10;
 
 let currentPage = 1;
@@ -23,3 +27,5 @@ export const getCatchDate = () => {
 
   return `${day} ${month} ${year}`
 };
+
+export const noop = () => {};

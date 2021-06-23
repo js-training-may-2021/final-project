@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Menu on Caught page 1`] = `
+<ul
+  className="header__menu menu"
+>
+  <li
+    className="menu__item"
+  >
+    <a
+      aria-current={null}
+      className="menu__link"
+      href="/"
+      onClick={[Function]}
+    >
+      ALL
+    </a>
+  </li>
+  <li
+    className="menu__item"
+  >
+    <a
+      aria-current="page"
+      className="menu__link  menu__link--selected"
+      href="/caught"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      CAUGHT
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`Render Menu on Detail page 1`] = `
+<ul
+  className="header__menu menu"
+>
+  <li
+    className="menu__item"
+  >
+    <a
+      aria-current={null}
+      className="menu__link"
+      href="/"
+      onClick={[Function]}
+    >
+      ALL
+    </a>
+  </li>
+  <li
+    className="menu__item"
+  >
+    <a
+      aria-current={null}
+      className="menu__link"
+      href="/caught"
+      onClick={[Function]}
+    >
+      CAUGHT
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`Render Menu on Main page 1`] = `
+<ul
+  className="header__menu menu"
+>
+  <li
+    className="menu__item"
+  >
+    <a
+      aria-current="page"
+      className="menu__link menu__link--selected"
+      href="/"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      ALL
+    </a>
+  </li>
+  <li
+    className="menu__item"
+  >
+    <a
+      aria-current={null}
+      className="menu__link"
+      href="/caught"
+      onClick={[Function]}
+    >
+      CAUGHT
+    </a>
+  </li>
+</ul>
+`;

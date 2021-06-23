@@ -8,117 +8,79 @@
     },
     {
       "name": "ivysaur",
-      "id": 2,
-      "isCaught": false,
-      "catchDate": null
+      "id": 2
     },
     {
       "name": "venusaur",
-      "id": 3,
-      "isCaught": false,
-      "catchDate": null
+      "id": 3
     },
     {
       "name": "charmander",
-      "id": 4,
-      "isCaught": false,
-      "catchDate": null
+      "id": 4
     },
     {
       "name": "charmeleon",
-      "id": 5,
-      "isCaught": false,
-      "catchDate": null
+      "id": 5
     },
     {
       "name": "charizard",
-      "id": 6,
-      "isCaught": false,
-      "catchDate": null
+      "id": 6
     },
     {
       "name": "squirtle",
-      "id": 7,
-      "isCaught": false,
-      "catchDate": null
+      "id": 7
     },
     {
       "name": "wartortle",
-      "id": 8,
-      "isCaught": false,
-      "catchDate": null
+      "id": 8
     },
     {
       "name": "blastoise",
-      "id": 9,
-      "isCaught": false,
-      "catchDate": null
+      "id": 9
     },
     {
       "name": "caterpie",
-      "id": 10,
-      "isCaught": false,
-      "catchDate": null
+      "id": 10
     },
     {
       "name": "metapod",
-      "id": 11,
-      "isCaught": false,
-      "catchDate": null
+      "id": 11
     },
     {
       "name": "butterfree",
-      "id": 12,
-      "isCaught": false,
-      "catchDate": null
+      "id": 12
     },
     {
       "name": "weedle",
-      "id": 13,
-      "isCaught": false,
-      "catchDate": null
+      "id": 13
     },
     {
       "name": "kakuna",
-      "id": 14,
-      "isCaught": false,
-      "catchDate": null
+      "id": 14
     },
     {
       "name": "beedrill",
-      "id": 15,
-      "isCaught": false,
-      "catchDate": null
+      "id": 15
     },
     {
       "name": "pidgey",
-      "id": 16,
-      "isCaught": false,
-      "catchDate": null
+      "id": 16
     },
     {
       "name": "pidgeotto",
-      "id": 17,
-      "isCaught": false,
-      "catchDate": null
+      "id": 17
     },
     {
       "name": "pidgeot",
-      "id": 18,
-      "isCaught": false,
-      "catchDate": null
+      "id": 18
     },
     {
       "name": "rattata",
-      "id": 19,
-      "isCaught": false,
-      "catchDate": null
+      "id": 19
     },
     {
       "name": "raticate",
-      "id": 20,
-      "isCaught": false,
-      "catchDate": null
+      "id": 20
     },
     {
       "name": "spearow",
@@ -214,9 +176,7 @@
     },
     {
       "name": "gloom",
-      "id": 44,
-      "isCaught": false,
-      "catchDate": null
+      "id": 44
     },
     {
       "name": "vileplume",

@@ -32,8 +32,10 @@
     "css-loader": "^5.2.6",
     "eslint": "^7.28.0",
     "eslint-plugin-react": "^7.24.0",
+    "history": "^5.0.0",
     "html-webpack-plugin": "^5.3.1",
     "jest": "^27.0.4",
+    "jest-css-modules": "^2.1.0",
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^6.0.0",
     "prop-types": "^15.7.2",
@@ -53,5 +55,12 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules"
+    },
+    "testEnvironment": "jsdom"
   }
 }

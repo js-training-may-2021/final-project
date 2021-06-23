@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render List 1`] = `
+<ul
+  className="page__list list"
+>
+  <li
+    className="list__card card"
+    onClick={[Function]}
+  >
+    <a
+      className="card__link-wrap"
+      href="/detail/1"
+      onClick={[Function]}
+    >
+      <img
+        alt="Bulbasaur"
+        className="card__img"
+        src="test-file-stub"
+      />
+      <h2
+        className="card__title"
+      >
+        Bulbasaur
+      </h2>
+    </a>
+    <button
+      className="card__button button"
+      onClick={[Function]}
+      type="button"
+    >
+      Catch!
+    </button>
+  </li>
+  <li
+    className="list__card card card--caught"
+    onClick={[Function]}
+  >
+    <a
+      className="card__link-wrap"
+      href="/detail/2"
+      onClick={[Function]}
+    >
+      <img
+        alt="Ivysaur"
+        className="card__img"
+        src="test-file-stub"
+      />
+      <h2
+        className="card__title"
+      >
+        Ivysaur
+      </h2>
+    </a>
+    <button
+      className="card__button button button--checked"
+      onClick={[Function]}
+      type="button"
+    >
+      Release
+    </button>
+  </li>
+  <li
+    className="list__card card card--caught"
+    onClick={[Function]}
+  >
+    <a
+      className="card__link-wrap"
+      href="/detail/3"
+      onClick={[Function]}
+    >
+      <img
+        alt="Venusaur"
+        className="card__img"
+        src="test-file-stub"
+      />
+      <h2
+        className="card__title"
+      >
+        Venusaur
+      </h2>
+    </a>
+    <button
+      className="card__button button button--checked"
+      onClick={[Function]}
+      type="button"
+    >
+      Release
+    </button>
+  </li>
+  <li
+    className="list__card card"
+    onClick={[Function]}
+  >
+    <a
+      className="card__link-wrap"
+      href="/detail/4"
+      onClick={[Function]}
+    >
+      <img
+        alt="Charmander"
+        className="card__img"
+        src="test-file-stub"
+      />
+      <h2
+        className="card__title"
+      >
+        Charmander
+      </h2>
+    </a>
+    <button
+      className="card__button button"
+      onClick={[Function]}
+      type="button"
+    >
+      Catch!
+    </button>
+  </li>
+  <li
+    className="list__card card card--caught"
+    onClick={[Function]}
+  >
+    <a
+      className="card__link-wrap"
+      href="/detail/5"
+      onClick={[Function]}
+    >
+      <img
+        alt="Charmeleon"
+        className="card__img"
+        src="test-file-stub"
+      />
+      <h2
+        className="card__title"
+      >
+        Charmeleon
+      </h2>
+    </a>
+    <button
+      className="card__button button button--checked"
+      onClick={[Function]}
+      type="button"
+    >
+      Release
+    </button>
+  </li>
+  <li
+    className="list__card card card--caught"
+    onClick={[Function]}
+  >
+    <a
+      className="card__link-wrap"
+      href="/detail/6"
+      onClick={[Function]}
+    >
+      <img
+        alt="Charizard"
+        className="card__img"
+        src="test-file-stub"
+      />
+      <h2
+        className="card__title"
+      >
+        Charizard
+      </h2>
+    </a>
+    <button
+      className="card__button button button--checked"
+      onClick={[Function]}
+      type="button"
+    >
+      Release
+    </button>
+  </li>
+  <li
+    className="list__card card"
+    onClick={[Function]}
+  >
+    <a
+      className="card__link-wrap"
+      href="/detail/7"
+      onClick={[Function]}
+    >
+      <img
+        alt="Squirtle"
+        className="card__img"
+        src="test-file-stub"
+      />
+      <h2
+        className="card__title"
+      >
+        Squirtle
+      </h2>
+    </a>
+    <button
+      className="card__button button"
+      onClick={[Function]}
+      type="button"
+    >
+      Catch!
+    </button>
+  </li>
+  <li
+    className="list__card card card--caught"
+    onClick={[Function]}
+  >
+    <a
+      className="card__link-wrap"
+      href="/detail/8"
+      onClick={[Function]}
+    >
+      <img
+        alt="Wartortle"
+        className="card__img"
+        src="test-file-stub"
+      />
+      <h2
+        className="card__title"
+      >
+        Wartortle
+      </h2>
+    </a>
+    <button
+      className="card__button button button--checked"
+      onClick={[Function]}
+      type="button"
+    >
+      Release
+    </button>
+  </li>
+  <li
+    className="list__card card card--caught"
+    onClick={[Function]}
+  >
+    <a
+      className="card__link-wrap"
+      href="/detail/9"
+      onClick={[Function]}
+    >
+      <img
+        alt="Blastoise"
+        className="card__img"
+        src="test-file-stub"
+      />
+      <h2
+        className="card__title"
+      >
+        Blastoise
+      </h2>
+    </a>
+    <button
+      className="card__button button button--checked"
+      onClick={[Function]}
+      type="button"
+    >
+      Release
+    </button>
+  </li>
+  <li
+    className="list__card card"
+    onClick={[Function]}
+  >
+    <a
+      className="card__link-wrap"
+      href="/detail/10"
+      onClick={[Function]}
+    >
+      <img
+        alt="Caterpie"
+        className="card__img"
+        src="test-file-stub"
+      />
+      <h2
+        className="card__title"
+      >
+        Caterpie
+      </h2>
+    </a>
+    <button
+      className="card__button button"
+      onClick={[Function]}
+      type="button"
+    >
+      Catch!
+    </button>
+  </li>
+  <li
+    className="list__card card"
+    onClick={[Function]}
+  >
+    <a
+      className="card__link-wrap"
+      href="/detail/11"
+      onClick={[Function]}
+    >
+      <img
+        alt="Metapod"
+        className="card__img"
+        src="test-file-stub"
+      />
+      <h2
+        className="card__title"
+      >
+        Metapod
+      </h2>
+    </a>
+    <button
+      className="card__button button"
+      onClick={[Function]}
+      type="button"
+    >
+      Catch!
+    </button>
+  </li>
+</ul>
+`;
