@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: "Comic Sans MS",	cursive;
+  color: rgb(0, 97, 0);
+  background: rgb(231,251,63);
+  background: radial-gradient(circle, rgba(231,251,63,0.7343312324929971) 34%, rgba(70,252,118,0.2861519607843137) 100%);
+}
+
+input[type=text]:focus 
+ {
+  box-shadow: inset 0 -1px 0 #ddd;
+}

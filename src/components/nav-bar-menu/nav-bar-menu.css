@@ -1,0 +1,10 @@
+.navbar {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #198754;;
+    border-radius: .25rem;    
+}
+
+.navbar-brand:hover {
+    text-shadow: 1px 2px 5px #c1f336d8;
+}
