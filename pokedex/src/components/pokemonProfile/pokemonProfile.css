@@ -1,0 +1,10 @@
+.pokemon-profile {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  border: 1px solid red;
+  border-radius: 2rem;
+  align-items: center;
+  width: 50vw;
+  margin-top: 2rem;
+}
