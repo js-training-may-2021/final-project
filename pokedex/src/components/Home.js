@@ -1,38 +1,43 @@
-import {  Alert  } from 'react-bootstrap';
-import  useFetch  from './useFetch';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Container } from 'react-bootstrap';
 import PokemonsList from '../containers/PokemonsList';
+import InfiniteScroll from 'react-infinite-scroller';
+import axios from 'axios';
+import { loadMorePokemons } from '../action';
 
 export default function Home() {
-    const { data: pokemons, isPending, error} = useFetch('http://localhost:8000/pokemons');
+   
+    const pokemons = useSelector((state) => state);
+    const dispatch = useDispatch();
+    const [isMore, setMore] = useState(true);
+    const [page, setPage] = useState(2);
+       
 
-  /*  const handleCatch = (id) => {
-        pokemons.map(pokemon => pokemon.id === id);
+   const loadFunc = async() => {
+    if (pokemons.length > 949) {
+        
+        setMore(false);
+        return;
+    }
+        const response = await axios.get(`http://localhost:8000/pokemons?_page=${page}&_limit=20`);
+        dispatch(loadMorePokemons(response.data));
+        setPage(page + 1);
+   }
 
-    }*/
     return (
-        <>
-            <div className = "home-container"> 
-             {error && <Alert variant='danger'>{error}!</Alert>}
-             {isPending && <Alert  variant='warning'> Loading... </Alert>}
-             {pokemons && <PokemonsList pokemons={pokemons} /*handleCatch={handleCatch}*//> }
-            </div>
-        </>
+        <Container className="home-container" fluid>
+            <InfiniteScroll
+                pageStart={page}
+                initialLoad={false}
+                loadMore={loadFunc}
+                hasMore={isMore}
+                loader={<div className="loader" key={0}>Loading ...</div>}
+            >
+                <PokemonsList pokemons={pokemons} />
+            </InfiniteScroll>
+        </Container>
     )
 }
 
 
-/*
-<Container >
-<Row>
-    <Col>
-    <PokemonCard />
-    </Col>
-    <Col>
-    <PokemonCard />
-    </Col>
-    <Col>
-    <PokemonCard />
-    </Col>
-</Row>
-
-</Container>*/

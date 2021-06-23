@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -16,18 +16,14 @@ export default function Menu() {
     return (
     <>
         <Styles>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+            <Navbar collapseOnSelect expand="lg" fixed="top" bg="light">
                 <Navbar.Brand>Pokedex</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Link className = "nav-link" exact="true" to="/">Home </Link>
-                        <Link className = "nav-link" exact="true" to="/caught">Pokemons</Link> 
+                        <Link className = "nav-link" exact="true" to="/">All Pokemons </Link>
+                        <Link className = "nav-link" exact="true" to="/caught">My Pokemons</Link> 
                         <Link className = "nav-link" exact="true" to="/about">About </Link> 
-                    </Nav>
-                    <Nav>
-                        <Button variant="success" className ="m-2">Log in</Button>
-                        <Button variant="primary" className ="m-2">Push me</Button>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

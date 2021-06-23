@@ -1,22 +1,30 @@
 import { Container, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { catchPokemon } from '../action';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+const PokemonsList = ({ pokemons }) => {
+    const dispatch = useDispatch();
+    const handleCatch = (id, name) => {
+        dispatch(catchPokemon({id, name}));
+    }
 
-const PokemonsList = ({ pokemons, handleCatch}) => {
     return (
         <>
         <Container className = "pokemons-list">
             {pokemons.map((pokemon) => (
-                    <Card className = "pokemon-card" key={ pokemon.id }>
-                        <Card.Img variant="top" src={`../assets/pokemons/${pokemon.id}.png`}></Card.Img>
+                    <Card className = "pokemon-card" key={ pokemon.id } >
+                        <Link to={`/${pokemon.id}`}>  
+                            <Card.Img variant="top" src={`/pokemons/${pokemon.id}.png`}></Card.Img>
+                        </Link>  
                         <Card.Body className = "card-body">
-                         <Link to={`/home/${pokemon.id}`}>
+                        <Link to={`/home/${pokemon.id}`}>
                              <Card.Title className="pokemon-name">{ pokemon.name }</Card.Title>
-                         </Link>      
-                        <Button variant="info" className="catch-btn"/* onClick={() => handleCatch(pokemon.id)}*/>Catch</Button>            
-                        <Button variant="danger" className="free-btn" >Set free</Button>
-                        </Card.Body> 
+                        </Link>  
+                        <Button disabled={pokemon.caught} variant="info" className="catch-btn"  onClick={() => handleCatch(pokemon.id, pokemon.name)}>Catch</Button>            
+                        </Card.Body>  
                     </Card>
             ))}
         </Container>

@@ -1,41 +1,25 @@
-.menu {
-  color: rgb(68, 66, 61);
-  background-color: #a3bae9;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;  
-  font-size: calc(10px + 2vmin);
-  color: rgb(48, 66, 49);
-  margin: 0;
+.navbar {
+  position: fixed;
+  top: 0;
 }
 
 .main-stuff {
-  
   background-repeat: no-repeat;
-  
   min-height: 100vh;
   margin: 0;
   text-align: center;
 }
 
-.main-stuff h1 {
-  margin: 0;
-  padding-top: 20px;
-  font-size: 60px;
-  color: rgb(44, 51, 12);
-}
-
-
 .pokemon-card {
   width: 16rem;
   height: auto;
-  margin: 20px;
+  margin: 1rem;
 }
 
 .pokemon-name {
   color: black;
   text-decoration: none;
+  word-wrap: initial;
 }
 
 .pokemon-card a:hover  {
@@ -51,13 +35,33 @@
   padding: 50px;
   background: url('./assets/wallpaper-hd.webp') fixed;
   background-size: cover;
-  
   min-height: 100vh;
+  width: 100%;
+  
 }
 
-.free-btn {
-  margin-left: 4rem;
+.caught-container {
+  padding: 50px;
+  background: url('./assets/556616.webp') fixed;
+  min-height: 100vh;
+  width: 100%;
 }
+
+.about-container {
+  padding: 50px;
+  background: url('./assets/1.webp') fixed;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.pokemon-page {
+  padding: 50px;
+  background: url('./assets/iIqsiwx.webp') fixed;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+
 
 .pokemons-list {
   display: flex;
@@ -65,3 +69,14 @@
   justify-content: space-around;
 }
 
+.pokemon-name {
+  text-transform: uppercase;
+}
+
+.container {
+  text-align: center;
+}
+
+.about {
+  margin-top: 20vh;
+}
