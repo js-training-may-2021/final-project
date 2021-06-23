@@ -2,7 +2,7 @@
 @import "../../utils/mixins.scss";
 
 .container {
-  padding: 50px 20px 30px;
+  padding: 50px 10px 30px;
   margin: 0 auto;
   max-width: 800px;
   display: grid;
@@ -33,4 +33,6 @@
 .img {
   height: auto;
   width: 90%;
+  display: block;
+  margin: 0 auto;
 }
