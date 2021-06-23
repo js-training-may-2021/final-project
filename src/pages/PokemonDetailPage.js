@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import PokemonProfile from '../components/PokemonProfile/PokemonProfile';
 import PokemonNotFound from '../components/UI/PokemonNotFound';
 import Spinner from '../components/UI/Spinner';
-import classes from './PokemonDetailPage.module.css';
 
 const PokemonDetailPage = () => {
 
@@ -55,7 +54,7 @@ const PokemonDetailPage = () => {
       content = <PokemonProfile pokemon={currentPokemon} />;
     }
 
-  return <main className={classes.main}>{content}</main>
+  return <>{content}</>
 
 };
 

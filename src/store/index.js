@@ -1,15 +1,18 @@
 import { createStore, combineReducers } from 'redux';
 
 import { loadState, saveState } from './localStorageManager';
+import { NUMBER_OF_POKEMONS_PER_PAGE } from '../utils/constants';
 
 const catchReducer = (state = { caughtPokemons: loadState() }, action) => {
   if (action.type === "CATCH_POKEMON") {
-    console.log({ caughtPokemons: [...state.caughtPokemons, action.payload] });
-    return { caughtPokemons: [...state.caughtPokemons, action.payload] };
+    const newCaughtPokemons = [...state.caughtPokemons, action.payload];
+    saveState(newCaughtPokemons);
+    return { caughtPokemons: newCaughtPokemons };
   }
   if (action.type === "RELEASE_POKEMON") {
-    console.log({ caughtPokemons: state.caughtPokemons.filter(pokemon => pokemon.id !== action.payload.id) });
-    return { caughtPokemons: state.caughtPokemons.filter(pokemon => pokemon.id !== action.payload.id) };
+    const newCaughtPokemons = state.caughtPokemons.filter(pokemon => pokemon.id !== action.payload.id);
+    saveState(newCaughtPokemons);
+    return { caughtPokemons: newCaughtPokemons };
   }
   return state;
 };
@@ -27,9 +30,9 @@ const homePagePaginationReducer = (state = { pokemons: [], isLoading: false, err
   return state;
 };
 
-const myPokemonsPaginationReducer = (state = { numberOfPokemons: 20, error: false }, action) => {
+const myPokemonsPaginationReducer = (state = { numberOfPokemons: NUMBER_OF_POKEMONS_PER_PAGE }, action) => {
   if (action.type === "LOAD_MORE") {
-    return { ...state, numberOfPokemons: state.numberOfPokemons + 20 };
+    return { numberOfPokemons: state.numberOfPokemons + NUMBER_OF_POKEMONS_PER_PAGE };
   }
   return state;
 };
@@ -41,10 +44,5 @@ const reducer = combineReducers({
 });
 
 const store = createStore(reducer);
-
-// TODO if using localstorage bug on details page occurs
-store.subscribe(() => {
-  saveState(store.getState().catch.caughtPokemons);
-});
 
 export default store;

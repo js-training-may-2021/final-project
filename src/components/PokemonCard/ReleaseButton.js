@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import classes from './ReleaseButton.module.css';
+import classes from './ReleaseButton.module.scss';
 
 const ReleaseButton = (props) => {
 

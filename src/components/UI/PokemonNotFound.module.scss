@@ -1,0 +1,30 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.text {
+  padding-top: 100px;
+  padding-bottom: 30px;
+  color: $light-grey;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.btn {
+  display: block;
+  border: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $primary-green;
+  padding: 5px;
+  margin: 0 auto;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  &:hover,
+  &:active {
+    background-color: $lightest-green;
+  }
+}

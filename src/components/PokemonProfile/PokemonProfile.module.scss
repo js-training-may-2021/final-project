@@ -1,0 +1,36 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.container {
+  padding: 50px 20px 30px;
+  margin: 0 auto;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px; 
+}
+
+.inner-card {
+  @include inner-card;
+}
+
+.heading {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 30px 0;
+  color: $dark-grey;
+}
+
+.text-block {
+  margin: 20px;
+
+  & > * {
+    margin-bottom: 10px;
+  }
+  
+}
+
+.img {
+  height: auto;
+  width: 90%;
+}

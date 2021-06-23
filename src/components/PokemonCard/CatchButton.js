@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import classes from "./CatchButton.module.css";
+import classes from "./CatchButton.module.scss";
 
 const CatchButton = (props) => {
 

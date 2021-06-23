@@ -1,0 +1,21 @@
+@import "../utils/mixins.scss";
+@import "../utils/variables.scss";
+
+.list {
+@include pokemon-list;
+}
+
+.link {
+  @include pokemon-link;
+}
+
+.btn {
+  @include orange-btn-style;
+}
+
+.error {
+  font-size: 1.5rem;
+  color: $error-message-color;
+  text-align: center;
+  padding: 50px;
+}

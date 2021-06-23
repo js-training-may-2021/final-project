@@ -1,15 +1,16 @@
-.navList {
+@import "../../utils/variables.scss";
+
+.nav-list {
   width: 90vw;
   max-width: 1530px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   display: flex;
   justify-content: flex-end;
   list-style: none;
   padding: 0;
 }
 
-.navLink {
+.nav-link {
   padding: 5px 10px;
   margin-left: 20px;
   transition: all .4s;
@@ -17,19 +18,24 @@
   text-decoration: none;
   color: currentColor;
   transition: transform .3s;
+
+  &:active,
+  &:hover {
+    border-bottom: 2px solid $light;
+  }
+
 }
 
-.navLink:active,
-.navLink:hover,
-.navLink.activeNavLink {
-  border-bottom: 2px solid #fff;
+.active-nav-link {
+  border-bottom: 2px solid $light;
 }
+
 
 .header {
   padding-top: 10px;
   height: 60px;
-  background-color: #ff5722;
-  color: #fff;
+  background-color: $primary-orange;
+  color: $light;
   font-size: 1.5rem;
   font-weight: 600;
 }

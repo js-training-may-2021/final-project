@@ -2,16 +2,12 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import classes from './HomePage.module.css';
+import classes from './HomePage.module.scss';
 import PokemonCard from "../components/PokemonCard/PokemonCard";
 import Spinner from '../components/UI/Spinner';
 import CatchButton from '../components/PokemonCard/CatchButton';
-
-const getPokemonId = (pokemonUrl) => {
-  let copyUrl = pokemonUrl;
-  copyUrl = copyUrl.slice(0, copyUrl.length - 1);
-  return +copyUrl.slice(copyUrl.lastIndexOf('/') + 1);
-};
+import { NUMBER_OF_POKEMONS_PER_PAGE } from '../utils/constants';
+import { getPokemonId } from '../utils/helperFunctions';
 
 const HomePage = () => {
 
@@ -21,7 +17,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
   function getPokemonList(offset) {
-    fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=${NUMBER_OF_POKEMONS_PER_PAGE}&offset=${offset}`)
       .then(res => res.json())
       .then(res => {
         dispatch({ type: "START_LOADING_POKEMONS" });
@@ -45,7 +41,7 @@ const HomePage = () => {
     content = <p className={classes.error}>Something went wrong</p>;
   } else {
     content = <>
-      <ul className={classes.pokemonList}>
+      <ul className={classes.list}>
         {pokemons.map(pokemon => {
           const pokemonObj = {
             name: pokemon.name,
@@ -70,10 +66,10 @@ const HomePage = () => {
   }
 
   return (
-    <main className={classes.main}>
-      {content}
+    <>
+      <div>{content}</div>
       {isLoading && !error && <Spinner />}
-    </main>
+    </>
   );
 };
 

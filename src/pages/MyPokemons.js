@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import classes from './MyPokemons.module.css';
+import classes from './MyPokemons.module.scss';
 
 import PokemonCard from "../components/PokemonCard/PokemonCard";
 import ReleaseButton from '../components/PokemonCard/ReleaseButton';
@@ -21,7 +21,7 @@ const MyPokemons = () => {
     !caughtPokemons.length ?
       <p className={classes.text}>You haven't any pokemons yet</p> :
       <>
-        <ul className={classes.pokemonList}>
+        <ul className={classes.list}>
           {caughtPokemons.slice(0, numOfPokemonsToRender).map(pokemon => {
             return (
               <li key={pokemon.id}>
@@ -39,10 +39,10 @@ const MyPokemons = () => {
   const isButtonToRender = caughtPokemons.length > 20 && caughtPokemons.length > numOfPokemonsToRender;
 
   return (
-    <main className={classes.main}>
-      {content}
+    <>
+      <>{content}</>
       {isButtonToRender && <button onClick={loadMoreHandler} className={classes.btn}>Load More...</button>}
-    </main>
+    </>
   );
 };
 
