@@ -1,16 +1,16 @@
 {
   "pokemons": [
     {
-      "name": "ivysaur",
-      "id": 1,
+      "name": "bulbasaur",
+      "id": 1
     },
     {
       "name": "ivysaur",
-      "id": 2,
+      "id": 2
     },
     {
       "name": "venusaur",
-      "id": 3,
+      "id": 3
     },
     {
       "name": "charmander",
@@ -51,6 +51,7 @@
     {
       "name": "weedle",
       "id": 13,
+      "isCaught": false
     },
     {
       "name": "kakuna",
@@ -98,11 +99,12 @@
     },
     {
       "name": "pikachu",
-      "id": 25
+      "id": 25,
+      "isCaught": false
     },
     {
       "name": "raichu",
-      "id": 26,
+      "id": 26
     },
     {
       "name": "sandshrew",
@@ -146,7 +148,7 @@
     },
     {
       "name": "vulpix",
-      "id": 37,
+      "id": 37
     },
     {
       "name": "ninetales",
@@ -290,7 +292,8 @@
     },
     {
       "name": "tentacruel",
-      "id": 73
+      "id": 73,
+      "isCaught": false
     },
     {
       "name": "geodude",
@@ -630,7 +633,7 @@
     },
     {
       "name": "totodile",
-      "id": 158,
+      "id": 158
     },
     {
       "name": "croconaw",
@@ -1446,7 +1449,7 @@
     },
     {
       "name": "glalie",
-      "id": 362,
+      "id": 362
     },
     {
       "name": "spheal",
@@ -1926,7 +1929,7 @@
     },
     {
       "name": "azelf",
-      "id": 482,
+      "id": 482
     },
     {
       "name": "dialga",
@@ -2122,7 +2125,7 @@
     },
     {
       "name": "audino",
-      "id": 531,
+      "id": 531
     },
     {
       "name": "timburr",
