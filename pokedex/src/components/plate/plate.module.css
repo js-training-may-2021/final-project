@@ -1,0 +1,31 @@
+.card {
+  background-color: #faee80;
+  border-radius: 1%;
+}
+
+.card_link {
+  text-decoration: none;
+}
+
+.card_btn {
+  font-size: 1.2rem;
+  background-color: #a86319;
+  margin-bottom: 15px;
+  align-items: center;
+  color: rgb(255, 250, 210);
+  width: 100%;
+}
+.card_btn:hover {
+  background-color: #8f4a01;
+  color: rgb(255, 255, 255);
+}
+
+.card_title {
+  color: #d0006e;
+  justify-content: center;
+  text-align: center;
+}
+
+.card_title:hover {
+  color: #ad005c;
+}

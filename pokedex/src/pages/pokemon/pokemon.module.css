@@ -1,0 +1,40 @@
+.pokemon_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.pokemon_img {
+  width: 28vw;
+  margin: 15vh 0;
+}
+
+.pokemon_info {
+  margin: auto 3vw;
+  color: #ad005c;
+}
+
+.pokemon_text {
+  font-size: 2em;
+}
+
+.pokemon_title {
+  font-size: 3em;
+}
+
+@media (max-width: 767px) {
+  .pokemon_wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pokemon_img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .pokemon_text {
+    font-size: 3em;
+  }
+  .pokemon_title {
+    font-size: 4em;
+  }
+}
