@@ -1,0 +1,31 @@
+@import "@scss/variables.scss";
+@import "@scss/mixins.scss";
+
+.messageLogin {
+  @include login-box;
+  @include d-flex-standart;
+
+  flex-direction: column;
+
+  button {
+    @include button;
+
+    margin-top: 10px;
+
+    &:hover {
+      border: 1px solid $semi-dark;
+    }
+  }
+}
+
+.username {
+  text-transform: capitalize;
+}
+
+.dark {
+  color: $light;
+
+  button {
+    background-color: $medium-gray;
+  }
+}

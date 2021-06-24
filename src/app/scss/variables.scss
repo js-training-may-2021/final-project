@@ -1,0 +1,33 @@
+@font-face {
+  font-family: Roboto-regular;
+  src: url("/assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: Roboto-bold;
+  src: url("/assets/fonts/Roboto/Roboto-Bold.ttf");
+}
+
+$success: #28a745;
+$blue: #17a2b8;
+$danger: #b4323f;
+$semi-dark: #363d45;
+$dark: #212121;
+$medium-gray: #666;
+$light-gray: #e0e0e0;
+$light: #f7f7f7;
+$dis-col: #d2d5db;
+$dis-back: #6c7589;
+
+$width0: 1320px;
+$width1: 1140px;
+$width2: 960px;
+$width3: 720px;
+$width4: 576px;
+$width5: 100%;
+
+$breakpoint1: 1399px;
+$breakpoint2: 1199px;
+$breakpoint3: 991px;
+$breakpoint4: 767px;
+$breakpoint5: 575px;
