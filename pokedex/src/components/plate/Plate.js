@@ -1,7 +1,10 @@
 import React from "react";
-import catchPokemonAction from "../store/actions/actions";
+import catchPokemonAction from "../../store/actions/actions";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import imgLinks from "../../pokemons/imgLinks";
+import styles from './plate.module.css';
+
 
 function Plate(props) {
   let catchPokemon = function (e) {
@@ -14,22 +17,24 @@ function Plate(props) {
     let pok = props.pokemon;
     if (!pok.caught) {
       return {
-        className: "btn btn-success",
+        className: "btn",
         word: "Catch",
         disabled: false,
       };
     } else {
       console.log("come");
       return {
-        className: "btn btn-danger",
+        className: "btn ",
         word: "Caught",
         disabled: true,
       };
     }
   };
   return (
-    <div className="card col">
+    <div className={`col-lg-3 col-md-4 col-sm-12 col-xs-12 col-12`}>
+    <div className={`${styles.card} m-1`}>
       <Link
+      className={`${styles.card_link}`}
         to={{
           pathname: "/pokemon",
           propsSearch: {
@@ -38,20 +43,21 @@ function Plate(props) {
         }}
       >
         <img
-          className="card-img-top"
-          src={require(`../pokemons/${props.pokemon.id}.png`).default}
-          alt="Picture"
+          className={` ${styles.card_img} card-img-top`}
+          src={imgLinks[props.pokemon.id]}
+          alt=""
         />
-        <h5 className="card-title">Name: {props.pokemon.name} </h5>
+        <h4 className={`${styles.card_title} card-title`}>Name: {props.pokemon.name} </h4>
       </Link>
       <button
-        className={getAtr().className}
+        className={`${styles.card_btn} card col ${getAtr().className}`}
         disabled={getAtr().disabled}
         pokemonid={props.pokemon.id}
         onClick={catchPokemon}
       >
         {getAtr().word}
       </button>
+    </div>
     </div>
   );
 }

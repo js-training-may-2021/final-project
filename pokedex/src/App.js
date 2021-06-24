@@ -1,14 +1,19 @@
 import React from "react";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import { Route, Switch, Redirect, BrowserRouter as Router } from "react-router-dom";
-import Main from "./pages/Main";
-import Caught from "./pages/Caught";
-import Pokemon from "./pages/Pokemon";
+import Main from "./pages/main/Main";
+import Caught from "./pages/caught/Caught";
+import Pokemon from "./pages/pokemon/Pokemon";
+import styles from './app.module.css';
+import ScrollToTop from "./components/ScrollToTop";
+
+
 
 function App() {
   return (
     <Router>
-    <main id="app">
+      <ScrollToTop/>
+    <main id="app" className={styles.main}>
       <div>
         <Header/>
       </div>

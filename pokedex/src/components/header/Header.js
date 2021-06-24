@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from './header.module.css';
+
 
 export default function Header() {
   return (
@@ -7,23 +9,18 @@ export default function Header() {
       <nav className="header">
         <ul className="nav justify-content-center">
           <li className="nav-item">
-            <Link className="nav-link" to="/main">
+            <Link className={`${styles.link} nav-link`} to="/main">
               Main
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/caught">
+            <Link className={`${styles.link} nav-link`} to="/caught">
               Caught
             </Link>
           </li>
-          {/* <li className="nav-item">
-            <Link className="nav-link" to="/pokemon">
-              Pokemon
-            </Link>
-          </li> */}
         </ul>
       </nav>
-      <h1>Pokedex</h1>
+      <h1 className={`${styles.header}`}>Pokedex</h1>
     </>
   );
 }

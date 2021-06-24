@@ -1,5 +1,5 @@
 import React from "react";
-import Plate from "./Plate";
+import Plate from "../plate/Plate";
 
 export default function Plates(props) {
   return (

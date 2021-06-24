@@ -1,0 +1,15 @@
+.link {
+    color: #D0006E;
+    font-size: 2em;
+
+}
+
+.link:hover {
+    color: blueviolet;
+}
+
+.header {
+    text-align: center;
+    color: #fcedb2;
+    /* margin-bottom: 3vh; */
+}
