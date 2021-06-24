@@ -1,0 +1,67 @@
+.main {
+    background: #000000;
+    height: 90px;
+}
+.title {
+    position: absolute;
+    top: 35px;
+    left: 140px;
+    color: white;
+    font-family: fantasy;
+}
+.icon {
+    margin: 20px 20px;
+    width: 100px;
+    height: 60px;
+    background-color: red;
+}
+.menu {
+    position: fixed;
+    right: 20px;
+    top: 25px;
+    display: flex;
+    column-gap: 25px;
+}
+.item {
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    list-style-type: none;
+    text-decoration: none;
+    padding:5px;
+}
+.link {
+    color: red;
+    font-size: 22px;
+    text-decoration-line: none;
+    font-family: fantasy;
+}
+.link:hover {
+    color:orange;
+    text-decoration-line: none;
+}
+
+@media (max-width: 568px)  {
+    .main {
+        height: 50px;
+    }
+    .icon {
+        display: none;
+    }
+    .title {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-size: 18px;
+    }
+    .menu {
+        gap: 10px;
+        top: 10px;
+    }
+    .item {
+        padding: 2px;
+    }
+    .link {
+        font-size: 13px;
+    }
+    
+}
