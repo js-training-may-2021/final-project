@@ -1,0 +1,86 @@
+.navbar {
+  position: fixed;
+  top: 0;
+}
+
+.main-stuff {
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+
+.pokemon-card {
+  width: 16rem;
+  height: auto;
+  margin: 1rem;
+}
+
+.pokemon-name {
+  color: black;
+  text-decoration: none;
+  word-wrap: initial;
+}
+
+.pokemon-card a:hover  {
+  color: black;
+  text-decoration: none;
+}
+
+.card-body {
+  background-color: whitesmoke;
+}
+
+.home-container {
+  padding: 50px;
+  background: url('./assets/bg-1.webp') fixed;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  
+}
+
+.caught-container {
+  padding: 50px;
+  background: url('./assets/bg-3.webp') fixed;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.about-container {
+  padding: 50px;
+  background: url('./assets/bg-2.webp') fixed;
+  background-size: initial;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.greetings {
+  margin: 10rem auto 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+.pokemon-page {
+  padding: 50px;
+  background: url('./assets/bg-3.webp') fixed;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+
+
+.pokemons-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.pokemon-name {
+  text-transform: uppercase;
+}
+
+.container {
+  text-align: center;
+}
+
