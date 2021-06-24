@@ -1,33 +1,23 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 
-const Styles = styled.div `
-    a, .navbar-brand, .navbar-nav .navbar-link {
-        color: black;
-        &:hover {
-            color: green;
-        }
-    }
-`
+
 
 export default function Menu() {
     return (
     <>
-        <Styles>
-            <Navbar collapseOnSelect expand="lg" fixed="top" bg="light">
-                <Navbar.Brand>Pokedex</Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto">
-                        <Link className = "nav-link" exact="true" to="/">All Pokemons </Link>
-                        <Link className = "nav-link" exact="true" to="/caught">My Pokemons</Link> 
-                        <Link className = "nav-link" exact="true" to="/about">About </Link> 
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
-        </Styles>
+        <Navbar collapseOnSelect expand="lg" fixed="top" bg="light">
+            <Navbar.Brand>Pokedex</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                    <Link className = "nav-link" exact="true" to="/">All Pokemons </Link>
+                    <Link className = "nav-link" exact="true" to="/caught">My Pokemons</Link> 
+                    <Link className = "nav-link" exact="true" to="/about">About </Link> 
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>      
     </>
     )
 }

@@ -33,7 +33,7 @@
 
 .home-container {
   padding: 50px;
-  background: url('./assets/wallpaper-hd.webp') fixed;
+  background: url('./assets/bg-1.webp') fixed;
   background-size: cover;
   min-height: 100vh;
   width: 100%;
@@ -42,21 +42,28 @@
 
 .caught-container {
   padding: 50px;
-  background: url('./assets/556616.webp') fixed;
+  background: url('./assets/bg-3.webp') fixed;
   min-height: 100vh;
   width: 100%;
 }
 
 .about-container {
   padding: 50px;
-  background: url('./assets/1.webp') fixed;
+  background: url('./assets/bg-2.webp') fixed;
+  background-size: initial;
   min-height: 100vh;
   width: 100%;
 }
 
+.greetings {
+  margin: 10rem auto 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
 .pokemon-page {
   padding: 50px;
-  background: url('./assets/iIqsiwx.webp') fixed;
+  background: url('./assets/bg-3.webp') fixed;
   min-height: 100vh;
   width: 100%;
   background-size: cover;
@@ -77,6 +84,3 @@
   text-align: center;
 }
 
-.about {
-  margin-top: 20vh;
-}

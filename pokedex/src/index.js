@@ -12,7 +12,7 @@ const init = async() => {
   const devtoolMiddleware = ext && ext();
   
   const response = await axios.get('http://localhost:8000/pokemons?_page=1&_limit=20');
-  const initialState = response.data;
+  const initialState = { pokemonsBase: response.data, collection: [] }
 
   const store = createStore(rootReducer, initialState, devtoolMiddleware);
   

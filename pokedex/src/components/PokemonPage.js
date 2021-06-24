@@ -7,16 +7,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const PokemonDetails = () => {
-    const { id: stringId } = useParams();
-    const id = Number(stringId);
-    const { data: pokemon, error, isPending } = useFetch('http://localhost:8000/pokemons/' + id);
-    const allPokemons = useSelector((state) => state);
-    const actualPokemon = allPokemons.find((pokemon) => pokemon.id === id);
-    const caught = actualPokemon.caught ? true : false;
     const dispatch = useDispatch();
     const handleCatch = (id, name) => {
         dispatch(catchPokemon({id, name}));
     }
+    const { id: stringId } = useParams();
+    const id = Number(stringId);
+    const { data: pokemon, error, isPending } = useFetch('http://localhost:8000/pokemons/' + id);
+    const allPokemons = useSelector((state) => state.pokemonsBase);
+    const myPokemons = useSelector((state) => state.collection)
+    const actualPokemon = (myPokemons.find((pokemon) => pokemon.id === id)) || (allPokemons.find((pokemon) => pokemon.id === id));
+    const caught = myPokemons.find((pokemon) => pokemon.id === id) ? true: false;
+    
+    
    return (
         <Container className="pokemon-page" fluid>
             { isPending && <Alert  variant='warning'> Loading... </Alert> }

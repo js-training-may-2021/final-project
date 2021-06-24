@@ -8,22 +8,22 @@ import { loadMorePokemons } from '../action';
 
 export default function Home() {
    
-    const pokemons = useSelector((state) => state);
+    const pokemons = useSelector((state) => state.pokemonsBase);
+    
     const dispatch = useDispatch();
     const [isMore, setMore] = useState(true);
     const [page, setPage] = useState(2);
        
 
    const loadFunc = async() => {
-    if (pokemons.length > 949) {
-        
-        setMore(false);
-        return;
+        if (pokemons.length > 949) {
+            setMore(false);
+            return;
+        }
+            const response = await axios.get(`http://localhost:8000/pokemons?_page=${page}&_limit=20`);
+            dispatch(loadMorePokemons(response.data));
+            setPage(page + 1);
     }
-        const response = await axios.get(`http://localhost:8000/pokemons?_page=${page}&_limit=20`);
-        dispatch(loadMorePokemons(response.data));
-        setPage(page + 1);
-   }
 
     return (
         <Container className="home-container" fluid>

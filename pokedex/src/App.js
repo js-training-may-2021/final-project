@@ -6,7 +6,7 @@ import Menu from './components/Menu';
 import Home from './components/Home';
 import About from './components/About';
 import Caught from './components/Caught';
-import Pokemon from './components/PokemonPage';
+import PokemonDetails from './components/PokemonPage';
 import NotFound from './components/NotFound';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Route exact path="/about" component={About}/>
           <Route exact path="/caught" component={Caught}/>
           <Route exact path="/:id">
-            <Pokemon/>
+            <PokemonDetails/>
           </Route>  
           <Route path='*'>
             <NotFound />
