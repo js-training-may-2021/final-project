@@ -19,7 +19,7 @@ const pokemonListReducer = (state=initialState, action) => {
                 ...state, 
                 pokemons: state.pokemons.map ( p => {
                     if (p.id === action.pokemonID) {
-                        return {...p, caught: true}
+                        return {...p, isCaught: true}
                     }
                     return p;
                 })
@@ -56,6 +56,5 @@ export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, current
 
 
 //caught action creator
-// export const watchProfileAC = (pokemonID) => ({type: WATCHPROFILE, pokemonID});
 
 export default pokemonListReducer;

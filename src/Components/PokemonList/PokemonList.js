@@ -22,7 +22,11 @@ let PokemonList = (props) => {
                                 </NavLink>                              
                                 <div className="card-body">
                                     <h5 className="card-title">{pokemonItem.name.toUpperCase()}</h5>
-                                    <a href="#" className="btn btn-primary">CAUGHT</a>
+                                    <div>
+                                        { pokemonItem.isCaught
+                                        ? <button href="#" className="btn btn-secondary">DONE</button>
+                                        : <button href="#" onClick={ () => { props.caught(pokemonItem.id) } } className="btn btn-primary">CAUGHT</button>}
+                                    </div>
                                 </div>
                             </div>
                         </div>

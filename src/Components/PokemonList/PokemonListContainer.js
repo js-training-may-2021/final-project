@@ -6,7 +6,6 @@ import './PokemonList.css';
 import PokemonList from './PokemonList';
 
 class PokemonListContainer extends React.Component {
-
 //метод жизненного цикла компоненты, 
 //компонента монтируется один раз в страницу 
   componentDidMount() {
@@ -17,7 +16,6 @@ class PokemonListContainer extends React.Component {
         // this.props.setTotalPokemonsCount(response.data.length);
       });
   }
-
   onPageChanged = (pageNumber) => {
     this.props.setCurrentPage(pageNumber);
     axios.get(`http://localhost:8000/pokemons?_limit=${this.props.pageSize}&_page=${pageNumber}`)
@@ -25,7 +23,6 @@ class PokemonListContainer extends React.Component {
         this.props.setPokemons(response.data);
       });
   }
-
   render() {
     return (
         <PokemonList 
@@ -34,13 +31,14 @@ class PokemonListContainer extends React.Component {
           currentPage={this.props.currentPage}
           pokemons={this.props.pokemons}
           onPageChanged={this.onPageChanged}
+          caught={this.props.caught}
           
 
           />
     )
   }
 }
-
+ 
 
 let mapStateToProps = (state) => {
     return {
@@ -68,11 +66,8 @@ let mapStateToProps = (state) => {
 //         // setTotalPokemonsCount: (totalPokemonsCount) => {
 //         //     dispatch(setTotalPokemonsCountAC(totalPokemonsCount));
 //         // },
-//     }
-    
+//     }    
 // }
-
-
 
 export default connect (mapStateToProps, 
     { caught, setPokemons, setCurrentPage }) (PokemonListContainer);
