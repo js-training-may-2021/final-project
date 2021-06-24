@@ -331,6 +331,10 @@ a {
     margin: 25px 15px 35px 15px;
   }
 
+  .tabs-container {
+    margin-top: -50px;
+  }
+
   .tab {
     height:45px;
     padding: 12px 10px 6px 10px;

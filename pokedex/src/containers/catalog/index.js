@@ -1,6 +1,6 @@
 const Catalog = (props) => {
   return (
-    <div className="catalog">{props.children}</div>
+    <div className='catalog'>{props.children}</div>
   );
 };
 

@@ -15,12 +15,6 @@ export const makeArrayFromValue = (value) => {
 
 export const getPokemonStatus = (id, caughtArray) => {
   const pokemon = caughtArray.find((item) => parseInt(item.id, 10) === parseInt(id, 10));
-  /* if (pokemon !== undefined) {
-    const d = pokemon.isCaught;
-    return (d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear() + ' в ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds());
-  } else {
-    return 'нет';
-  } */
   return pokemon === undefined ? 'нет' : pokemon.isCaught;
 };
 

@@ -1,9 +1,9 @@
 const Logo = () => {
   return (
     <>
-      <span className="logo-line"></span>
-      <h1 className="logo">Pokedex</h1>
-      <span className="logo-line"></span>
+      <span className='logo-line'></span>
+      <h1 className='logo'>Pokedex</h1>
+      <span className='logo-line'></span>
     </>
   );
 };

@@ -1,12 +1,9 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-
-import LargeCard from "../../components/large-card";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import LargeCard from '../../components/large-card';
 import BackLink from '../../components/back-link';
-
-import CaughtPokemonsContext from "../../contexts/caught-pokemons";
-import ChosenTabContext from "../../contexts/chosen-tab";
-
+import CaughtPokemonsContext from '../../contexts/caught-pokemons';
+import ChosenTabContext from '../../contexts/chosen-tab';
 class CardPage extends Component {
   constructor(props) {
     super(props);

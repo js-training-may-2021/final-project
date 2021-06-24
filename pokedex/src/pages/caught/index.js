@@ -1,13 +1,9 @@
-import React, { Component } from "react";
-
-import Catalog from "../../containers/catalog";
-import CatalogItems from "../../components/catalog-items";
-import Pagination from "../../components/pagination";
-
-import CaughtPokemonsContext from "../../contexts/caught-pokemons";
-import ChosenTabContext from "../../contexts/chosen-tab";
-import ChosenPageContext from "../../contexts/chosen-page";
-
+import React, { Component } from 'react';
+import Catalog from '../../containers/catalog';
+import CatalogItems from '../../components/catalog-items';
+import Pagination from '../../components/pagination';
+import CaughtPokemonsContext from '../../contexts/caught-pokemons';
+import ChosenPageContext from '../../contexts/chosen-page';
 class CaughtPage extends Component {
   constructor(props) {
     super(props);
@@ -29,13 +25,12 @@ class CaughtPage extends Component {
               <CaughtPokemonsContext.Consumer>
                 {(c) => {
                   const quantity = c._currentValue2.length;
-                  const len = Math.ceil(quantity / 12);
                   return (
                     <>
                       <h3>Всего поймано покемонов: {quantity}</h3> 
                       <Catalog>
-                        <CatalogItems data={this.props.data} caught={c._currentValue2} chosenPage={p._currentValue2} catalogType={this.props.chosenTab} />
-                        <Pagination len={len} chosenPage={p._currentValue2} />
+                        <CatalogItems data={this.state.data} caught={c._currentValue2} chosenPage={p._currentValue2} catalogType={this.state.chosenTab} />
+                        <Pagination data={c._currentValue2} chosenPage={p._currentValue2} />
                       </Catalog>
                     </>
                   )
