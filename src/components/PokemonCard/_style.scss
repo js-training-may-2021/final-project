@@ -1,0 +1,42 @@
+.card-wrapper {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4em;
+  padding: 1em;
+  background: #0d47a1;
+}
+
+.pokemon-image {
+  width: 70%;
+}
+
+.pokemon-name {
+  letter-spacing: .2em;
+}
+
+.image-wrapper {
+  margin: .5em 1em 0 1em;
+  background: #002171;
+  display: flex;
+  justify-content: center;
+  border-radius: .3em;
+}
+
+.catch-button {
+  background: #c00d2e;
+  padding: .6em 2em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .7rem;
+  border-radius: .3em;
+  cursor: pointer;
+  font-weight: bold;
+  color: rgba(245,245,245, 0.8);
+}
+
+.catch-button:disabled {
+  background: #434347;
+  cursor: default;
+}

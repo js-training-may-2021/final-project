@@ -1,0 +1,26 @@
+.caught-pokemon-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4em;
+}
+
+.warning {
+  max-width: 80%;
+  text-align: center;
+  background: #c00d2e;
+  padding: 1em;
+  border-radius: .3em;
+}
+
+@media (min-width: 1025px) {
+  .caught-pokemon-content {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .card-wrapper {
+    width: 40%;
+  }
+}

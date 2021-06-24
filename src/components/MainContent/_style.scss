@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 auto;
+  align-self: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 70%;
+  background-image: url("https://raw.githubusercontent.com/jnannni/web-itmo/master/fourth_lab/img/back-poke-card.jpg");
+  background-repeat: repeat;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1em;
+}
+
+@media (min-width: 1025px) {
+  .main-content {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .card-wrapper {
+    width: 40%;
+  }
+}

@@ -1,0 +1,26 @@
+.pagination-wrapper {
+}
+
+.pagination {
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  background: #c00d2e;
+  border-radius: .3em;
+}
+
+.page-number {
+  color: rgba(245,245,245, 0.8);
+  padding: .5em;
+  cursor: pointer;
+  &:hover {
+    background: rgba(245,245,245, 0.8);
+    color: #c00d2e;
+  }
+}
+
+.page {
+  background: rgba(245,245,245, 0.8);
+  color: #c00d2e;
+}
