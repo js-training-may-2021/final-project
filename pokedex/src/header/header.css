@@ -1,0 +1,27 @@
+.header {
+    height: 70px;
+    background-color: aquamarine;
+}
+.header .container {
+    position: relative;
+}
+.header__links {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    line-height: 70px;
+}
+.header__links a {
+    margin-right: 20px;
+}
+
+.logo {
+    display: inline-block;
+    height: 70px;
+}
+
+.logo img {
+    margin-top: 10px;
+    height: 50px;
+    width: auto;
+}
