@@ -9,7 +9,7 @@ const PokemonCard = (props) => {
   const catchPokemon = (e) => {
     api.catchPokemon(props.id);
     e.target.classList.add('disabled');
-    e.target.innerText = 'Catched!'
+    e.target.innerText = 'Catched!';
   }
 
   const handleClick = (e) => {

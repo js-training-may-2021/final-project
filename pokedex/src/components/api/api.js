@@ -45,4 +45,25 @@ export default class PokemonApi extends Component {
       body: JSON.stringify({isCatched: true, catchDate: date})
     });
   }
+
+  async setAsUncatched() {
+    const url = `http://localhost:3000/pokemons/1`;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error('Cannot fetch Pokemons\' data');
+    }
+
+    const pokemon = await response.json();
+
+    if (!pokemon.isCatched || !pokemon.hasOwnProperty('isCatched')) {
+      await fetch(url, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({isCatched: false})
+      });
+    }
+  }
 }
