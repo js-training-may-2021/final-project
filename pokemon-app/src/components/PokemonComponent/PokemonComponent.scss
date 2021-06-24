@@ -1,0 +1,18 @@
+.caught-pok{
+  position: relative;
+  div.MuiCardMedia-root.pokemon-card__img{
+    filter: grayscale(1) !important;
+  }
+  &:before{
+    content: 'CAUGHT';
+    position: absolute;
+    top: 2.5rem;
+    left: 1rem;
+    color: #e51818;
+    transform: rotate(-30deg);
+    font-weight: 900;
+    filter: grayscale(0);
+    z-index: 2;
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,20 @@
+.caught-pokemons {
+  &__title {
+    margin-bottom: 32px;
+    color: #313131;
+    font-family: "Flexo-Bold", arial, sans-serif;
+    font-size: 2rem;
+    @media screen and (max-width: 600px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__cards {
+    padding-top: 32px;
+  }
+
+  &__msg {
+    margin-top: 64px;
+    color: #FFCB05;
+  }
+}

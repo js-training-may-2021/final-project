@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+  background-image: url("https://i.imgur.com/Bt0sdpD.jpg?1");
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (min-width: 1921px) {
+    align-items: unset;
+  }
+  @media screen and (max-width: 1024px) {
+    align-items: unset;
+  }
+
+  &__container {
+    padding: 94px 32px 32px;
+
+    @media screen and (max-width: 600px) {
+      padding: 74px 16px 16px;
+    }
+  }
+
+  &__wrapper {
+    background-color: white;
+    padding: 32px;
+    border-radius: 12px;
+
+    @media screen and (max-width: 600px) {
+      padding: 16px 16px 32px;
+    }
+
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
