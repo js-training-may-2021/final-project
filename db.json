@@ -3,17 +3,14 @@
     {
       "name": "ivysaur",
       "id": 1,
-      "isCaught": true
     },
     {
       "name": "ivysaur",
       "id": 2,
-      "isCaught": false
     },
     {
       "name": "venusaur",
       "id": 3,
-      "isCaught": false
     },
     {
       "name": "charmander",
@@ -53,7 +50,7 @@
     },
     {
       "name": "weedle",
-      "id": 13
+      "id": 13,
     },
     {
       "name": "kakuna",
@@ -105,7 +102,7 @@
     },
     {
       "name": "raichu",
-      "id": 26
+      "id": 26,
     },
     {
       "name": "sandshrew",
@@ -149,7 +146,7 @@
     },
     {
       "name": "vulpix",
-      "id": 37
+      "id": 37,
     },
     {
       "name": "ninetales",
@@ -633,7 +630,7 @@
     },
     {
       "name": "totodile",
-      "id": 158
+      "id": 158,
     },
     {
       "name": "croconaw",
@@ -1449,7 +1446,7 @@
     },
     {
       "name": "glalie",
-      "id": 362
+      "id": 362,
     },
     {
       "name": "spheal",
@@ -1929,7 +1926,7 @@
     },
     {
       "name": "azelf",
-      "id": 482
+      "id": 482,
     },
     {
       "name": "dialga",
@@ -2125,7 +2122,7 @@
     },
     {
       "name": "audino",
-      "id": 531
+      "id": 531,
     },
     {
       "name": "timburr",

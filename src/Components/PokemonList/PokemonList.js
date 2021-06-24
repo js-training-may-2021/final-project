@@ -12,7 +12,7 @@ let PokemonList = (props) => {
                 currentPage={props.currentPage}
                 onPageChanged={props.onPageChanged}
                 />
-                
+                 
             <div className="row">
                 {props.pokemons.map(pokemonItem => {
                     return (

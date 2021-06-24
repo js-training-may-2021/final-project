@@ -4,7 +4,7 @@ import { caught, letgo, setPokemons, setCurrentPage } from "../../redux/pokemonL
 import axios from "axios";
 import './PokemonList.css';
 import PokemonList from './PokemonList';
-
+ 
 class PokemonListContainer extends React.Component {
 //метод жизненного цикла компоненты, 
 //компонента монтируется один раз в страницу 
