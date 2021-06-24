@@ -1,13 +1,13 @@
 import React, { useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+
 import {
   fetchPokemonsData,
-  catchPokemonAction,
   clearCatchedPokemons,
-  nextPage,
-  previousPage,
 } from '../store/actions/pokemons';
+import { catchPokemonAction } from '../store/actions/pokemon';
+import { nextPage, previousPage } from '../store/actions/counter';
 
 import { PokemonsList } from '../components/PokemonsList';
 

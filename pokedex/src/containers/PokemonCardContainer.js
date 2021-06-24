@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import {
   fetchPokemonData,
   clearSelectedPokemon,
-} from '../store/actions/pokemons';
+} from '../store/actions/pokemon';
 import { PokemonCard } from '../components/PokemonCard';
 
 export const PokemonCardContainer = () => {

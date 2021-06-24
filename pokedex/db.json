@@ -98,7 +98,9 @@
     },
     {
       "name": "pikachu",
-      "id": 25
+      "id": 25,
+      "catched": true,
+      "date": 1624564916603
     },
     {
       "name": "raichu",
@@ -106,7 +108,9 @@
     },
     {
       "name": "sandshrew",
-      "id": 27
+      "id": 27,
+      "catched": true,
+      "date": 1624564906647
     },
     {
       "name": "sandslash",

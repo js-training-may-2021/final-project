@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import { CatchedPokemon } from '../CatchedPokemon';
 import { Spinner } from '../Spinner';
-import './CatchedPokemonsList.css';
 
 export const CatchedPokemonsList = ({
   pokemons = [],

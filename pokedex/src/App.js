@@ -11,7 +11,7 @@ import './App.css';
 
 export const App = () => {
   return (
-    <div className="App container">
+    <div className="container">
       <Navigation />
       <div className="page-content">
         <Switch>
