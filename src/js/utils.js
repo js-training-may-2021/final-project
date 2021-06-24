@@ -2,8 +2,9 @@ import {createMemoryHistory} from 'history';
 import configureStore from 'redux-mock-store';
 
 export const POKEMONS_PER_PAGE = 10;
+const START_PAGE = 1;
 
-let currentPage = 1;
+let currentPage = START_PAGE;
 
 export const getCurrentPage = () => {
 	return currentPage++;
