@@ -1,0 +1,5 @@
+@import "../../utils/mixins.scss";
+
+.btn {
+  @include green-btn-style;
+}

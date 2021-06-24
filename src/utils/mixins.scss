@@ -1,0 +1,90 @@
+@import "./variables.scss";
+
+@mixin btn-general-style {
+  font-family: 'Bangers', cursive;
+  font-size: 20px;
+  color: $light;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px 30px;
+  cursor: pointer;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+@mixin btn-disabled-style {
+  background-color: $light-grey;
+  border: 1px solid $light-grey;
+  cursor: not-allowed;
+}
+
+@mixin orange-btn-style {
+  @include btn-general-style;
+  background-color: $primary-orange;
+  border: 1px solid $primary-orange;
+
+  &:hover,
+  &:active {
+    background-color: $light-orange;
+    border: 1px solid $light-orange;
+  }
+
+  &:disabled {
+    @include btn-disabled-style;
+  }
+
+}
+
+@mixin green-btn-style {
+  @include btn-general-style;
+  background-color: $primary-green;
+  border: 1px solid $primary-green;
+
+  &:hover,
+  &:active {
+    background-color: $light-green;
+    border: 1px solid $light-green;
+  }
+
+  &:disabled {
+    @include btn-disabled-style;
+  }
+  
+}
+
+@mixin inner-card {
+  border-radius: 5px;
+  border: 2px solid $light-green;
+  width: 90%;
+  height: 90%;
+  // min-height: 350px;
+  margin: 10px auto;
+}
+
+@mixin pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  // grid-template-rows: 400px;
+  grid-gap: 20px;
+  max-width: 1530px;
+  padding: 0 20px;
+  margin: 20px auto;
+  list-style: none;
+}
+
+@mixin pokemon-link {
+  
+  &:link,
+  &:hover,
+  &:active,
+  &:visited {
+    color: $dark-grey;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+}

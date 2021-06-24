@@ -1,0 +1,19 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.inner-card {
+  @include inner-card;
+}
+
+.img {
+  width: 226px;
+  height: 226px;
+  background-color: $light;
+  display: block;
+  margin: 10px auto;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 10px;
+}

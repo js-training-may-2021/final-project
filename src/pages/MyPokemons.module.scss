@@ -1,0 +1,22 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+
+.list {
+  @include pokemon-list;
+  grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+}
+
+.link {
+  @include pokemon-link;
+}
+
+.text {
+  font-size: 1.5rem;
+  color: $dark-grey;
+  text-align: center;
+  padding: 50px;
+}
+
+.btn {
+  @include orange-btn-style;
+}
