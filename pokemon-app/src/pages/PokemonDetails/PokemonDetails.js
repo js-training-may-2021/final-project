@@ -40,12 +40,9 @@ const PokemonDetails = () => {
     }, [pokemonId])
 
     const storedCaughtPokemon = caughtPokemons.find((pok) => parseInt(pok.id) === parseInt(pokemonId));
-    console.log('storedCaughtPokemon ',storedCaughtPokemon)
-    const isCatchDisabled = storedCaughtPokemon
-            ? true : false;
+    const isCatchDisabled = !!storedCaughtPokemon;
     return (
         <div className="pokemon-details">
-            {/*<Header/>*/}
             <Container className='pokemon-details__container wrapper'>
                 {Object.keys(pokemon).length === 0 ? (
                     <div>Loading...</div>

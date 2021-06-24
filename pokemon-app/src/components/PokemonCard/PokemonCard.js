@@ -16,13 +16,11 @@ const PokemonCard = (props) => {
         caughtPokemons,
     } = useContext(GlobalContext);
 
-
     let storedPokemon = pokemons.find((pok) => pok.id === props.id);
     let storedCaughtPokemons = caughtPokemons.find((pok) => pok.id === props.id);
 
     const isCatchDisabled = storedPokemon
-        ? true : storedCaughtPokemons
-            ? true : false;
+        ? true : !!storedCaughtPokemons;
 
     return (
         <Card className='pokemon-card' variant="outlined">

@@ -16,9 +16,7 @@ export const GlobalProvider = props => {
         localStorage.setItem('pokemons', JSON.stringify(state.pokemons));
         localStorage.setItem('caughtPokemons', JSON.stringify(state.caughtPokemons))
     }, [state])
-    //actions
     const catchPokemon = (id) => {
-        console.log('catchPokemon ',id)
         let newPokemon = {
             id: id,
             captureDate: new Date().toLocaleDateString()

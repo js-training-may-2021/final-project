@@ -11,9 +11,7 @@ const PokemonComponent = () => {
         caughtPokemons,
     } = useContext(GlobalContext);
     const pokemons = useSelector((state) => state.allPokemons.pokemons);
-    // const pokemons = props.list;
- /*   let storedCaughtPokemons = caughtPokemons.find((pok) => pok.id === props.id);
-console.log('storedCaughtPokemons ',caughtPokemons)*/
+
     const renderList = pokemons.map(pokemon => {
         const {id, name} = pokemon;
         const imgPath = `/pokemons/${id}.png`;

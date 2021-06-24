@@ -3,7 +3,6 @@ import {GlobalContext} from "../../redux/context";
 import {useDispatch} from "react-redux";
 import './CaughtPokemons.scss'
 import Grid from "@material-ui/core/Grid";
-import Header from "../../components/Header/Header";
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
 import {appendPokemons, setPokemons} from "../../redux/actions/pokemonActions";
@@ -20,12 +19,9 @@ export const CaughtPokemons = () => {
     const dispatch = useDispatch();
 
     const fetchPokemonDetails = async (offSet) => {
-console.log('fetchPokemonDetails')
-        console.log('caughtPokemons',caughtPokemons)
         let ids = caughtPokemons.slice(offSet, offSet+limit);
         if(ids.length>1) {
             const queryParams = ids.map(x => `id=${x.id}`).join('&');
-            if (queryParams === '') console.log('n0 query');
             const response = await axios
                 .get(`http://localhost:3004/pokemons?${queryParams}`)
                 .catch((err) => {
