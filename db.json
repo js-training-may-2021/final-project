@@ -1,16 +1,19 @@
 {
   "pokemons": [
     {
-      "name": "bulbasaur",
-      "id": 1
+      "name": "ivysaur",
+      "id": 1,
+      "isCaught": true
     },
     {
       "name": "ivysaur",
-      "id": 2
+      "id": 2,
+      "isCaught": false
     },
     {
       "name": "venusaur",
-      "id": 3
+      "id": 3,
+      "isCaught": false
     },
     {
       "name": "charmander",

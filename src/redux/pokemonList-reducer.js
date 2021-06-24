@@ -1,4 +1,5 @@
 const CAUGHT = 'CAUGHT';
+const LET_GO = 'LET_GO';
 const SET_POKEMONS = 'SET_POKEMONS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 // const SET_TOTAL_POKEMON_COUNT = 'SET_TOTAL_POKEMON_COUNT';
@@ -24,6 +25,16 @@ const pokemonListReducer = (state=initialState, action) => {
                     return p;
                 })
             }
+        case LET_GO:
+            return {
+                ...state, 
+                pokemons: state.pokemons.map ( p => {
+                    if (p.id === action.pokemonID) {
+                        return {...p, isCaught: false}
+                    }
+                    return p;
+                })
+            }    
         case SET_POKEMONS: 
             return {
                 ...state,
@@ -50,11 +61,13 @@ const pokemonListReducer = (state=initialState, action) => {
 
 //action-creators:
 export const caught = (pokemonID) => ({type: CAUGHT, pokemonID});
+export const letgo = (pokemonID) => ({type: LET_GO, pokemonID});
 export const setPokemons = (pokemons) => ({type: SET_POKEMONS, pokemons});
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 // export const setTotalPokemonsCountAC = (totalPokemonsCount) => ({type: SET_TOTAL_POKEMON_COUNT, totalPokemonsCount});
 
 
 //caught action creator
+
 
 export default pokemonListReducer;

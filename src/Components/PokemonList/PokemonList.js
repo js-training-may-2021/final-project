@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Pagination from './../Pagination/Pagination';
@@ -24,8 +25,34 @@ let PokemonList = (props) => {
                                     <h5 className="card-title">{pokemonItem.name.toUpperCase()}</h5>
                                     <div>
                                         { pokemonItem.isCaught
-                                        ? <button href="#" className="btn btn-secondary">DONE</button>
-                                        : <button href="#" onClick={ () => { props.caught(pokemonItem.id) } } className="btn btn-primary">CAUGHT</button>}
+                                        ? <button href="#" onClick={ () => {
+                                            axios.put(`http://localhost:8000/pokemons/${pokemonItem.id}`,{
+                                                name: pokemonItem.name,
+                                                id: pokemonItem.id,                
+                                                isCaught: false,
+                                            })
+                                            .then(response => {
+                                                console.log(response);
+                                                props.letgo(pokemonItem.id) 
+                                                // this.props.setPokemons(response.data);
+                                                });
+                                        }}
+                                        className="btn btn-secondary">LET GO</button>
+                                        
+                                        : <button href="#" onClick={ () => { 
+                                            axios.put(`http://localhost:8000/pokemons/${pokemonItem.id}`,{
+                                                name: pokemonItem.name,
+                                                id: pokemonItem.id,                
+                                                isCaught: true,
+                                            })
+                                            .then(response => {
+                                                console.log(response);
+                                                props.caught(pokemonItem.id) 
+                                                // this.props.setPokemons(response.data);
+                                                });
+
+                                            } } 
+                                            className="btn btn-primary">CAUGHT</button>}
                                     </div>
                                 </div>
                             </div>

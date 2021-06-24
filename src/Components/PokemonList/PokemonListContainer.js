@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { caught, setPokemons, setCurrentPage } from "../../redux/pokemonList-reducer";
+import { caught, letgo, setPokemons, setCurrentPage } from "../../redux/pokemonList-reducer";
 import axios from "axios";
 import './PokemonList.css';
 import PokemonList from './PokemonList';
@@ -32,6 +32,7 @@ class PokemonListContainer extends React.Component {
           pokemons={this.props.pokemons}
           onPageChanged={this.onPageChanged}
           caught={this.props.caught}
+          letgo={this.props.letgo}
           
 
           />
@@ -70,4 +71,4 @@ let mapStateToProps = (state) => {
 // }
 
 export default connect (mapStateToProps, 
-    { caught, setPokemons, setCurrentPage }) (PokemonListContainer);
+    { caught, letgo, setPokemons, setCurrentPage }) (PokemonListContainer);
