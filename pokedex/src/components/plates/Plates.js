@@ -6,10 +6,9 @@ export default function Plates(props) {
     <>
       <div className="row row-cols-4">
         {props.pokemons.map((pokemon) => (
-            <Plate pokemon={pokemon} key={pokemon.id} />
+          <Plate pokemon={pokemon} key={pokemon.id} />
         ))}
       </div>
     </>
   );
 }
-

@@ -17,7 +17,7 @@
 }
 
 .pokemon_title {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 @media (max-width: 767px) {
@@ -36,5 +36,5 @@
   }
   .pokemon_title {
     font-size: 4em;
-}
+  }
 }

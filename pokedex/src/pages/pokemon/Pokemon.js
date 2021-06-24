@@ -25,8 +25,8 @@ export default function Pokemon(props) {
       ></img>
       <div className={`${styles.pokemon_info}`}>
         <h1 className={`${styles.pokemon_title}`}>Pokemon: {pok.name}</h1>
-        <p className={`${styles.pokemon_text} card-text`} >Status: {status}</p>
-        <p className={`${styles.pokemon_text} card-text`} >{time}</p>
+        <p className={`${styles.pokemon_text} card-text`}>Status: {status}</p>
+        <p className={`${styles.pokemon_text} card-text`}>{time}</p>
       </div>
     </div>
   );

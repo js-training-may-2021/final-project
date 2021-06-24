@@ -3,8 +3,7 @@ import catchPokemonAction from "../../store/actions/actions";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import imgLinks from "../../pokemons/imgLinks";
-import styles from './plate.module.css';
-
+import styles from "./plate.module.css";
 
 function Plate(props) {
   let catchPokemon = function (e) {
@@ -32,41 +31,35 @@ function Plate(props) {
   };
   return (
     <div className={`col-lg-3 col-md-4 col-sm-12 col-xs-12 col-12`}>
-    <div className={`${styles.card} m-1`}>
-      <Link
-      className={`${styles.card_link}`}
-        to={{
-          pathname: "/pokemon",
-          propsSearch: {
-            pokemon: props.pokemon,
-          },
-        }}
-      >
-        <img
-          className={` ${styles.card_img} card-img-top`}
-          src={imgLinks[props.pokemon.id]}
-          alt=""
-        />
-        <h4 className={`${styles.card_title} card-title`}>Name: {props.pokemon.name} </h4>
-      </Link>
-      <button
-        className={`${styles.card_btn} card col ${getAtr().className}`}
-        disabled={getAtr().disabled}
-        pokemonid={props.pokemon.id}
-        onClick={catchPokemon}
-      >
-        {getAtr().word}
-      </button>
-    </div>
+      <div className={`${styles.card} m-1`}>
+        <Link
+          className={`${styles.card_link}`}
+          to={{
+            pathname: "/pokemon",
+            propsSearch: {
+              pokemon: props.pokemon,
+            },
+          }}
+        >
+          <img
+            className={` ${styles.card_img} card-img-top`}
+            src={imgLinks[props.pokemon.id]}
+            alt=""
+          />
+          <h4 className={`${styles.card_title} card-title`}>
+            Name: {props.pokemon.name}{" "}
+          </h4>
+        </Link>
+        <button
+          className={`${styles.card_btn} card col ${getAtr().className}`}
+          disabled={getAtr().disabled}
+          pokemonid={props.pokemon.id}
+          onClick={catchPokemon}
+        >
+          {getAtr().word}
+        </button>
+      </div>
     </div>
   );
 }
-
-// let mapStateToProps = function (state, props) {
-//   for (let i = 0; i < state.length; i++) {
-//     if (state[i].id == props.pokemon.id) {
-//       return { pokemon: state[i] };
-//     }
-//   }
-// };
 export default connect()(Plate);

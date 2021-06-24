@@ -1,4 +1,3 @@
-
 export default function pokemonListReducer(state, action) {
   let newArr = [...state.pokemonsList];
   switch (action.type) {
@@ -9,12 +8,14 @@ export default function pokemonListReducer(state, action) {
             name: newArr[i].name,
             id: newArr[i].id,
             caught: true,
-            time: `${action.time}`.substring(0, `${action.time}`.indexOf(' GMT')),
+            time: `${action.time}`.substring(
+              0,
+              `${action.time}`.indexOf(" GMT")
+            ),
           };
         }
       }
-      return Object.assign({}, state, {pokemonsList: newArr});
-
+      return Object.assign({}, state, { pokemonsList: newArr });
 
     default:
       return state;

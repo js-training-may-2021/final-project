@@ -1,9 +1,7 @@
 .card {
   background-color: #faee80;
-border-radius: 1%;
-
+  border-radius: 1%;
 }
-
 
 .card_link {
   text-decoration: none;
