@@ -1,0 +1,12 @@
+.pokemon-details{
+  &__header{
+    &::before{
+      content: '';
+      left: -75px;
+      bottom: 0;
+      position: absolute;
+      height: 52px;
+      width: 75px;
+    }
+  }
+}
