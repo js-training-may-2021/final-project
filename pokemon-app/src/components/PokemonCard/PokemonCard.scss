@@ -1,0 +1,38 @@
+.pokemon-card {
+  width: 100%;
+  border-radius: 0.2rem;
+  box-shadow: none;
+
+  &:hover {
+    .pokemon-card__img {
+      transform: scale(1.1);
+    }
+  }
+
+  &__img {
+    height: 140px;
+    background-size: contain !important;
+
+    &-wrapper {
+      background-color: #F2F2F2;
+      border-radius: 5px;
+    }
+  }
+
+  &__info {
+    text-align: left;
+  }
+
+  &__number {
+    color: #919191;
+    font-family: "Flexo-Bold", arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  &__name {
+    font-family: "Flexo-Demi", arial, sans-serif;
+    color: #313131;
+    font-size: 1.7rem;
+  }
+}

@@ -1,0 +1,26 @@
+header{
+  @media screen and (max-width: 1023px){
+    padding-right: 40px;
+  }
+  .wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .makeStyles-title-3{
+    h6:hover {
+      color: #FFCB05;
+    }
+  }
+  svg{
+    path {
+      fill: white;
+    }
+
+  }
+  button:hover{
+    svg path {
+      fill: #FFCB05;
+    }
+  }
+}
