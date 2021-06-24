@@ -13,6 +13,7 @@ class PokemonListContainer extends React.Component {
     axios.get(`http://localhost:8000/pokemons?_limit=${this.props.pageSize}&_page=${this.props.currentPage}`)
       .then(response => {
         this.props.setPokemons(response.data);
+        console.log(response);
         // this.props.setTotalPokemonsCount(response.data.length);
       });
   }

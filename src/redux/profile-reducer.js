@@ -1,4 +1,4 @@
-const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const SET_POKEMON_PROFILE = 'SET_POKEMON_PROFILE';
 
 
 let initialState = {
@@ -7,7 +7,7 @@ let initialState = {
 
 const profileReducer = (state=initialState, action) => {
     switch (action.type) {
-        case SET_USER_PROFILE: 
+        case SET_POKEMON_PROFILE: 
             return {
                 ...state,
                 profile: action.profile,
@@ -18,6 +18,6 @@ const profileReducer = (state=initialState, action) => {
 }
 
 
-export const setPokemonProfile = (profile) => ({type: SET_USER_PROFILE, profile});
+export const setPokemonProfile = (profile) => ({type: SET_POKEMON_PROFILE, profile});
 
 export default profileReducer;

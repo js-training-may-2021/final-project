@@ -2,16 +2,14 @@ import React from 'react';
 import Profile from './Profile';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { setPokemonProfile } from '../redux/profile-reducer';
+import { setPokemonProfile } from '../../redux/profile-reducer';
 import { withRouter } from 'react-router';
 
 
 class ProfileContainer extends React.Component{
 
     componentDidMount() {     
-
         let pokemonID = this.props.match.params.pokemonID;
-
         if (!pokemonID) {
             pokemonID = 25;  
         }
@@ -19,6 +17,7 @@ class ProfileContainer extends React.Component{
         axios.get(`http://localhost:8000/pokemons/?_limit=1&_page=${pokemonID}`)
           .then(response => {
             this.props.setPokemonProfile(response.data);
+            // console.log(response);
           });
       }
 

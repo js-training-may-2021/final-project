@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import PokemonListContainer from './Components/PokemonList/PokemonListContainer';
-import CaughtPokemon from './Components/CaughtPokemon/CaughtPokemon';
-import ProfileContainer from './Profile/ProfileContainer';
+import CaughtPokemonContainer from './Components/CaughtPokemon/CaughtPokemonContainer';
+import ProfileContainer from './Components/Profile/ProfileContainer';
 
 
 
@@ -15,7 +15,7 @@ function App(props) {
           <div>
             <Switch>
               <Route path='/' exact render={ () => <PokemonListContainer /> }/>
-              <Route path='/caughtpokemon' render={ () => <CaughtPokemon /> }/>
+              <Route path='/caughtpokemon' render={ () => <CaughtPokemonContainer /> }/>
               <Route path='/profile/:pokemonID?' render={ () => <ProfileContainer /> }/>
             </Switch>
           </div>

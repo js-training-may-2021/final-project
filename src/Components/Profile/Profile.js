@@ -11,7 +11,7 @@ const Profile = (props) => {
         <div>
             <h3>{props.profile.map(item => {
                 return (
-                    <div>
+                    <div key={item.id}>
                         <div>Name: {item.name.toUpperCase()}</div>
                         <div>ID: {item.id}</div>
                         <img src={`/pokemons/${item.id}.png`} className="rounded mx-auto d-block" alt="image" />
