@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Button of caught pokemon 1`] = `
+<button
+  className="card__button button button--checked"
+  onClick={[Function]}
+  type="button"
+>
+  Release
+</button>
+`;
+
+exports[`Render Button of uncaught pokemon 1`] = `
+<button
+  className="card__button button"
+  onClick={[Function]}
+  type="button"
+>
+  Catch!
+</button>
+`;

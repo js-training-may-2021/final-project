@@ -1,0 +1,51 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+
+  background: map-get($colorScheme, 'background');
+  color: map-get($colorScheme, 'text');
+
+  font-family: $textFontFamily;
+  font-size: $desktopFontSize;
+  line-height: $desktopLineHeight;
+
+  @media (max-width: $mobileWidth) {
+    font-size: $mobileFontSize;
+    line-height: $mobileLineHeight;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: map-get($colorScheme, 'textSecondary');
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 0.5;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

@@ -1,0 +1,16 @@
+@mixin nav-wrap {  
+  padding: 20px 0;
+  background-color: map-get($colorScheme, 'footer');
+  color: map-get($colorScheme, 'textSecondary');
+
+  &__nav-wrap {
+    width: 100%;
+    max-width: $desktopWidth;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  @media (max-width: $mobileWidth) {
+    padding: 15px 0 10px;
+  }
+}

@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Footer on Caught page 1`] = `
+<footer
+  className="page__footer footer"
+>
+  <div
+    className="footer__nav-wrap"
+  >
+    <div
+      className="logo"
+    >
+      <a
+        className="logo__link"
+        href="/"
+        onClick={[Function]}
+      >
+        POKEDEX
+      </a>
+    </div>
+    <ul
+      className="header__menu menu"
+    >
+      <li
+        className="menu__item"
+      >
+        <a
+          aria-current={null}
+          className="menu__link"
+          href="/"
+          onClick={[Function]}
+        >
+          ALL
+        </a>
+      </li>
+      <li
+        className="menu__item"
+      >
+        <a
+          aria-current="page"
+          className="menu__link  menu__link--selected"
+          href="/caught"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          CAUGHT
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+`;
+
+exports[`Render Footer on Detail page 1`] = `
+<footer
+  className="page__footer footer"
+>
+  <div
+    className="footer__nav-wrap"
+  >
+    <div
+      className="logo"
+    >
+      <a
+        className="logo__link"
+        href="/"
+        onClick={[Function]}
+      >
+        POKEDEX
+      </a>
+    </div>
+    <ul
+      className="header__menu menu"
+    >
+      <li
+        className="menu__item"
+      >
+        <a
+          aria-current={null}
+          className="menu__link"
+          href="/"
+          onClick={[Function]}
+        >
+          ALL
+        </a>
+      </li>
+      <li
+        className="menu__item"
+      >
+        <a
+          aria-current={null}
+          className="menu__link"
+          href="/caught"
+          onClick={[Function]}
+        >
+          CAUGHT
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+`;
+
+exports[`Render Footer on Main page 1`] = `
+<footer
+  className="page__footer footer"
+>
+  <div
+    className="footer__nav-wrap"
+  >
+    <div
+      className="logo"
+    >
+      <a
+        className="logo__link"
+        href="/"
+        onClick={[Function]}
+      >
+        POKEDEX
+      </a>
+    </div>
+    <ul
+      className="header__menu menu"
+    >
+      <li
+        className="menu__item"
+      >
+        <a
+          aria-current="page"
+          className="menu__link menu__link--selected"
+          href="/"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          ALL
+        </a>
+      </li>
+      <li
+        className="menu__item"
+      >
+        <a
+          aria-current={null}
+          className="menu__link"
+          href="/caught"
+          onClick={[Function]}
+        >
+          CAUGHT
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+`;

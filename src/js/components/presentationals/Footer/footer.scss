@@ -1,0 +1,8 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.footer {
+  @include nav-wrap;
+  margin-top: auto;
+  background-color: map-get($colorScheme, 'footer');
+}

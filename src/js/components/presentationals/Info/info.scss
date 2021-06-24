@@ -1,0 +1,18 @@
+@import '../../../../styles/variables';
+
+.info {
+  min-width: $mobileWidth;
+  padding: 40px;
+
+  &__text {
+    font-weight: 700;
+  }
+
+  &__data {
+    font-weight: 400;
+  }
+
+  @media (max-width: $mobileWidth) {
+    min-width: 300px;
+  }
+}

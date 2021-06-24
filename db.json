@@ -2,7 +2,9 @@
   "pokemons": [
     {
       "name": "bulbasaur",
-      "id": 1
+      "id": 1,
+      "isCaught": false,
+      "catchDate": null
     },
     {
       "name": "ivysaur",
