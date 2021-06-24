@@ -21,7 +21,7 @@ const PokemonCard = (props) => {
   return (
       <div className="pokemon-card" onClick={handleClick}>
         <h3 className="pokemon-card__title">{props.name}</h3>
-        <img className="pokemon-card__image" src={`pokemons/${props.id}.png`} alt={props.name}/>
+        <img className="pokemon-card__image" src={`/pokemons/${props.id}.png`} alt={props.name}/>
         {props.isCatched ? <button className="btn btn-danger" disabled>Catched!</button> : <button className="btn btn-danger" onClick={catchPokemon}>Catch!</button>}
       </div>
     );

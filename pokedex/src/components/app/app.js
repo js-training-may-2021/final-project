@@ -8,15 +8,11 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <Route path='/catched' component={CatchedPokemonsPage}/>
-        <Route exact path='/' component={AllPokemonsPage}/>
-        <Route path='/pokemons/:id' render={
-          ({match}) => {
-            return <PokemonProfile id={match.params.id}/>
-          }
-        }/>
+        <Route exact path='/catched' component={CatchedPokemonsPage}/>
+        <Route exact path='/' component={({match}) => <AllPokemonsPage currentPage={1}/>}/>
+        <Route exact path='/page/:page' component={({match}) => <AllPokemonsPage currentPage={match.params.page}/>}/>
+        <Route path='/pokemons/:id' render={({match}) => <PokemonProfile id={match.params.id}/>}/>
       </Router>
-      
     )
   }
 }

@@ -8,7 +8,7 @@ export default class AllPokemonsPage extends Component {
   state = {
     loading: true,
     pokemons: [],
-    currentPage: 1,
+    currentPage: this.props.currentPage,
   }
 
   async componentDidMount() {
