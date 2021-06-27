@@ -9,8 +9,10 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 function App({ props }) {
   
   // setPokemon - через эту ф мы можем менять покемонов
+  // эта запись равнозначна let pokemons = []
   const [pokemons, setPokemon] = useState([]);
   const [catched, setCatched] = useState([]);
+
 
 
   function setCatchedPropToPokemon(clickedpokemon) {
@@ -21,6 +23,7 @@ function App({ props }) {
       // проставляем новое поле в кликнутом покемоне
       clickedPokemon.catched = true
       // в старых покемонах подменяем на новый массив из пойманных покемонов
+        // эта запись равнозначна function setCatchedPropToPokemon(clickedpokemon) { pokemons = newPokemons}
     setPokemon(newPokemons)
     let dateObj = new Date();
     let month = dateObj.getUTCMonth() + 1;
@@ -34,7 +37,7 @@ function App({ props }) {
 // ф изменяет наших покемонов, зовем каждый раз когда кликаем на catch
 // ф берет все старое и добавляет новое - каждого кликнутого покемона
   function addNewCatchedPokemon(clickedpokemon) {
-    setCatched(prev => ([...prev, clickedpokemon]))
+    setCatched(pokemons => ([...pokemons, clickedpokemon]))
   }
 
 
@@ -43,6 +46,8 @@ function App({ props }) {
       .then((response) => response.json())
       .then((json) => setPokemon(json));
   }, [])
+
+
 
 
   return (
