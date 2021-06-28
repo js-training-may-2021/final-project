@@ -1,0 +1,35 @@
+.page {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ color: white;
+ background-color: grey;
+}
+
+.page__content {
+  max-width: 1160px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.margin {
+  margin-right: 2%;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1191px) {
+  .page__content {
+        padding-left: 20px;
+        padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 678px) {
+.page__content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+}
