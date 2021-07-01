@@ -2,15 +2,18 @@
   "pokemons": [
     {
       "name": "bulbasaur",
-      "id": 1
+      "id": 1,
+      "isCaught": "false"
     },
     {
       "name": "ivysaur",
-      "id": 2
+      "id": 2,
+      "isCaught": "false"
     },
     {
       "name": "venusaur",
-      "id": 3
+      "id": 3,
+      "isCaught": "false"
     },
     {
       "name": "charmander",
@@ -22,7 +25,8 @@
     },
     {
       "name": "charizard",
-      "id": 6
+      "id": 6,
+      "isCaught": "false"
     },
     {
       "name": "squirtle",
@@ -51,15 +55,17 @@
     {
       "name": "weedle",
       "id": 13,
-      "isCaught": false
+      "isCaught": "false"
     },
     {
       "name": "kakuna",
-      "id": 14
+      "id": 14,
+      "isCaught": false
     },
     {
       "name": "beedrill",
-      "id": 15
+      "id": 15,
+      "isCaught": false
     },
     {
       "name": "pidgey",
@@ -75,7 +81,8 @@
     },
     {
       "name": "rattata",
-      "id": 19
+      "id": 19,
+      "isCaught": false
     },
     {
       "name": "raticate",
@@ -108,7 +115,8 @@
     },
     {
       "name": "sandshrew",
-      "id": 27
+      "id": 27,
+      "isCaught": "false"
     },
     {
       "name": "sandslash",
@@ -152,7 +160,8 @@
     },
     {
       "name": "ninetales",
-      "id": 38
+      "id": 38,
+      "isCaught": "false"
     },
     {
       "name": "jigglypuff",
@@ -533,7 +542,8 @@
     },
     {
       "name": "eevee",
-      "id": 133
+      "id": 133,
+      "isCaught": false
     },
     {
       "name": "vaporeon",

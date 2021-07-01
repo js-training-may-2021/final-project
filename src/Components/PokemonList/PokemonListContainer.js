@@ -1,11 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
-import { caught, letgo, setPokemons, setCurrentPage } from "../../redux/pokemonList-reducer";
+import { catchIt, letgo, setPokemons, setCurrentPage } from "../../redux/pokemonList-reducer";
 import axios from "axios";
 import './PokemonList.css';
 import PokemonList from './PokemonList';
  
 class PokemonListContainer extends React.Component {
+// по умолчанию конструктор перебрасывает свое конструирование на
+// react.component, поэтому удаляем
+
+// constructor(props) {
+//   super(props);
+// }
+
 //метод жизненного цикла компоненты, 
 //компонента монтируется один раз в страницу 
   componentDidMount() {
@@ -16,6 +23,8 @@ class PokemonListContainer extends React.Component {
         // this.props.setTotalPokemonsCount(response.data.length);
       });
   }
+
+  //метод
   onPageChanged = (pageNumber) => {
     this.props.setCurrentPage(pageNumber);
     axios.get(`http://localhost:8000/pokemons?_limit=${this.props.pageSize}&_page=${pageNumber}`)
@@ -31,7 +40,7 @@ class PokemonListContainer extends React.Component {
           currentPage={this.props.currentPage}
           pokemons={this.props.pokemons}
           onPageChanged={this.onPageChanged}
-          caught={this.props.caught}
+          catchIt={this.props.catchIt}
           letgo={this.props.letgo}
           
 
@@ -49,7 +58,7 @@ let mapStateToProps = (state) => {
         currentPage: state.pokemonListPage.currentPage,
         //берем лишь то что нужно компоненте
         //чтоб не перерисовывался лишний раз стейт
-
+        //функция берез из стейта значения и передает в пропсы компаненты
     }
 }
 
@@ -69,6 +78,7 @@ let mapStateToProps = (state) => {
 //         // },
 //     }    
 // }
+// // функция 
 
 export default connect (mapStateToProps, 
-    { caught, letgo, setPokemons, setCurrentPage }) (PokemonListContainer);
+    { catchIt, letgo, setPokemons, setCurrentPage }) (PokemonListContainer);

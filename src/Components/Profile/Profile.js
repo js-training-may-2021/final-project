@@ -9,7 +9,7 @@ const Profile = (props) => {
 
     return (
         <div>
-            <h3>{props.profile.map(item => {
+            {/* <h3>{props.profile.map(item => {
                 return (
                     <div key={item.id}>
                         <div>Name: {item.name.toUpperCase()}</div>
@@ -19,7 +19,12 @@ const Profile = (props) => {
                     </div>
                     
                 )
-            })}</h3>
+            })}</h3> */}
+            <div>Name: {props.profile.name}</div>
+            <div>ID: {props.profile.id}</div>
+            <div>Caught Status: {props.profile.isCaught}</div>
+            <div>Data: </div>
+            <img src={`/pokemons/${props.profile.id}.png`} className="rounded mx-auto d-block" alt="image" />
 
         </div>
     )

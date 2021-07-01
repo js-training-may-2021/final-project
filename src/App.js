@@ -6,7 +6,7 @@ import PokemonListContainer from './Components/PokemonList/PokemonListContainer'
 import CaughtPokemonContainer from './Components/CaughtPokemon/CaughtPokemonContainer';
 import ProfileContainer from './Components/Profile/ProfileContainer';
 
-
+//exact отключ частичное совпадение маршрута, те только по / пойдет
 
 function App(props) {
   return (

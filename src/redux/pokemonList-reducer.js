@@ -1,4 +1,4 @@
-const CAUGHT = 'CAUGHT';
+const CATCH_IT = 'CATCH_IT';
 const LET_GO = 'LET_GO';
 const SET_POKEMONS = 'SET_POKEMONS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
@@ -15,12 +15,12 @@ let initialState = {
 
 const pokemonListReducer = (state=initialState, action) => {
     switch (action.type) {
-        case CAUGHT:
+        case CATCH_IT:
             return {
                 ...state, 
                 pokemons: state.pokemons.map ( p => {
                     if (p.id === action.pokemonID) {
-                        return {...p, isCaught: true}
+                        return {...p, isCaught: "true"}
                     }
                     return p;
                 })
@@ -30,7 +30,7 @@ const pokemonListReducer = (state=initialState, action) => {
                 ...state, 
                 pokemons: state.pokemons.map ( p => {
                     if (p.id === action.pokemonID) {
-                        return {...p, isCaught: false}
+                        return {...p, isCaught: "false"}
                     }
                     return p;
                 })
@@ -59,8 +59,8 @@ const pokemonListReducer = (state=initialState, action) => {
     }
 }
 
-//action-creators:
-export const caught = (pokemonID) => ({type: CAUGHT, pokemonID});
+//action-creators: функция кот вернет объект с экшеном
+export const catchIt = (pokemonID) => ({type: CATCH_IT, pokemonID});
 export const letgo = (pokemonID) => ({type: LET_GO, pokemonID});
 export const setPokemons = (pokemons) => ({type: SET_POKEMONS, pokemons});
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});

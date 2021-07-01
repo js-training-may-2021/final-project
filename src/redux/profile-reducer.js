@@ -2,7 +2,7 @@ const SET_POKEMON_PROFILE = 'SET_POKEMON_PROFILE';
 
 
 let initialState = {
-    profile: [],
+    profile: {},
 };
 
 const profileReducer = (state=initialState, action) => {

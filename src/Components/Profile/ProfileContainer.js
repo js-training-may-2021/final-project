@@ -14,10 +14,10 @@ class ProfileContainer extends React.Component{
             pokemonID = 25;  
         }
 
-        axios.get(`http://localhost:8000/pokemons/?_limit=1&_page=${pokemonID}`)
+        axios.get(`http://localhost:8000/pokemons/${pokemonID}`)
           .then(response => {
             this.props.setPokemonProfile(response.data);
-            // console.log(response);
+            //console.log(response);
           });
       }
 

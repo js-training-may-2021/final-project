@@ -12,7 +12,7 @@ let PokemonList = (props) => {
                 currentPage={props.currentPage}
                 onPageChanged={props.onPageChanged}
                 />
-                 
+            {/* МАР не мутирует наш стейт а возвращ новый массив*/}
             <div className="row">
                 {props.pokemons.map(pokemonItem => {
                     return (
@@ -24,12 +24,12 @@ let PokemonList = (props) => {
                                 <div className="card-body">
                                     <h5 className="card-title">{pokemonItem.name.toUpperCase()}</h5>
                                     <div>
-                                        { pokemonItem.isCaught
+                                        { pokemonItem.isCaught === "true"
                                         ? <button href="#" onClick={ () => {
                                             axios.put(`http://localhost:8000/pokemons/${pokemonItem.id}`,{
                                                 name: pokemonItem.name,
                                                 id: pokemonItem.id,                
-                                                isCaught: false,
+                                                isCaught: "false",
                                             })
                                             .then(response => {
                                                 console.log(response);
@@ -43,16 +43,16 @@ let PokemonList = (props) => {
                                             axios.put(`http://localhost:8000/pokemons/${pokemonItem.id}`,{
                                                 name: pokemonItem.name,
                                                 id: pokemonItem.id,                
-                                                isCaught: true,
+                                                isCaught: "true",
                                             })
                                             .then(response => {
                                                 console.log(response);
-                                                props.caught(pokemonItem.id) 
+                                                props.catchIt(pokemonItem.id) 
                                                 // this.props.setPokemons(response.data);
                                                 });
 
                                             } } 
-                                            className="btn btn-primary">CAUGHT</button>}
+                                            className="btn btn-primary">CATCH!</button>}
                                     </div>
                                 </div>
                             </div>

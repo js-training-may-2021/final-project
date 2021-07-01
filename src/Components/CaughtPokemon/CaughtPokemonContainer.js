@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { c_caught, c_letgo, c_setPokemons, c_setCurrentPage } from "../../redux/caughtPokemon-reducer";
+import { c_catchIt, c_letgo, c_setPokemons, c_setCurrentPage } from "../../redux/caughtPokemon-reducer";
 import axios from "axios";
 // import './../PokemonList/PokemonList.css';
 import CaughtPokemon from './CaughtPokemon';
@@ -14,7 +14,7 @@ class CaughtPokemonContainer extends React.Component {
         console.log(response);
         // this.props.setTotalPokemonsCount(response.data.length);
       });
-  }
+  } 
   onPageChanged = (pageNumber) => {
     this.props.c_setCurrentPage(pageNumber);
     axios.get(`http://localhost:8000/pokemons/`)
@@ -30,7 +30,7 @@ class CaughtPokemonContainer extends React.Component {
           currentPage={this.props.currentPage}
           pokemons={this.props.pokemons}
           onPageChanged={this.onPageChanged}
-          c_caught={this.props.c_caught}
+          c_catchIt={this.props.c_catchIt}
           c_letgo={this.props.c_letgo}
           
 
@@ -54,4 +54,4 @@ let mapStateToProps = (state) => {
 
 
 export default connect (mapStateToProps, 
-    { c_caught, c_letgo, c_setPokemons, c_setCurrentPage }) (CaughtPokemonContainer);
+    { c_catchIt, c_letgo, c_setPokemons, c_setCurrentPage }) (CaughtPokemonContainer);

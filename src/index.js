@@ -7,6 +7,7 @@ import store from './redux/store';
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
+//браузерРоутер - тк роутинг на клиентской стороне а не на серверной
 ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
