@@ -31,20 +31,12 @@ export default class AllPokemonsPage extends Component {
     }
   }
 
-  next = () => {
-    this.setState(state => {
-      return ({
-        loading: true,
-        currentPage: state.currentPage + 1,
-      });
-    });
-  }
-
-  prev = () => {
-    if (this.state.currentPage > 1) {
+  goToPage = (newPage) => {
+    if (newPage < 1) return;
+    if (newPage !== this.state.currentPage) {
       this.setState({
         loading: true,
-        currentPage: this.state.currentPage - 1,
+        currentPage: newPage,
       });
     }
   }
@@ -53,13 +45,13 @@ export default class AllPokemonsPage extends Component {
     return (
       <>
         <Header/>
-        <Paginator next={this.next} prev={this.prev}/>
+        <Paginator currentPage={this.state.currentPage} goToPage={this.goToPage} next={this.next} prev={this.prev}/>
         <div className="app d-flex flex-wrap justify-content-center">
           {this.state.loading ? <h2>Loading...</h2> : this.state.pokemons.map(pokemon => {
             return <PokemonCard name={pokemon.name} id={pokemon.id} key={pokemon.id} isCatched={pokemon.isCatched}/>
           })}
         </div>
-        <Paginator next={this.next} prev={this.prev}/>
+        {/* <Paginator next={this.next} prev={this.prev}/> */}
       </>
     )
   }
