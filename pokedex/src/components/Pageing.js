@@ -11,30 +11,26 @@ class Pageing extends React.Component {
     }
 
     handleClick = (e) => {
-        /* console.log(e.target.innerText)
-        this.props.getPokemons((e.target.innerText - 1) * this.props.limit, this.props.limit); */
         if(this.props.onlyCatched === "true") {
             this.props.getPokemons((e.target.innerText - 1) * this.props.limit, this.props.limit, this.props.catchedPokemons);
         } else {
-            this.props.getPokemons((e.target.innerText - 1) * this.props.limit, this.props.limit);
+            this.props.getPokemons((e.target.innerText - 1) * this.props.limit, this.props.limit, undefined, this.props.totalCount);
         }
     }
 
     getPrevious = () => {
-        //this.props.getPokemons(this.props.previousPage, this.props.limit)
         if(this.props.onlyCatched === "true") {
             this.props.getPokemons(this.props.previousPage, this.props.limit, this.props.catchedPokemons);
         } else {
-            this.props.getPokemons(this.props.previousPage, this.props.limit);
+            this.props.getPokemons(this.props.previousPage, this.props.limit, undefined, this.props.totalCount);
         }
     } 
 
     getNext = () => {
-       // this.props.getPokemons(this.props.nextPage, this.props.limit)
         if(this.props.onlyCatched === "true") {
             this.props.getPokemons(this.props.nextPage, this.props.limit, this.props.catchedPokemons);
         } else {
-            this.props.getPokemons(this.props.nextPage, this.props.limit);
+            this.props.getPokemons(this.props.nextPage, this.props.limit, undefined, this.props.totalCount);
         }
     }
 
@@ -48,12 +44,12 @@ class Pageing extends React.Component {
             <div className="container">
                 <ul className="pageing">
                     <li 
-                        onClick={ this.props.previousPage ? this.getPrevious : () => {} }>
+                        onClick={ this.props.previousPage !== null ? this.getPrevious : () => {} }>
                             <a href="#!">&lt;</a>
                     </li>
                     { pageLinks }
                     <li 
-                        onClick={ this.props.nextPage ? this.getNext : () => {} }>
+                        onClick={ this.props.nextPage !== null ? this.getNext : () => {} }>
                             <a href="#!">&gt;</a>
                     </li>
                 </ul>
@@ -69,14 +65,15 @@ const mapStateToProps = state => {
         numberOfPage: state.numberOfPage,
         currentPage: state.currentPage,
         limit: state.limit,
-        catchedPokemons: state.catchedPokemons
+        catchedPokemons: state.catchedPokemons,
+        totalCount: state.totalCount
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        getPokemons: (offset, limit, catchedPokemons) => {
-            getPokemons(dispatch, offset, limit, catchedPokemons)
+        getPokemons: (offset, limit, catchedPokemons, totalCount) => {
+            getPokemons(dispatch, offset, limit, catchedPokemons, totalCount)
         }
     }
 }

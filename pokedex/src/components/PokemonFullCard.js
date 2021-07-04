@@ -1,40 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { connect } from 'react-redux';
 import { getPokemon } from '../store/actions/pokemonActions';
+import PokemonCardView from './PokemonCardView';
 import '../index.css';
 
-class PokemonFullCard extends React.Component {
-    componentDidMount() {
-        this.props.getPokemon(this.props.match.params.id);
-    }
-    render() {
-       /*  const { name, id, isCatched } = this.props.pokemon;
-        const imgUrl = `http://localhost:5000/pokemons/${id}.png`; */
-         const { name, id, imgUrl } = this.props.pokemon;
-        const isCatched = this.props.catchedPokemons.includes(this.props.match.params.id);
+const PokemonFullCard = (props) => {
+    const params = useParams();   
+    const pokemon = useSelector(state => state.pokemon);
+    const catchedPokemons = useSelector(state => state.catchedPokemons);
+    useEffect(() => {
+        props.getPokemon(Number(params.id));
+        if(!pokemon){
+            return;   
+        }
+    }, [params, catchedPokemons])
         
-        return (
-            
-                 <div className="pokemon__item">
-                    <p> { id } </p>
-                    <div className="pokemon__item_img">
-                        <img src={ imgUrl } />
-                    </div>
-                    <div className="pokemon__item_txt">
-                            <p> { name } </p>
-                    </div>
-                    <div className="pokemon__item_iscatch">
-                        Catched: <span>{isCatched}</span>
-                    </div>
-                </div>       
-        );
-    }
+    return <PokemonCardView pokemon={pokemon} catchedPokemons={catchedPokemons} />
+
 }
 
 const mapStateToProps = state => {
     return {
-        pokemon: state.pokemon,
-        catchedPokemons: state.catchedPokemons
+        /* pokemon: state.pokemon,
+        catchedPokemons: state.catchedPokemons */
     }
 }
 

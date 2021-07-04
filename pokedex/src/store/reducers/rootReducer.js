@@ -1,8 +1,10 @@
 const initialState = {
     pokemons: [],
     catchedPokemons: [],
+    totalCount: 0,
     previousPage: null,
     nextPage: null,
+    totalNumberOfPage: 0,
     numberOfPage: 0,
     currentPage: 1,
     limit: 20
@@ -12,26 +14,19 @@ const getNumberOfPage = count => {
     return Math.ceil(count / 20);
 }
 
-const getCurrentPage = ({ next, count }) => {
-    if (next === null) {
-        return getNumberOfPage(count)
-    }
-}
-
 const rootReducer = (state = initialState, action) => {
-    switch (action.type) { // check if action.type match any of the cases
-        case 'INITIAL_API_CALL': // if action.type === 'GET_POKEMONS'
+    switch (action.type) {
+        case 'INITIAL_API_CALL':
             console.log('Making the initial calls ...');
 
             return {
                 ...state,
                 previousPage: null,
                 nextPage: state.limit,
+                totalNumberOfPage: getNumberOfPage(action.data.count),
                 numberOfPage: getNumberOfPage(action.data.count),
-                pokemons: action.data.pokemons.map(p => {
-                    p.imgUrl = `http://localhost:5000/pokemons/${p.id}.png`;
-                    return p;
-                })
+                pokemons: action.data.pokemons,
+                totalCount: action.data.count
             };
         
         case 'POKEMON_LIST_UPDATED':
@@ -39,17 +34,20 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 previousPage: action.data.previous,
                 nextPage: action.data.next,
-                pokemons: action.data.pokemons.map(p => {
-                    p.imgUrl = `http://localhost:5000/pokemons/${p.id}.png`;
-                    return p;
-                }),
-                currentPage: getNumberOfPage(action.data.previous + state.limit)
+                pokemons: action.data.pokemons,
+                currentPage: getNumberOfPage(action.data.previous + state.limit),
+                numberOfPage: action.data.numberCatched !== null ? getNumberOfPage(action.data.numberCatched) : state.totalNumberOfPage
             }    
 
         case 'POKEMON_CATCH':
             return {
                 ...state,
-                catchedPokemons: [...state.catchedPokemons, action.data.id]
+                catchedPokemons: [...state.catchedPokemons, 
+                    {
+                        id: action.data.id,
+                        dateCatched: action.data.dateCatched
+                    }
+                ]
             }  
             
         case 'POKEMON_GET':
@@ -58,7 +56,7 @@ const rootReducer = (state = initialState, action) => {
                 pokemon: action.data.pokemon
             } 
             
-        default: // if non of the cases match
+        default:
             return state;
     }
 }

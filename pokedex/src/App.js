@@ -2,13 +2,10 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
-import logo from './logo.svg';
 import Home from './pages/Home';
 import CatchedPokemons from './pages/CatchedPokemons';
-import PokemonFullCard from './components/PokemonFullCard';
 import Pokemon from './pages/Pokemon';
 import './App.css';
 

@@ -1,11 +1,11 @@
 export const initPokemon = (dispatch, limit, catchedPokemons) => {
-    return fetch('http://localhost:5000/db.json')
+    return fetch(`http://localhost:3000/pokemons`)
         .then(resp => resp.json())
         .then(data => {
-            let catchedList = data.pokemons;
+            let catchedList = data;
             if(catchedPokemons !== undefined) {
                 catchedList = catchedList.filter(item => {
-                    return catchedPokemons.includes(item.id);
+                    return Boolean(catchedPokemons.filter(itemP => itemP.id === item.id).length);
                 })
             }
             dispatch({
@@ -19,22 +19,27 @@ export const initPokemon = (dispatch, limit, catchedPokemons) => {
         .catch(err => console.log(err))
 }
 
-export const getPokemons = (dispatch, offset, limit, catchedPokemons) => {
-    return fetch('http://localhost:5000/db.json')
+export const getPokemons = (dispatch, offset, limit, catchedPokemons, totalCount) => {
+    let page = 1 + offset/limit;
+    let filterPokemons = catchedPokemons !== undefined ? 
+    catchedPokemons.map(item => `id=${item.id}`).join('&') + '&' : 
+    '';
+    if (catchedPokemons !== undefined && catchedPokemons.length ===0) {
+        filterPokemons = 'id=-1&';
+    }
+    let numberCatched = catchedPokemons !== undefined ? catchedPokemons.length : null;
+    let count = catchedPokemons !== undefined ? catchedPokemons.length : totalCount;
+    return fetch(`http://localhost:3000/pokemons?${filterPokemons}_page=${page}&_limit=${limit}`)
         .then(resp => resp.json())
         .then(data => {
-            let catchedList = data.pokemons;
-            if(catchedPokemons !== undefined) {
-                catchedList = catchedList.filter(item => {
-                    return catchedPokemons.includes(item.id);
-                })
-            }
+            let catchedList = data;
             dispatch({
                 type: 'POKEMON_LIST_UPDATED',
                 data: {
-                    pokemons: catchedList.slice(offset, offset + limit),
+                    pokemons: catchedList,
                     previous: (offset - limit) < 0 ? null : offset - limit,
-                    next: (offset + limit) <= catchedList.length ? offset + limit : null
+                    next: (offset + limit) <= count ? offset + limit : null,
+                    numberCatched
                 }
             })
         })
@@ -42,10 +47,10 @@ export const getPokemons = (dispatch, offset, limit, catchedPokemons) => {
 }
 
 export const getPokemon = (dispatch, id) => {
-    return fetch('http://localhost:5000/db.json')
+    return fetch(`http://localhost:3000/pokemons?id=${id}`)
         .then(resp => resp.json())
         .then(data => {
-            const pokemon = data.pokemons.filter(item => item.id === id);
+            const pokemon = data[0];
             dispatch({
                 type: 'POKEMON_GET',
                 data: {
@@ -60,7 +65,8 @@ export const catchPokemon = (dispatch, id) => {
     dispatch({
         type: 'POKEMON_CATCH',
         data: {
-            id: id
+            id: id,
+            dateCatched: new Date()
         }
     })
 }

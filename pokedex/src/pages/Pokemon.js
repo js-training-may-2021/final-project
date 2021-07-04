@@ -7,7 +7,7 @@ const Pokemon = () => {
         <>
             <Header />
             <h1>Pokemon</h1>
-            In development...
+            <PokemonFullCard />
         </>
     );
 }
