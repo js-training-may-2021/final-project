@@ -12,12 +12,12 @@ function Navbar() {
         <ul className={classes.menu}>
             <li className={classes.item}>
                 <NavLink className={classes.link} to='/' exact>
-                    Pokemon Wiki
+                    POKEMON WIKI
                 </NavLink>
             </li>
             <li className={classes.item}>
                 <NavLink className={classes.link} to='/caught'>
-                    Caught pokemons
+                    CAUGHT POKEMONS
                 </NavLink>
             </li>
         </ul>
