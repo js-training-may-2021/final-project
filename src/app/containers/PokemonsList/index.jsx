@@ -26,7 +26,7 @@ const PokemonsList = ({ pokemons }) => {
           dispatch(setFetching(false));
         } catch (err) {
           console.log(err);
-          alert('network error');
+          alert('network ersror');
           dispatch(setFetching(false));
         }
       } else {
