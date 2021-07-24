@@ -58,7 +58,7 @@ class App extends React.Component {
                       data={this.state.data} 
                       caught={this.state.caught} 
                       chosenPage={this.state.chosenPage} 
-                      chosenTab='caught-only' />
+                      chosenTab='/caught' />
                   </Route>
                   <Route path='/home'>
                     <HomePage 

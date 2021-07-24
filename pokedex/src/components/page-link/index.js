@@ -1,23 +1,25 @@
-import ChosenPageContext from '../../contexts/chosen-page';
+import React, { Component } from 'react';
+import { makeClassList } from '../../utils';
 
-const PageLink = (props) => {
+class PageLink extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: this.props.number,
+      isChosen: this.props.isChosen,
+      handler: this.props.handler
+    };
+  }
 
-  const changePageNumber = (evt, number, quantity) => {
-    evt.preventDefault();
-    if (number === 'Начало') {
-      number = 1;
-    } else if (number === 'Конец') {
-      number = quantity;
-    }
-    ChosenPageContext._currentValue2 = number;
-  };
+  render() {
+    const classNames = makeClassList(this.state.number, this.state.isChosen);
+    return (
+      <a href={this.state.number} className={classNames} onClick={this.state.handler}>
+        {this.state.number}
+      </a>
+    );
+  }
 
-  return (
-    <a href={props.url} className={props.classNames} onClick={(evt) => changePageNumber(evt, props.pageTitle, props.quantity)}>
-      {props.pageTitle}
-    </a>
-  );
-  
 }
 
 export default PageLink;

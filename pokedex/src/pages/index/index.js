@@ -20,9 +20,7 @@ class HomePage extends Component {
 
     return (    
         <>
-          <ChosenPageContext.Consumer>
-            {(p) => {
-              return (
+          
                 <CaughtPokemonsContext.Consumer>
                   {(c) => {
                     const quantity = this.props.data.length;
@@ -30,16 +28,14 @@ class HomePage extends Component {
                       <>
                         <h3>Всего покемонов: {quantity}</h3>
                         <Catalog>
-                          <CatalogItems data={this.state.data} caught={c._currentValue2} chosenPage={p._currentValue2} catalogType={this.state.chosenTab} />
-                          <Pagination data={this.state.data} chosenPage={p._currentValue2} />
+                          <CatalogItems data={this.state.data} /*caught={c._currentValue2} chosenPage={p._currentValue2} catalogType={this.state.chosenTab}*/ />
+                          <Pagination data={this.state.data} />
                         </Catalog>
                       </> 
                     )
                   }}
                   </CaughtPokemonsContext.Consumer>  
-                )
-            }}
-          </ChosenPageContext.Consumer>
+
         </> 
     );
 

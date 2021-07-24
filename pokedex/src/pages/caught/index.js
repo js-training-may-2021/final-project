@@ -19,9 +19,7 @@ class CaughtPage extends Component {
 
     return (
     <>
-      <ChosenPageContext.Consumer>
-          {(p) => {
-            return (
+      
               <CaughtPokemonsContext.Consumer>
                 {(c) => {
                   const quantity = c._currentValue2.length;
@@ -29,16 +27,14 @@ class CaughtPage extends Component {
                     <>
                       <h3>Всего поймано покемонов: {quantity}</h3> 
                       <Catalog>
-                        <CatalogItems data={this.state.data} caught={c._currentValue2} chosenPage={p._currentValue2} catalogType={this.state.chosenTab} />
-                        <Pagination data={c._currentValue2} chosenPage={p._currentValue2} />
+                        <CatalogItems data={this.state.data} /*caught={c._currentValue2} chosenPage={p._currentValue2} catalogType={this.state.chosenTab}*/ />
+                        <Pagination data={c._currentValue2} />
                       </Catalog>
                     </>
                   )
                 }}
               </CaughtPokemonsContext.Consumer>
-            )            
-          }}
-        </ChosenPageContext.Consumer>
+    
       </>
     );
 

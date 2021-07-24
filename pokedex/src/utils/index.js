@@ -1,9 +1,5 @@
-export const makeClassList = (elem, chosen) => {
-  if (elem === chosen) {
-    return 'active to-' + elem;
-  } else {
-    return 'to-' + elem;
-  };
+export const makeClassList = (elem, isChosen) => {
+  return !!isChosen ? `to-${elem} active` : `to-${elem}`;
 };
 
 export const makeArrayFromValue = (value) => {
@@ -29,10 +25,13 @@ export const checkStatus = (id, caughtArray) => {
 };
 
 export const getPortion = (data, chosenPage) => {
+  if (!chosenPage) return data;
   const chosenPageNumber = +chosenPage - 1;
   const portionsQuantity = Math.ceil(data.length / 12);
+  console.log(portionsQuantity, chosenPageNumber);
   const startPoint = portionsQuantity - chosenPageNumber;
-  let endPoint = startPoint + 1;
+  const endPoint = startPoint + 1;
+  console.log(startPoint, endPoint);
   const result = data.slice((startPoint - 1) * 12, (endPoint - 1) * 12);
   return result;
 };
