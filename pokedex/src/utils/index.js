@@ -1,3 +1,5 @@
+import { MAX_ITEMS_IN_PORTION } from '../constants';
+
 export const makeClassList = (elem, isChosen) => {
   return !!isChosen ? `to-${elem} active` : `to-${elem}`;
 };
@@ -26,13 +28,7 @@ export const checkStatus = (id, caughtArray) => {
 
 export const getPortion = (data, chosenPage) => {
   if (!chosenPage) return data;
-  const chosenPageNumber = +chosenPage - 1;
-  const portionsQuantity = Math.ceil(data.length / 12);
-  console.log(portionsQuantity, chosenPageNumber);
-  const startPoint = portionsQuantity - chosenPageNumber;
-  const endPoint = startPoint + 1;
-  console.log(startPoint, endPoint);
-  const result = data.slice((startPoint - 1) * 12, (endPoint - 1) * 12);
+  const result = data.slice((chosenPage - 1) * MAX_ITEMS_IN_PORTION, chosenPage * MAX_ITEMS_IN_PORTION);
   return result;
 };
 
