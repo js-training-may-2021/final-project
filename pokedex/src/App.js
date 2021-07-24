@@ -46,11 +46,6 @@ class App extends React.Component {
         </Header>
 
         <Main>
-
-          <ChosenTabContext.Consumer>
-            {(t) => {
-              return (
-
                 <Router history={customHistory}>
 
                   <Tabs>
@@ -63,7 +58,7 @@ class App extends React.Component {
                       data={this.state.data} 
                       caught={this.state.caught} 
                       chosenPage={this.state.chosenPage} 
-                      chosenTab={'caught-only'} />
+                      chosenTab='caught-only' />
                   </Route>
                   <Route path='/home'>
                     <HomePage 
@@ -88,11 +83,6 @@ class App extends React.Component {
                   </Route>
         
                 </Router>
-
-              )
-            }}
-          </ChosenTabContext.Consumer>
-
         </Main> 
 
         </ChosenTabContext.Provider>

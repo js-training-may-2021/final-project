@@ -4,6 +4,7 @@ import ChosenTabContext from '../../contexts/chosen-tab';
 const MenuLink = (props) => {
 
   const changeTab = (tab) => {
+    console.log(ChosenTabContext);
     ChosenTabContext._currentValue2 = tab;
   };
 
