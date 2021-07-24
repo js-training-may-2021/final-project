@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../button';
 import { CATCH_BTN_NAME_OFF, CATCH_BTN_NAME, NO_PHOTO, LAST_IMG } from '../../constants';
+import CaughtPokemonsContext from '../../contexts/caught-pokemons';
 class SmallCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: this.props.title,
       id: this.props.id,
-      isCaught: this.props.isCaught,
+      isCaught: this.props.isCaught
+      //handler: this.props.handler
     };
+    this.catchPokemon = this.catchPokemon.bind(this);
   }
 
   render() {
@@ -36,11 +39,22 @@ class SmallCard extends Component {
           text={btnText} 
           isDisabled={status} 
           buttonType='catch-pokemon' 
-          buttonId={this.state.id} />
+          buttonId={this.state.id}
+          catchHandler={this.catchPokemon} />
  
     </div>
     )
   }
+
+  catchPokemon(evt, id) {
+    evt.preventDefault();
+    alert('Покемон ' + this.state.id + ' пойман!');
+    const date = new Date().toDateString();
+    this.setState({isCaught: true});
+    CaughtPokemonsContext._currentValue2.push({isCaught: date, id: this.state.id});
+    console.log(CaughtPokemonsContext);
+  }
+
 }
 
 export default SmallCard;
