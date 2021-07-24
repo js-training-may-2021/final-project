@@ -10,7 +10,6 @@ class SmallCard extends Component {
       title: this.props.title,
       id: this.props.id,
       isCaught: this.props.isCaught
-      //handler: this.props.handler
     };
     this.catchPokemon = this.catchPokemon.bind(this);
   }
@@ -46,13 +45,12 @@ class SmallCard extends Component {
     )
   }
 
-  catchPokemon(evt, id) {
+  catchPokemon(evt) {
     evt.preventDefault();
     alert('Покемон ' + this.state.id + ' пойман!');
     const date = new Date().toDateString();
     this.setState({isCaught: true});
     CaughtPokemonsContext._currentValue2.push({isCaught: date, id: this.state.id});
-    console.log(CaughtPokemonsContext);
   }
 
 }

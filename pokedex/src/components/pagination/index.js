@@ -28,11 +28,8 @@ class Pagination extends Component {
   }
 
   render() {
-
     const quantity = this.state.data.length;
     const len = Math.ceil(quantity / MAX_ITEMS_IN_PORTION);
-
-    console.log(this.state);
 
     if (len < 2) {
       return (
@@ -61,16 +58,20 @@ class Pagination extends Component {
 
   choosePage(evt) {
     evt.preventDefault();
-    const value = parseInt(evt.target.textContent, 10);
-    console.log('switch to page ', value);
-    
 
-    ChosenPageContext._currentValue2 = value;
-    console.log('after switching: page context: ', ChosenPageContext._currentValue2)
-    this.setState({chosen: value});
-    console.log('after switching: state: ', this.state);
-    this.forceUpdate();
-    console.log('after forceupdate: state: ', this.state);
+    const value = evt.target.textContent;
+    let number = null;
+
+    if (value === 'Начало') {
+      number = 1;
+    } else if (value === 'Конец') {
+      number = Math.ceil(this.state.data.length / MAX_ITEMS_IN_PORTION);
+    } else {
+      number = parseInt(value, 10);
+    }
+
+    ChosenPageContext._currentValue2 = number;
+    this.setState({chosen: number});
   }
 }
 
