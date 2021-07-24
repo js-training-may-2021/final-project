@@ -28,9 +28,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: parsedPokemons,
-      caught: CaughtPokemonsContext,
       chosenPage: ChosenPageContext,
       chosenTab: ChosenTabContext,
+      caught: CaughtPokemonsContext
     };
   }
 
@@ -55,31 +55,19 @@ class App extends React.Component {
 
                   <Route path='/caught'>
                     <CaughtPage 
-                      data={this.state.data} 
-                      caught={this.state.caught} 
-                      chosenPage={this.state.chosenPage} 
-                      chosenTab='/caught' />
+                      data={this.state.data} />
                   </Route>
                   <Route path='/home'>
                     <HomePage 
-                      data={this.state.data} 
-                      caught={this.state.caught} 
-                      chosenPage={this.state.chosenPage} 
-                      chosenTab='/home' />
+                      data={this.state.data} />
                   </Route>
                   <Route exact path='/'>
                     <HomePage 
-                      data={this.state.data} 
-                      caught={this.state.caught} 
-                      chosenPage={this.state.chosenPage} 
-                      chosenTab='/home' />
+                      data={this.state.data} />
                   </Route>
                   <Route path='/card/:id'>
                     <CardPage 
-                      data={this.state.data} 
-                      caught={this.state.caught} 
-                      chosenPage={this.state.chosenPage} 
-                      chosenTab={this.state.chosenTab} />
+                      data={this.state.data} />
                   </Route>
         
                 </Router>
@@ -87,7 +75,7 @@ class App extends React.Component {
 
         </ChosenTabContext.Provider>
         </ChosenPageContext.Provider>
-        </CaughtPokemonsContext.Provider>   
+        </CaughtPokemonsContext.Provider>
       </>
     );
   }

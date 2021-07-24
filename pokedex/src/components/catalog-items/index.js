@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import { checkStatus, getPortion, findCommonItems } from '../../utils';
 import { MAX_ITEMS_IN_PORTION } from '../../constants';
 import SmallCard from '../small-card';
@@ -31,11 +31,25 @@ const makeCardsMarkup = (data, caught, chosenPage, catalogType) => {
 
   return markup;
 };
+/*
+const CatalogItems = (props) => {
+  
+  const t = useContext(ChosenTabContext);
+  const p = useContext(ChosenPageContext);
+  const c = useContext(CaughtPokemonsContext);
+
+  console.log(props.data, t._currentValue2, p._currentValue2, c._currentValue2);
+
+  const markup = makeCardsMarkup(props.data, c._currentValue2, p._currentValue2, t._currentValue2);
+  return markup;
+};
+
+*/
 class CatalogItems extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      chosenPage: ChosenPageContext._currentValue2,
+      page: ChosenPageContext._currentValue2,
       catalogType: ChosenTabContext._currentValue2,
       caught: CaughtPokemonsContext._currentValue2,
       data: this.props.data
@@ -43,8 +57,9 @@ class CatalogItems extends Component {
   }
 
   render() {
-    const markup = makeCardsMarkup(this.state.data, this.state.caught, this.state.chosenPage, this.state.catalogType);
-    return markup;
+
+          const markup = makeCardsMarkup(this.state.data, this.state.caught, this.state.page, this.state.catalogType);
+          return markup;
   }
 
 }

@@ -9,25 +9,17 @@ class CardPage extends Component {
     super(props);
     this.state = {
       data: this.props.data,
-      id: this.props.location.id
+      id: this.props.location.id,
+      caught: CaughtPokemonsContext._currentValue2
     };
   }
 
   render() {
-
     return (
       <>
-        <CaughtPokemonsContext.Consumer>
-        {(c) => {
-          return (
-            <>
-              <BackLink />
-              <LargeCard data={this.state.data} caught={c._currentValue2} id={this.state.id} />
-            </>
-          )
-        }}
-        </CaughtPokemonsContext.Consumer> 
-     </> 
+        <BackLink />
+        <LargeCard data={this.state.data} caught={this.state.caught} id={this.state.id} />
+      </>
     );
   }
 

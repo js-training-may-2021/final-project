@@ -69,9 +69,9 @@ class Pagination extends Component {
     } else {
       number = parseInt(value, 10);
     }
-
-    ChosenPageContext._currentValue2 = number;
     this.setState({chosen: number});
+    ChosenPageContext._currentValue2 = number;
+  
   }
 }
 

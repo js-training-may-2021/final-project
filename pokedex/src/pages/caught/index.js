@@ -20,7 +20,7 @@ class CaughtPage extends Component {
       <>
         <h3>Всего поймано покемонов: {quantity}</h3> 
           <Catalog>
-            <CatalogItems data={this.state.caught} />
+            <CatalogItems data={this.state.data} />
             <Pagination data={this.state.caught} />
           </Catalog>
       </>
