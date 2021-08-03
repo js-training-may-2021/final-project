@@ -1,0 +1,104 @@
+@import "@scss/variables.scss";
+@import "@scss/mixins.scss";
+
+.card {
+  display: grid;
+  grid-template: 30px 50px 1fr/ 1fr 1fr;
+  grid-template-areas:
+    "id status"
+    "name status"
+    "image free";
+  width: 80%;
+  margin: 0 auto;
+
+  @media screen and (max-width: $breakpoint4) {
+    grid-template: 30px 50px 80px 1fr/ 1fr;
+    grid-template-areas:
+      "id"
+      "name"
+      "status"
+      "image";
+  }
+}
+
+.id {
+  grid-area: id;
+  align-self: center;
+
+  @include font-size(20, 23);
+
+  @media screen and (max-width: $breakpoint4) {
+    text-align: center;
+  }
+}
+
+.name {
+  @include bold;
+  @include font-size(28, 33);
+
+  grid-area: name;
+  align-self: center;
+
+  text-transform: capitalize;
+
+  @media screen and (max-width: $breakpoint4) {
+    text-align: center;
+  }
+}
+
+.image {
+  grid-area: image;
+
+  width: 100%;
+  max-width: 475px;
+  margin: 0 auto;
+
+  background: url("/assets/images/icons/pokeball-back.svg") no-repeat  center center;
+  background-size: contain;
+
+  img {
+    width: 100%;
+  }
+}
+
+.status {
+  @include d-flex-standart;
+
+  flex-direction: column;
+
+  grid-area: status;
+  align-self: center;
+  margin: 0 auto;
+  padding: 10px;
+
+  background: $light-gray;
+  border-radius: 10px;
+
+  @include small;
+
+  img {
+    height: 34px;
+  }
+
+  span {
+    margin: 0 2px;
+  }
+}
+
+.dark {
+  background: $dark;
+}
+
+.catch {
+  @include d-flex-standart;
+
+  justify-content: flex-start;
+}
+
+.success {
+  color: $success;
+}
+
+.danger {
+  color: $danger;
+}

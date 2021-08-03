@@ -1,0 +1,87 @@
+@import "@scss/mixins.scss";
+@import "@scss/variables.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  font-size: inherit;
+  font-family: inherit;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input, select {
+  font-size: inherit;
+  font-family: inherit;
+
+  border: none;
+  outline: none;
+}
+
+body {
+  @include roboto-regular;
+  @include font-size(16, 24);
+
+  min-height: 101vh;
+
+  color: $dark;
+
+  background-color: $light;
+
+  @media screen and (min-width: 1520px) {
+    background-image: url("/assets/images/icons/bg.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 200px;
+    background-attachment: fixed;
+  }
+}
+
+.container {
+  position: relative;
+
+  width: $width0;
+  margin: 0 auto;
+  padding: 100px 0;
+
+  @media screen and (max-width: $breakpoint1) {
+    width: $width1;
+  }
+
+  @media screen and (max-width: $breakpoint2) {
+    width: $width2;
+  }
+
+  @media screen and (max-width: $breakpoint3) {
+    width: $width3;
+  }
+
+  @media screen and (max-width: $breakpoint4) {
+    width: $width5;
+    min-width: 320px;
+    padding: 100px 4px 0;
+  }
+}
+
+.dark {
+  color: $light;
+
+  background-color: $semi-dark;
+}

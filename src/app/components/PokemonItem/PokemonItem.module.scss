@@ -1,0 +1,93 @@
+@import "@scss/variables.scss";
+@import "@scss/mixins.scss";
+
+.item {
+  width: 200px;
+  height: 290px;
+  margin: 0 15px 30px;
+  padding: 10px;
+
+  color: $dark;
+  text-align: center;
+
+  background: url("/assets/images/icons/pokeball-back.svg")  no-repeat  90px -10px;
+  border: 2px solid $medium-gray;
+  border-radius: 15px;
+
+  &:hover {
+    color: $light;
+
+    background-color: $blue;
+  }
+
+  @media screen and (max-width: $breakpoint4) {
+    width: 150px;
+    height: 240px;
+    margin: 0 4px 8px;
+  }
+
+  @media screen and (max-width: $breakpoint5) {
+    width: 100px;
+    height: 180px;
+    margin: 0 4px 8px;
+
+    background-position: 55px -2px;
+    background-size: 50px;
+
+    @include font-size(10, 16);
+  }
+}
+
+.name {
+  @include bold;
+
+  display: block;
+  min-height: 48px;
+  margin-top: 10px;
+
+  text-align: center;
+  text-transform: capitalize;
+
+  @media screen and (max-width: $breakpoint5) {
+    min-height: 32px;
+  }
+}
+
+.image {
+  width: 80%;
+  min-height: 147.3px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+  }
+
+  @media screen and (max-width: $breakpoint4) {
+    min-height: 107.3px;
+  }
+
+  @media screen and (max-width: $breakpoint5) {
+    width: 95%;
+    min-height: 76.7px;
+  }
+}
+
+.button {
+  @include button;
+
+  margin: 10px auto 0;
+
+  @media screen and (max-width: $breakpoint5) {
+    margin-top: 5px;
+  }
+}
+
+.dark {
+  color: $light;
+
+  background-color: $semi-dark;
+
+  button {
+    background-color: $medium-gray;
+  }
+}

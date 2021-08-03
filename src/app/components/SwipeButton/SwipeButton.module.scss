@@ -1,0 +1,17 @@
+@import "@scss/variables.scss";
+@import "@scss/mixins.scss";
+
+.swipeButton {
+  position: absolute;
+  top: 100px;
+
+  padding: 0 10px;
+}
+
+.previous {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
