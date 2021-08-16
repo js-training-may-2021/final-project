@@ -10,7 +10,7 @@ import qs from "qs";
 
 function getPokemons(params, setPokemonList) {
   const strParams = qs.stringify(params)
-  let url = 'http://localhost:3000/pokemons';
+  let url = 'http://localhost:3001/pokemons';
 
   if (strParams) {
       url = url + "?" + strParams;
