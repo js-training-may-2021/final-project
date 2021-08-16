@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const renderPokemons = (pokemons, caughtPokemons, catchPokemon) => pokemons.map(
     pokemon => {
         const caughtArray = caughtPokemons.filter((item) => item.id === pokemon.id)
-        const caught = caughtArray.length === 0 ? false : true;
+        const caught = caughtArray.length !== 0;
         return (
         <Link key={`pokemon_${pokemon.id}`} to={{pathname: `/pokemons/${pokemon.id}`}}>
             <div className={classes.cover}>

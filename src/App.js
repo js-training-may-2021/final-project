@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react'
 import axios from "axios";
 import _ from 'lodash';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import Navbar from './components/navbar';
-import PokemonList from './components/pokemonList';
-import PokemonCard from './components/pokemonCard';
+import Navbar from './components/Navbar/navbar';
+import PokemonList from './components/PokemonList/pokemonList';
+import PokemonCard from './components/PokemonCard/pokemonCard';
 import qs from "qs";
 
 
@@ -25,7 +25,6 @@ function App() {
   
   useEffect(() => {
       getPokemons({_limit: 10}, setPokemons)
-      
   }, [])
   
 

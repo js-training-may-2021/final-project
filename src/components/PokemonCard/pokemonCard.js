@@ -27,7 +27,7 @@ export default function PokemonCard(props) {
     const { pokemons, caughtPokemons } = props;
     const pokemon = pokemons.find(item => parseInt(item.id) === parseInt(id));
     const caughtSinglePokemon = caughtPokemons.find(item => parseInt(item.id) === parseInt(id));
-    const caught = caughtSinglePokemon ? true : false;
+    const caught = !!caughtSinglePokemon;
     const caughtAt = caughtSinglePokemon === undefined ? null : caughtSinglePokemon.caughtAt;
     return renderPokemon(pokemon, caught, caughtAt)
 }

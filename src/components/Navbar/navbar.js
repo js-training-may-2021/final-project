@@ -6,7 +6,7 @@ function Navbar() {
     return (
         <nav className={classes.main}>
         <div>
-            <img className={classes.icon} alt='logo'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFBr-npuA5hJrVOOaHcTGk_nRlFaFXtCCNZg&usqp=CAU"></img>
+            <img className={classes.icon} alt='logo'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFBr-npuA5hJrVOOaHcTGk_nRlFaFXtCCNZg&usqp=CAU"/>
         </div>
         <h4 className={classes.title}>POKEDEX</h4>
         <ul className={classes.menu}>
