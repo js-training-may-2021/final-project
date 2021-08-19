@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Navbar from './components/Navbar/navbar';
+import Navbar from './components/Navbar/Navbar';
 import PokemonsPage from "./pages/PokemonsPage";
-import NoMatchPage from "./pages/NoMatchPage";
+import NoMatchPage from "./pages/NoMatchPage/NoMatchPage";
 import CaughtPokemonsPage from "./pages/CaughtPokemonsPage";
-import PokemonCard from "./components/PokemonCard/pokemonCard";
+import PokemonCard from "./components/PokemonCard/PokemonCard";
 
 const App = () => {
 

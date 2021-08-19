@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
-import classes from './pokemonList.module.css';
+import React from 'react'
+import classes from './PokemonList.module.css';
 import { Link } from 'react-router-dom';
 
-export default function PokemonList({ pokemons = [] ,caughtPokemons = [], catchPokemon}) {
-    // const [isActive, setIsActive] = useState(false);
+export default function PokemonList({ pokemons = [] ,caughtPokemons = [], Capturing}) {
+    // if (!caughtPokemons.length) {
+    //     return <div className={classes.main}>Nothing is here yet</div>
+    // }
     return (
         <div className={classes.main}>
             {pokemons.map(pokemon => {
@@ -16,10 +18,9 @@ export default function PokemonList({ pokemons = [] ,caughtPokemons = [], catchP
                                          alt={pokemon.name}/>
                                     <div>
                                         <h5 className={classes.name}>{pokemon.name}</h5>
-                                        <button data-testid="button" onClick={(e) => {
-                                            catchPokemon(pokemon);
+                                        <button data-testid="button" disabled={isCaught} onClick={(e) => {
+                                            Capturing(pokemon);
                                             e.preventDefault();
-                                            // setIsActive(true);
                                         }} className={classes.button}>
                                             {isCaught ? "Gotcha!" : "Catch him!"}
                                         </button>

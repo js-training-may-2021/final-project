@@ -1,10 +1,8 @@
 import React from "react";
+import classes from './NoMatchPage.module.css'
 
 const NoMatchPage = () => {
-    return <div style={{
-        textAlign: 'center',
-        fontSize: '80px',
-        marginTop: '150px'}}>
+    return <div className={classes.main}>
         NOT FOUND
     </div>
 }

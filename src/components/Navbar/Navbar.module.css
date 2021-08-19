@@ -6,12 +6,12 @@
     height: 90px;
     width: 100%;
 }
+
 .title {
     position: absolute;
     top: 35px;
     left: 140px;
     color: white;
-    font-family: fantasy;
 }
 .icon {
     margin: 20px 20px;
@@ -37,7 +37,6 @@
     color: red;
     font-size: 22px;
     text-decoration-line: none;
-    font-family: fantasy;
 }
 .link:hover {
     color:orange;

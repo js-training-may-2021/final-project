@@ -1,7 +1,7 @@
-import PokemonList from "../components/PokemonList/pokemonList";
+import PokemonList from "../components/PokemonList/PokemonList";
 import React, { useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {addPokemons, Catch } from "../redux/actions";
+import { addPokemons, catchPokemon } from "../redux/actions";
 import axios from "axios";
 import InfiniteScroll from 'react-infinite-scroller'
 
@@ -20,10 +20,10 @@ const PokemonsPage = () => {
         setPage((prev) => prev + 1);
     }
 
-    const catchPokemon = (pokemon) => {
+    const Capturing = (pokemon) => {
         const currentDate = new Date();
         const currentPokemon = {...pokemon, caughtAt: currentDate.toLocaleString(), caught: true};
-        dispatch(Catch(currentPokemon))
+        dispatch(catchPokemon(currentPokemon))
     }
 
     return (
@@ -34,7 +34,7 @@ const PokemonsPage = () => {
             hasMore={true}
             loader={<div className="loader" key={0}>Loading ...</div>}
         >
-            <PokemonList pokemons={pokemons} caughtPokemons={caughtPokemons} catchPokemon={catchPokemon}/>
+            <PokemonList pokemons={pokemons} caughtPokemons={caughtPokemons} Capturing={Capturing}/>
         </InfiniteScroll>)
 }
 

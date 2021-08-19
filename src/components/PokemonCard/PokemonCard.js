@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import classes from './pokemonCard.module.css';
+import classes from './PokemonCard.module.css';
 import { useSelector } from "react-redux";
 
 export default function PokemonCard() {
