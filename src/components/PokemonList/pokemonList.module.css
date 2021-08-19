@@ -40,12 +40,12 @@
 .button:hover {
     color: orange;
 }
-button[disabled] {
+button:disabled {
     color: rgb(255, 255, 255);
     background: rgb(20, 197, 228);
     text-decoration: none; 
 }
-a button[disabled]:hover {
+a button:disabled:hover {
         color: black;
         cursor: default;
         opacity: 0.8;

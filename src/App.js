@@ -1,67 +1,30 @@
-import React, {useState, useEffect} from 'react'
-import axios from "axios";
-import _ from 'lodash';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar/navbar';
-import PokemonList from './components/PokemonList/pokemonList';
-import PokemonCard from './components/PokemonCard/pokemonCard';
-import qs from "qs";
+import PokemonsPage from "./pages/PokemonsPage";
+import NoMatchPage from "./pages/NoMatchPage";
+import CaughtPokemonsPage from "./pages/CaughtPokemonsPage";
+import PokemonCard from "./components/PokemonCard/pokemonCard";
 
-
-function getPokemons(params, setPokemonList) {
-  const strParams = qs.stringify(params)
-  let url = 'http://localhost:3001/pokemons';
-
-  if (strParams) {
-      url = url + "?" + strParams;
-  }
-  axios.get(url).then(response => setPokemonList(response.data))
-}
-
-function App() {
-  const [pokemons, setPokemons] = useState([]);
-  const [caughtPokemons, setCaughtPokemons] = useState([]);
-  
-  
-  useEffect(() => {
-      getPokemons({_limit: 10}, setPokemons)
-  }, [])
-  
-
-  const renderPokemonList = () => {
-    return <PokemonList getPokemons={(params) => getPokemons(params, setPokemons)} 
-                        catchPokemon={catchPokemon} 
-                        pokemons={pokemons}
-                        caughtPokemons={caughtPokemons}
-                        scrollable={true} />
-  }
-
-  const renderCaughtPokemonList = () => {
-    return <PokemonList pokemons={pokemons.filter(({ id }) => _.find(caughtPokemons, { id }))} 
-                        catchPokemon={catchPokemon}
-                        caughtPokemons={caughtPokemons}
-                        scrollable={false} />
-  }
-
-  const renderPokemonCard = () => {
-    return <PokemonCard pokemons={pokemons} caughtPokemons={caughtPokemons} />
-  }
-
-  const catchPokemon = (pokemon) => {
-    setCaughtPokemons([...caughtPokemons, { id: pokemon.id, caughtAt: new Date().toLocaleString() }]);
-  }
+const App = () => {
 
   return (
     <BrowserRouter>
-    <div>
       <Navbar />
       <Switch>
-        <Route path={'/pokemons'} exact render={renderPokemonList} />
-        <Route path={'/caught'} exact render={renderCaughtPokemonList} />
-        <Route path={'/pokemons/:id'} exact render={renderPokemonCard} />
-        <Redirect path='/' exact to='/pokemons'/>
+        <Route path='/' exact>
+          <PokemonsPage/>
+        </Route>
+        <Route path='/caught' exact>
+          <CaughtPokemonsPage/>
+        </Route>
+        <Route path='/pokemons/:id' exact>
+          <PokemonCard/>
+        </Route>
+        <Route path='*'>
+          <NoMatchPage/>
+        </Route>
       </Switch>
-    </div>
     </BrowserRouter>
   );
 }
