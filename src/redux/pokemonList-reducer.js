@@ -12,7 +12,7 @@ let initialState = {
     totalPokemonsCount: 960,
     currentPage: 1,
 };
-
+ //редьюсеры - чистые функции
 const pokemonListReducer = (state=initialState, action) => {
     switch (action.type) {
         case CATCH_IT:

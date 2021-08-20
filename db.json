@@ -354,7 +354,8 @@
     },
     {
       "name": "seel",
-      "id": 86
+      "id": 86,
+      "isCaught": "false"
     },
     {
       "name": "dewgong",
@@ -498,7 +499,8 @@
     },
     {
       "name": "mr-mime",
-      "id": 122
+      "id": 122,
+      "isCaught": "false"
     },
     {
       "name": "scyther",

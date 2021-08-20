@@ -6,12 +6,12 @@ import Pagination from './../Pagination/Pagination';
 let CaughtPokemon = (props) => {
     return (
         <div className="container-xl">
-            <Pagination 
+            {/* <Pagination 
                 totalPokemonsCount={props.totalPokemonsCount}
                 pageSize={props.pageSize}
                 currentPage={props.currentPage}
                 onPageChanged={props.onPageChanged}
-                />
+                /> */}
                   
             <div className="row">
                 {props.pokemons.map(pokemonItem => {
