@@ -1,39 +1,41 @@
 import React from "react";
 import { connect } from "react-redux";
-import { c_catchIt, c_letgo, c_setPokemons, c_setCurrentPage } from "../../redux/caughtPokemon-reducer";
-import axios from "axios";
-// import './../PokemonList/PokemonList.css';
+import { catchIt, letgo, setPokemons } from "../../redux/pokemonList-reducer";
 import CaughtPokemon from './CaughtPokemon';
+// import { setTotalCaughtPokemonsCount, setCurrentPageCaught } from "../../redux/caughtPokemon-reducer";
  
+
+
 class CaughtPokemonContainer extends React.Component {
 
   componentDidMount() {
-    axios.get(`http://localhost:8000/pokemons/`)
-      .then(response => {
-        this.props.c_setPokemons(response.data);
-        console.log(response);
-        // this.props.setTotalPokemonsCount(response.data.length);
-      });
+    this.props.setPokemons(this.props.pokemons);
+
+    // let caughtPokemonsCount = 0;
+    // for (let pokemon of this.props.pokemons) {
+    //   if (pokemon.isCaught) {
+    //     caughtPokemonsCount += 1;
+    //   }
+    // }
+    // this.props.setTotalCaughtPokemonsCount(caughtPokemonsCount);
+ 
   } 
-  onPageChanged = (pageNumber) => {
-    this.props.c_setCurrentPage(pageNumber);
-    axios.get(`http://localhost:8000/pokemons/`)
-      .then(response => {
-        this.props.c_setPokemons(response.data);
-      });
-  }
+
+  // onPageChangedCaught = (pageNumber) => {
+  //   this.props.setCurrentPageCaught(pageNumber);
+  // }
+
   render() {
     return (
         <CaughtPokemon 
-          totalPokemonsCount={this.props.totalPokemonsCount}
-          pageSize={this.props.pageSize}
-          currentPage={this.props.currentPage}
+          // totalPokemonsCount={this.props.totalPokemonsCount}
+          // pageSize={this.props.pageSize}
+          // currentPageCaught={this.props.currentPageCaught}
+          // onPageChangedCaught={this.onPageChangedCaught}
+          // totalCaughtPokemonsCount={this.props.totalCaughtPokemonsCount}
+          catchIt={this.props.catchIt}
+          letgo={this.props.letgo}
           pokemons={this.props.pokemons}
-          onPageChanged={this.onPageChanged}
-          c_catchIt={this.props.c_catchIt}
-          c_letgo={this.props.c_letgo}
-          
-
           />
     )
   }
@@ -43,9 +45,11 @@ class CaughtPokemonContainer extends React.Component {
 let mapStateToProps = (state) => {
     return {
         pokemons: state.pokemonListPage.pokemons,
-        pageSize: state.pokemonListPage.pageSize,
-        totalPokemonsCount: state.pokemonListPage.totalPokemonsCount,
-        currentPage: state.pokemonListPage.currentPage,
+        // pageSize: state.pokemonListPage.pageSize,
+        // totalPokemonsCount: state.pokemonListPage.totalPokemonsCount,
+        // currentPageCaught: state.caughtPokemon.currentPageCaught,
+        // totalCaughtPokemonsCount: state.caughtPokemon.totalCaughtPokemonsCount
+        
         //берем лишь то что нужно компоненте
         //чтоб не перерисовывался лишний раз стейт
 
@@ -54,4 +58,6 @@ let mapStateToProps = (state) => {
 
 
 export default connect (mapStateToProps, 
-    { c_catchIt, c_letgo, c_setPokemons, c_setCurrentPage }) (CaughtPokemonContainer);
+    { catchIt, letgo, setPokemons, 
+      // setCurrentPageCaught, setTotalCaughtPokemonsCount 
+    }) (CaughtPokemonContainer);

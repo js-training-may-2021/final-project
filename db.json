@@ -2,18 +2,15 @@
   "pokemons": [
     {
       "name": "bulbasaur",
-      "id": 1,
-      "isCaught": "false"
+      "id": 1
     },
     {
       "name": "ivysaur",
-      "id": 2,
-      "isCaught": "false"
+      "id": 2
     },
     {
       "name": "venusaur",
-      "id": 3,
-      "isCaught": "false"
+      "id": 3
     },
     {
       "name": "charmander",
@@ -25,8 +22,7 @@
     },
     {
       "name": "charizard",
-      "id": 6,
-      "isCaught": "false"
+      "id": 6
     },
     {
       "name": "squirtle",
@@ -54,18 +50,15 @@
     },
     {
       "name": "weedle",
-      "id": 13,
-      "isCaught": "false"
+      "id": 13
     },
     {
       "name": "kakuna",
-      "id": 14,
-      "isCaught": false
+      "id": 14
     },
     {
       "name": "beedrill",
-      "id": 15,
-      "isCaught": false
+      "id": 15
     },
     {
       "name": "pidgey",
@@ -81,8 +74,7 @@
     },
     {
       "name": "rattata",
-      "id": 19,
-      "isCaught": false
+      "id": 19
     },
     {
       "name": "raticate",
@@ -106,8 +98,7 @@
     },
     {
       "name": "pikachu",
-      "id": 25,
-      "isCaught": false
+      "id": 25
     },
     {
       "name": "raichu",
@@ -115,8 +106,7 @@
     },
     {
       "name": "sandshrew",
-      "id": 27,
-      "isCaught": "false"
+      "id": 27
     },
     {
       "name": "sandslash",
@@ -160,8 +150,7 @@
     },
     {
       "name": "ninetales",
-      "id": 38,
-      "isCaught": "false"
+      "id": 38
     },
     {
       "name": "jigglypuff",
@@ -301,8 +290,7 @@
     },
     {
       "name": "tentacruel",
-      "id": 73,
-      "isCaught": false
+      "id": 73
     },
     {
       "name": "geodude",
@@ -354,8 +342,7 @@
     },
     {
       "name": "seel",
-      "id": 86,
-      "isCaught": "false"
+      "id": 86
     },
     {
       "name": "dewgong",
@@ -499,8 +486,7 @@
     },
     {
       "name": "mr-mime",
-      "id": 122,
-      "isCaught": "false"
+      "id": 122
     },
     {
       "name": "scyther",
@@ -544,8 +530,7 @@
     },
     {
       "name": "eevee",
-      "id": 133,
-      "isCaught": false
+      "id": 133
     },
     {
       "name": "vaporeon",

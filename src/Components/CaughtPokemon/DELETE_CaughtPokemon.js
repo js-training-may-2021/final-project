@@ -7,12 +7,12 @@ let CaughtPokemon = (props) => {
     return (
         <div className="container-xl">
             {/* <Pagination 
-                totalPokemonsCount={props.totalCaughtPokemonsCount}
+                totalPokemonsCount={props.totalPokemonsCount}
                 pageSize={props.pageSize}
-                currentPage={props.currentPageCaught}
-                onPageChanged={props.onPageChangedCaught}
+                currentPage={props.currentPage}
+                onPageChanged={props.onPageChanged}
                 /> */}
-                   
+                  
             <div className="row">
                 {props.pokemons.map(pokemonItem => {
                     if (pokemonItem.isCaught === "true") {
@@ -27,7 +27,7 @@ let CaughtPokemon = (props) => {
                                         <div>
                                             { pokemonItem.isCaught
                                             ? <button href="#" onClick={ () => {
-                                                props.letgo(pokemonItem.id) 
+                                                props.c_letgo(pokemonItem.id) 
                                                 // axios.put(`http://localhost:8000/pokemons/${pokemonItem.id}`,{
                                                 //     name: pokemonItem.name,
                                                 //     id: pokemonItem.id,                
@@ -41,7 +41,7 @@ let CaughtPokemon = (props) => {
                                             className="btn btn-secondary">LET GO</button>
                                             
                                             : <button href="#" onClick={ () => { 
-                                                props.catchIt(pokemonItem.id) 
+                                                props.c_catchIt(pokemonItem.id) 
                                                 // axios.put(`http://localhost:8000/pokemons/${pokemonItem.id}`,{
                                                 //     name: pokemonItem.name,
                                                 //     id: pokemonItem.id,                

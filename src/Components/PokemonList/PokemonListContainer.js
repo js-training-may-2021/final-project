@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { catchIt, letgo, setPokemons, setCurrentPage } from "../../redux/pokemonList-reducer";
+import { catchIt, letgo, setPokemons, setCurrentPage, setTotalPokemonsCount } from "../../redux/pokemonList-reducer";
 import axios from "axios";
 import './PokemonList.css';
 import PokemonList from './PokemonList';
@@ -16,10 +16,14 @@ class PokemonListContainer extends React.Component {
 //метод жизненного цикла компоненты, 
 //компонента монтируется один раз в страницу 
   componentDidMount() {
-    axios.get(`http://localhost:8000/pokemons?_limit=${this.props.pageSize}&_page=${this.props.currentPage}`)
+    // axios.get(`http://localhost:8000/pokemons?_limit=${this.props.pageSize}&_page=${this.props.currentPage}`)
+    axios.get(`http://localhost:8000/pokemons`)
       .then(response => {
-        this.props.setPokemons(response.data);
-        console.log(response);
+        if (this.props.pokemons.length == 0) {
+          this.props.setPokemons(response.data);
+          this.props.setTotalPokemonsCount(response.data.length);
+          // console.log(response.data.length);
+        } 
         // this.props.setTotalPokemonsCount(response.data.length);
       });
   }
@@ -27,10 +31,10 @@ class PokemonListContainer extends React.Component {
   //метод
   onPageChanged = (pageNumber) => {
     this.props.setCurrentPage(pageNumber);
-    axios.get(`http://localhost:8000/pokemons?_limit=${this.props.pageSize}&_page=${pageNumber}`)
-      .then(response => {
-        this.props.setPokemons(response.data);
-      });
+    // axios.get(`http://localhost:8000/pokemons?_limit=${this.props.pageSize}&_page=${pageNumber}`)
+    //   .then(response => {
+    //     this.props.setPokemons(response.data);
+    //   });
   }
   render() {
     return (
@@ -81,4 +85,4 @@ let mapStateToProps = (state) => {
 // // функция 
 
 export default connect (mapStateToProps, 
-    { catchIt, letgo, setPokemons, setCurrentPage }) (PokemonListContainer);
+    { catchIt, letgo, setPokemons, setCurrentPage, setTotalPokemonsCount }) (PokemonListContainer);

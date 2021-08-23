@@ -2,14 +2,14 @@ const CATCH_IT = 'CATCH_IT';
 const LET_GO = 'LET_GO';
 const SET_POKEMONS = 'SET_POKEMONS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
-// const SET_TOTAL_POKEMON_COUNT = 'SET_TOTAL_POKEMON_COUNT';
+const SET_TOTAL_POKEMON_COUNT = 'SET_TOTAL_POKEMON_COUNT';
 
 // const WATCHPROFILE = 'WATCHPROFILE';
 
 let initialState = {
     pokemons: [],
     pageSize: 12,
-    totalPokemonsCount: 960,
+    totalPokemonsCount: 0,
     currentPage: 1,
 };
  //редьюсеры - чистые функции
@@ -45,11 +45,11 @@ const pokemonListReducer = (state=initialState, action) => {
                 ...state,
                 currentPage: action.currentPage,
             }   
-        // case SET_TOTAL_POKEMON_COUNT: 
-        //     return {
-        //         ...state,
-        //         totalPokemonsCount: action.totalPokemonsCount,
-        //     } 
+        case SET_TOTAL_POKEMON_COUNT: 
+            return {
+                ...state,
+                totalPokemonsCount: action.totalPokemonsCount,
+            } 
             
             
 
@@ -58,13 +58,13 @@ const pokemonListReducer = (state=initialState, action) => {
             return state;    
     }
 }
-
+ 
 //action-creators: функция кот вернет объект с экшеном
 export const catchIt = (pokemonID) => ({type: CATCH_IT, pokemonID});
 export const letgo = (pokemonID) => ({type: LET_GO, pokemonID});
 export const setPokemons = (pokemons) => ({type: SET_POKEMONS, pokemons});
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
-// export const setTotalPokemonsCountAC = (totalPokemonsCount) => ({type: SET_TOTAL_POKEMON_COUNT, totalPokemonsCount});
+export const setTotalPokemonsCount = (totalPokemonsCount) => ({type: SET_TOTAL_POKEMON_COUNT, totalPokemonsCount});
 
 
 //caught action creator
