@@ -22,8 +22,8 @@ const Profile = (props) => {
             })}</h3> */}
             <div>Name: {props.profile.name}</div>
             <div>ID: {props.profile.id}</div>
-            <div>Caught Status: {props.profile.isCaught}</div>
-            <div>Data: </div>
+            <div>Caught Status: {props.profile.isCaught ? 'The Pokemon was caught!' : 'The Pokemon has not been caught yet...'}</div>
+            {props.profile.isCaught ? <div>Data: {props.profile.date}</div> : ''}
             <img src={`/pokemons/${props.profile.id}.png`} className="rounded mx-auto d-block" alt="image" />
 
         </div>

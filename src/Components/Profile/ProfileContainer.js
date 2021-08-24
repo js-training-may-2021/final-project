@@ -13,13 +13,17 @@ class ProfileContainer extends React.Component{
         if (!pokemonID) {
             pokemonID = 25;  
         }
-
-        axios.get(`http://localhost:8000/pokemons/${pokemonID}`)
-          .then(response => {
-            this.props.setPokemonProfile(response.data);
-            //console.log(response);
-          });
-      }
+        this.props.pokemons.map(pokemonItem => {
+            if (pokemonItem.id == pokemonID) {
+                this.props.setPokemonProfile(pokemonItem);
+            }
+        })
+    //     axios.get(`http://localhost:8000/pokemons/${pokemonID}`)
+    //       .then(response => {
+    //         this.props.setPokemonProfile(response.data);
+    //         //console.log(response);
+    //       });
+    }
 
     render() {
         return(
@@ -31,6 +35,7 @@ class ProfileContainer extends React.Component{
 
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
+    pokemons: state.pokemonListPage.pokemons,
 });
 
 

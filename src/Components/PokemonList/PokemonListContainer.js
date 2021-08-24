@@ -24,7 +24,6 @@ class PokemonListContainer extends React.Component {
           this.props.setTotalPokemonsCount(response.data.length);
           // console.log(response.data.length);
         } 
-        // this.props.setTotalPokemonsCount(response.data.length);
       });
   }
 

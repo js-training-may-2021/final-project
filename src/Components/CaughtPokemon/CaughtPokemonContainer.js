@@ -8,18 +8,18 @@ import CaughtPokemon from './CaughtPokemon';
 
 class CaughtPokemonContainer extends React.Component {
 
-  componentDidMount() {
-    this.props.setPokemons(this.props.pokemons);
+  // componentDidMount() {
+  //   this.props.setPokemons(this.props.pokemons);
 
-    // let caughtPokemonsCount = 0;
-    // for (let pokemon of this.props.pokemons) {
-    //   if (pokemon.isCaught) {
-    //     caughtPokemonsCount += 1;
-    //   }
-    // }
-    // this.props.setTotalCaughtPokemonsCount(caughtPokemonsCount);
+  //   // let caughtPokemonsCount = 0;
+  //   // for (let pokemon of this.props.pokemons) {
+  //   //   if (pokemon.isCaught) {
+  //   //     caughtPokemonsCount += 1;
+  //   //   }
+  //   // }
+  //   // this.props.setTotalCaughtPokemonsCount(caughtPokemonsCount);
  
-  } 
+  // } 
 
   // onPageChangedCaught = (pageNumber) => {
   //   this.props.setCurrentPageCaught(pageNumber);

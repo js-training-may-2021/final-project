@@ -20,7 +20,7 @@ const pokemonListReducer = (state=initialState, action) => {
                 ...state, 
                 pokemons: state.pokemons.map ( p => {
                     if (p.id === action.pokemonID) {
-                        return {...p, isCaught: "true"}
+                        return {...p, isCaught: true, date: action.date}
                     }
                     return p;
                 })
@@ -30,7 +30,7 @@ const pokemonListReducer = (state=initialState, action) => {
                 ...state, 
                 pokemons: state.pokemons.map ( p => {
                     if (p.id === action.pokemonID) {
-                        return {...p, isCaught: "false"}
+                        return {...p, isCaught: false, date: action.date}
                     }
                     return p;
                 })
@@ -60,8 +60,8 @@ const pokemonListReducer = (state=initialState, action) => {
 }
  
 //action-creators: функция кот вернет объект с экшеном
-export const catchIt = (pokemonID) => ({type: CATCH_IT, pokemonID});
-export const letgo = (pokemonID) => ({type: LET_GO, pokemonID});
+export const catchIt = (pokemonID, date) => ({type: CATCH_IT, pokemonID, date});
+export const letgo = (pokemonID, date) => ({type: LET_GO, pokemonID, date});
 export const setPokemons = (pokemons) => ({type: SET_POKEMONS, pokemons});
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 export const setTotalPokemonsCount = (totalPokemonsCount) => ({type: SET_TOTAL_POKEMON_COUNT, totalPokemonsCount});
