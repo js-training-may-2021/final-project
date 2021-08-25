@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Profile.css';
 
 const Profile = (props) => {
     if (!props.profile) {
@@ -8,24 +9,16 @@ const Profile = (props) => {
     }
 
     return (
-        <div>
-            {/* <h3>{props.profile.map(item => {
-                return (
-                    <div key={item.id}>
-                        <div>Name: {item.name.toUpperCase()}</div>
-                        <div>ID: {item.id}</div>
-                        <img src={`/pokemons/${item.id}.png`} className="rounded mx-auto d-block" alt="image" />
-                        
-                    </div>
-                    
-                )
-            })}</h3> */}
-            <div>Name: {props.profile.name}</div>
-            <div>ID: {props.profile.id}</div>
-            <div>Caught Status: {props.profile.isCaught ? 'The Pokemon was caught!' : 'The Pokemon has not been caught yet...'}</div>
-            {props.profile.isCaught ? <div>Data: {props.profile.date}</div> : ''}
-            <img src={`/pokemons/${props.profile.id}.png`} className="rounded mx-auto d-block" alt="image" />
-
+        <div className='profileCard'>
+            <div className='profileDescription'>
+                <div><strong>Name:</strong> {props.profile.name.toUpperCase()}</div>
+                <div><strong>ID:</strong> {props.profile.id}</div>
+                <div><strong>Caught Status:</strong> {props.profile.isCaught ? 'The Pokemon was caught!' : 'The Pokemon has not been caught yet...'}</div>
+                {props.profile.isCaught ? <div><strong>Data:</strong> {props.profile.date}</div> : ''}
+            </div>
+            <div className='profileImg'>
+                <img src={`/pokemons/${props.profile.id}.png`} className="rounded mx-auto d-block" alt="image" />
+            </div>
         </div>
     )
 }

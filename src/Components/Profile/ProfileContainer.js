@@ -1,6 +1,6 @@
 import React from 'react';
 import Profile from './Profile';
-import axios from 'axios';
+// import axios from 'axios';
 import { connect } from 'react-redux';
 import { setPokemonProfile } from '../../redux/profile-reducer';
 import { withRouter } from 'react-router';
@@ -27,7 +27,7 @@ class ProfileContainer extends React.Component{
 
     render() {
         return(
-            <Profile {...this.props} profile={this.props.profile}/>
+            <Profile profile={this.props.profile}/>
         )
     }
     
