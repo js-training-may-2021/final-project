@@ -15,6 +15,10 @@ const Pagination = ({totalPokemonsCount, pageSize, currentPage, onPageChanged}) 
     let portionCount = Math.ceil(pagesCount / portionSize);
 
     let [currentPortion, setCurrentPortion] = useState(1);
+    // результат useState - массив из 2х эл-тов (состояние, ф-ция изменяющая состояние 'set..')
+    // в саму ф-цию передаем начальное значение состояния;
+
+    // useEffect - симуляция componentDidMount
 
     let leftNumberOfAPortion = (currentPortion - 1) * portionSize + 1;
     let rightNumberOfAPortion = currentPortion * portionSize;

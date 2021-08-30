@@ -4,15 +4,14 @@ const SET_POKEMONS = 'SET_POKEMONS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_POKEMON_COUNT = 'SET_TOTAL_POKEMON_COUNT';
 
-// const WATCHPROFILE = 'WATCHPROFILE';
-
 let initialState = {
     pokemons: [],
     pageSize: 12,
     totalPokemonsCount: 0,
     currentPage: 1, 
 };
- //редьюсеры - чистые функции
+
+//redusers - чистые функции
 const pokemonListReducer = (state=initialState, action) => {
     switch (action.type) {
         case CATCH_IT:

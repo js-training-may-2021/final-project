@@ -1,6 +1,5 @@
 import React from 'react';
 import Profile from './Profile';
-// import axios from 'axios';
 import { connect } from 'react-redux';
 import { setPokemonProfile } from '../../redux/profile-reducer';
 import { withRouter } from 'react-router';
@@ -18,11 +17,6 @@ class ProfileContainer extends React.Component{
                 this.props.setPokemonProfile(pokemonItem);
             } 
         })
-    //     axios.get(`http://localhost:8000/pokemons/${pokemonID}`)
-    //       .then(response => {
-    //         this.props.setPokemonProfile(response.data);
-    //         //console.log(response);
-    //       });
     }
 
     render() {
@@ -41,8 +35,8 @@ let mapStateToProps = (state) => ({
 
 
 // export default connect (mapStateToProps, {setPokemonProfile}) (ProfileContainer);
-
 //новая компонента WithUrlDataContainerComponent
+
 let WithUrlDataContainerComponent = withRouter(ProfileContainer);
 
 export default connect (mapStateToProps, {setPokemonProfile}) (WithUrlDataContainerComponent);
