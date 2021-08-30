@@ -10,7 +10,7 @@ let initialState = {
     pokemons: [],
     pageSize: 12,
     totalPokemonsCount: 0,
-    currentPage: 1,
+    currentPage: 1, 
 };
  //редьюсеры - чистые функции
 const pokemonListReducer = (state=initialState, action) => {
@@ -59,7 +59,8 @@ const pokemonListReducer = (state=initialState, action) => {
     }
 }
  
-//action-creators: функция кот вернет объект с экшеном
+//action-creators: функция кот вернет (!)объект с экшеном
+//action-creator - функция, принимает значение, возвращает объект (экшен)
 export const catchIt = (pokemonID, date) => ({type: CATCH_IT, pokemonID, date});
 export const letgo = (pokemonID, date) => ({type: LET_GO, pokemonID, date});
 export const setPokemons = (pokemons) => ({type: SET_POKEMONS, pokemons});
@@ -67,7 +68,6 @@ export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, current
 export const setTotalPokemonsCount = (totalPokemonsCount) => ({type: SET_TOTAL_POKEMON_COUNT, totalPokemonsCount});
 
 
-//caught action creator
 
 
 export default pokemonListReducer;

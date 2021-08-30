@@ -4,11 +4,12 @@ import { catchIt, letgo, setPokemons, setCurrentPage, setTotalPokemonsCount } fr
 import axios from "axios";
 import './PokemonList.css';
 import PokemonList from './PokemonList';
+import {getPokemons} from './../../api/api';
  
 class PokemonListContainer extends React.Component {
+
 // по умолчанию конструктор перебрасывает свое конструирование на
 // react.component, поэтому удаляем
-
 // constructor(props) {
 //   super(props);
 // }
@@ -16,9 +17,7 @@ class PokemonListContainer extends React.Component {
 //метод жизненного цикла компоненты, 
 //компонента монтируется один раз в страницу 
   componentDidMount() {
-    // axios.get(`http://localhost:8000/pokemons?_limit=${this.props.pageSize}&_page=${this.props.currentPage}`)
-    axios.get(`http://localhost:8000/pokemons`)
-      .then(response => {
+    getPokemons().then(response => {
         if (this.props.pokemons.length == 0) {
           this.props.setPokemons(response.data);
           this.props.setTotalPokemonsCount(response.data.length);
@@ -52,7 +51,7 @@ class PokemonListContainer extends React.Component {
   }
 }
  
-
+//mapStateToProps - передаем данные из стейта в пропсы
 let mapStateToProps = (state) => {
     return {
         pokemons: state.pokemonListPage.pokemons,
@@ -67,9 +66,6 @@ let mapStateToProps = (state) => {
 
 // let mapDispatchToProps = (dispatch) => {
 //     return {
-//         caught: (pokemonID) => {
-//             dispatch(caughtAC(pokemonID));
-//         },
 //         setPokemons: (pokemons) => {
 //             dispatch(setPokemonsAC(pokemons));
 //         },
@@ -85,3 +81,4 @@ let mapStateToProps = (state) => {
 
 export default connect (mapStateToProps, 
     { catchIt, letgo, setPokemons, setCurrentPage, setTotalPokemonsCount }) (PokemonListContainer);
+    //экспортируем оборачивая к коннект 

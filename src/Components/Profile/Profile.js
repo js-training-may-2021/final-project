@@ -11,7 +11,7 @@ const Profile = (props) => {
     return (
         <div className='profileCard'>
             <div className='profileDescription'>
-                <div><strong>Name:</strong> {props.profile.name.toUpperCase()}</div>
+                <div><strong>Name:</strong> {props.profile.name}</div>
                 <div><strong>ID:</strong> {props.profile.id}</div>
                 <div><strong>Caught Status:</strong> {props.profile.isCaught ? 'The Pokemon was caught!' : 'The Pokemon has not been caught yet...'}</div>
                 {props.profile.isCaught ? <div><strong>Data:</strong> {props.profile.date}</div> : ''}

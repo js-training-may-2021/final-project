@@ -6,13 +6,6 @@ import Pagination from './../Pagination/Pagination';
 let CaughtPokemon = (props) => {
     return (
         <div className="container-xl">
-            {/* <Pagination 
-                totalPokemonsCount={props.totalCaughtPokemonsCount}
-                pageSize={props.pageSize}
-                currentPage={props.currentPageCaught}
-                onPageChanged={props.onPageChangedCaught}
-                /> */}
-                   
             <div className="row">
                 {props.pokemons.map(pokemonItem => {
                     if (pokemonItem.isCaught) {
@@ -29,32 +22,12 @@ let CaughtPokemon = (props) => {
                                             ? <button href="#" onClick={ () => {
                                                 let date = '';
                                                 props.letgo(pokemonItem.id, date)
-                                                // axios.put(`http://localhost:8000/pokemons/${pokemonItem.id}`,{
-                                                //     name: pokemonItem.name,
-                                                //     id: pokemonItem.id,                
-                                                //     isCaught: "false",
-                                                // })
-                                                // .then(response => {
-                                                //     console.log(response);
-                                                //     props.c_letgo(pokemonItem.id) 
-                                                //     });
                                             }}
                                             className="btn btn-secondary">LET GO</button>
                                             
                                             : <button href="#" onClick={ () => { 
                                                 let date = new Date().toLocaleString();
-                                                props.catchIt(pokemonItem.id, date); 
-                                                // axios.put(`http://localhost:8000/pokemons/${pokemonItem.id}`,{
-                                                //     name: pokemonItem.name,
-                                                //     id: pokemonItem.id,                
-                                                //     isCaught: "true",
-                                                // })
-                                                // .then(response => {
-                                                //     console.log(response);
-                                                //     props.c_catchIt(pokemonItem.id) 
-    
-                                                //     });
-    
+                                                props.catchIt(pokemonItem.id, date);     
                                                 } } 
                                                 className="btn btn-primary">CATCH IT!</button>}
                                         </div>

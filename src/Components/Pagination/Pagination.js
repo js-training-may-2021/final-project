@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Paginator.css';
+import './Pagination.css';
 
  
 const Pagination = ({totalPokemonsCount, pageSize, currentPage, onPageChanged}) => {

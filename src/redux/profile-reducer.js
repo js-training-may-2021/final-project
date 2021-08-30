@@ -16,7 +16,7 @@ const profileReducer = (state=initialState, action) => {
             return state;    
     }
 }
-
+ 
  
 export const setPokemonProfile = (profile) => ({type: SET_POKEMON_PROFILE, profile});
 

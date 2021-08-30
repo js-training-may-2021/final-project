@@ -16,7 +16,7 @@ class ProfileContainer extends React.Component{
         this.props.pokemons.map(pokemonItem => {
             if (pokemonItem.id == pokemonID) {
                 this.props.setPokemonProfile(pokemonItem);
-            }
+            } 
         })
     //     axios.get(`http://localhost:8000/pokemons/${pokemonID}`)
     //       .then(response => {
@@ -27,7 +27,7 @@ class ProfileContainer extends React.Component{
 
     render() {
         return(
-            <Profile profile={this.props.profile}/>
+            <Profile props={this.props} profile={this.props.profile}/>
         )
     }
     

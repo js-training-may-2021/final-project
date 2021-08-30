@@ -12,9 +12,7 @@ let PokemonList = (props) => {
                 currentPage={props.currentPage}
                 onPageChanged={props.onPageChanged}
                 />
-            {/* МАР не мутирует наш стейт а возвращ новый массив*/}
             <div className="row">
-                
                 {props.pokemons.map(pokemonItem => {
                     if (pokemonItem.id >= ((props.currentPage - 1) * props.pageSize + 1) && pokemonItem.id <= (props.currentPage * (props.pageSize))) {
                     return (
@@ -30,33 +28,12 @@ let PokemonList = (props) => {
                                         ? <button href="#" onClick={ () => {
                                             let date = '';
                                             props.letgo(pokemonItem.id, date) 
-                                            // axios.put(`http://localhost:8000/pokemons/${pokemonItem.id}`,{
-                                            //     name: pokemonItem.name,
-                                            //     id: pokemonItem.id,                
-                                            //     isCaught: "false",
-                                            // })
-                                            // .then(response => {
-                                            //     console.log(response);
-                                            //     props.letgo(pokemonItem.id) 
-                                            //     // this.props.setPokemons(response.data);
-                                            //     });
                                         }}
                                         className="btn btn-secondary">LET GO</button>
                                         
                                         : <button href="#" onClick={ () => { 
                                             let date = new Date().toLocaleString();
                                             props.catchIt(pokemonItem.id, date);
-                                            // axios.put(`http://localhost:8000/pokemons/${pokemonItem.id}`,{
-                                            //     name: pokemonItem.name,
-                                            //     id: pokemonItem.id,                
-                                            //     isCaught: "true",
-                                            // })
-                                            // .then(response => {
-                                            //     console.log(response);
-                                            //     props.catchIt(pokemonItem.id) 
-                                            //     // this.props.setPokemons(response.data);
-                                            //     });
-
                                             } } 
                                             className="btn btn-primary">CATCH!</button>}
                                     </div>
