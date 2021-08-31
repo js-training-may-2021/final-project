@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { catchIt, letgo, setPokemons, setCurrentPage, setTotalPokemonsCount } from "../../redux/pokemonList-reducer";
-import axios from "axios";
 import './PokemonList.css';
 import PokemonList from './PokemonList';
 import {getPokemons} from './../../api/api';
@@ -17,7 +16,7 @@ class PokemonListContainer extends React.Component {
 //компонента монтируется один раз в страницу 
   componentDidMount() {
     getPokemons().then(response => {
-        if (this.props.pokemons.length == 0) {
+        if (this.props.pokemons.length === 0) {
           this.props.setPokemons(response.data);
           this.props.setTotalPokemonsCount(response.data.length);
           // console.log(response.data.length);
@@ -46,6 +45,9 @@ class PokemonListContainer extends React.Component {
   }
 }
  
+
+//mapStateToProps, mapDispatchToProps - функции, возвращающие объекты; 
+//                                      их вызовет connect;
 //mapStateToProps - передаем данные из стейта в пропсы
 let mapStateToProps = (state) => {
     return {
@@ -55,6 +57,7 @@ let mapStateToProps = (state) => {
         currentPage: state.pokemonListPage.currentPage,
     }
 }
+// // mapDispatchToProps - возвращает объект, его свойства - колбэки
 
 // let mapDispatchToProps = (dispatch) => {
 //     return {
@@ -73,4 +76,11 @@ let mapStateToProps = (state) => {
 
 export default connect (mapStateToProps, 
     { catchIt, letgo, setPokemons, setCurrentPage, setTotalPokemonsCount }) (PokemonListContainer);
-    //экспортируем оборачивая в коннект;
+    // экспортируем оборачивая в connect;
+    // можем сократить код упростив mapDispatchToProps, так как connect делает это 
+    // преобразование mapDispatchToProps и оборачивание в dispatch
+    // можем упросить так как dispatch известен в коннекте и там сможет сам все сделать 
+
+    // let name = 'Ivan';
+    // let obj1 = { name: name };
+    // let obj2 = { name };         // то же самое

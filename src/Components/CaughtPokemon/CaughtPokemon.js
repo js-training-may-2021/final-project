@@ -9,6 +9,7 @@ let CaughtPokemon = (props) => {
                     if (pokemonItem.isCaught) {
                         return (
                             <PokemonGrid 
+                                key={pokemonItem.id}
                                 letgo={props.letgo}
                                 catchIt={props.catchIt}
                                 pokemonItem={pokemonItem}

@@ -16,6 +16,7 @@ let PokemonList = (props) => {
                     if (pokemonItem.id >= ((props.currentPage - 1) * props.pageSize + 1) && pokemonItem.id <= (props.currentPage * (props.pageSize))) {
                     return (
                         <PokemonGrid 
+                            key={pokemonItem.id}
                             letgo={props.letgo}
                             catchIt={props.catchIt}
                             pokemonItem={pokemonItem}

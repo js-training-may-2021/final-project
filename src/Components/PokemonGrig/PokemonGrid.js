@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 let PokemonGrid = (props) => {
     return (
-        <div className="col-md-3" key={props.pokemonItem.id}>
+        <div className="col-md-3" >
             <div className="card mt-3" >
                 <NavLink to={'/profile/' + props.pokemonItem.id}>
                     <img src={`/pokemons/${props.pokemonItem.id}.png`} className="card-img-top" alt="image" />

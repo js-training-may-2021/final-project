@@ -8,7 +8,7 @@ import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
 //BrowserRouter - тк роутинг на клиентской стороне а не на серверной
-//Provider - (redux) - оборачиваем, аргумент store
+//Provider - (redux) - оборачиваем, аргумент store; нужен чтобы прокинуть store
 ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
