@@ -4,15 +4,15 @@ import './Pagination.css';
  
 const Pagination = ({totalPokemonsCount, pageSize, currentPage, onPageChanged}) => {
 
-    let pagesCount = Math.ceil(totalPokemonsCount / pageSize);
+    const pagesCount = Math.ceil(totalPokemonsCount / pageSize);
 
     let pages = [];
-    for (let i=1; i<=pagesCount; i++) {
+    for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
 
-    let portionSize = 5;
-    let portionCount = Math.ceil(pagesCount / portionSize);
+    const portionSize = 5;
+    const portionCount = Math.ceil(pagesCount / portionSize);
 
     let [currentPortion, setCurrentPortion] = useState(1);
     // результат useState - массив из 2х эл-тов (состояние, ф-ция изменяющая состояние 'set..')
@@ -25,7 +25,7 @@ const Pagination = ({totalPokemonsCount, pageSize, currentPage, onPageChanged}) 
 
 
     return(
-        <div className="paginator">
+        <div className="pagination">
             {currentPortion > 1 && 
                 <button className="btn btn-secondary" onClick={() => {
                     setCurrentPortion(currentPortion - 1); 
@@ -35,7 +35,7 @@ const Pagination = ({totalPokemonsCount, pageSize, currentPage, onPageChanged}) 
                 .filter(p => p >= leftNumberOfAPortion && p <= rightNumberOfAPortion)
                 .map ( p => {
                     return <button key={p} type="button" className={currentPage === p ? "btn btn-success" : "btn btn-outline-success"} 
-                    onClick = { () => {onPageChanged(p)} } > {p} </button>
+                    onClick = { () => onPageChanged(p) } > {p} </button>
             })}
 
             {currentPortion < portionCount && 

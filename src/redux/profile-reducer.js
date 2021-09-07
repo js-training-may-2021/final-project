@@ -1,7 +1,7 @@
 const SET_POKEMON_PROFILE = 'SET_POKEMON_PROFILE';
 
 
-let initialState = {
+const initialState = {
     profile: {},
 };
 

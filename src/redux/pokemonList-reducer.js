@@ -4,7 +4,7 @@ const SET_POKEMONS = 'SET_POKEMONS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_POKEMON_COUNT = 'SET_TOTAL_POKEMON_COUNT';
 
-let initialState = {
+const initialState = {
     pokemons: [],
     pageSize: 12,
     totalPokemonsCount: 0,
