@@ -10,7 +10,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-dark bg-success">
             <div className="container-fluid">
                 <NavLink className="navbar-brand" to="/" >Pokedex</NavLink>
-                <div>
+                {/* <div> */}
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/" exact>Pokemon List</NavLink>
@@ -19,7 +19,7 @@ const Navbar = () => {
                             <NavLink className="nav-link" to="/caughtpokemon">Caught Pokemon</NavLink>
                         </li>
                     </ul>
-                </div>
+                {/* </div> */}
             </div>
         </nav>
 

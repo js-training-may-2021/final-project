@@ -9,15 +9,28 @@ import { compose } from 'redux';
 class ProfileContainer extends React.Component{
     componentDidMount() {     
         // debugger;
-        let pokemonID = this.props.match.params.pokemonID;
-        if (!pokemonID) {
-            pokemonID = 25;  
+        const { pokemons, setPokemonProfile } = this.props;
+
+        const queryParamId = this.props.match.params.pokemonID;
+        const pokemonID = queryParamId ? parseInt(queryParamId) : 25;
+        // const pokemonID = parseInt(this.props.match.params.pokemonID);
+        // if (!pokemonID) {
+        //     pokemonID = 25;  
+        // }
+
+        const foundedPokemon = pokemons.find(pokemon => pokemon.id === pokemonID);
+
+        if(foundedPokemon){
+            setPokemonProfile(foundedPokemon);
+        } else {
+            //this.props.setError()
         }
-        this.props.pokemons.map(pokemonItem => {
-            if (pokemonItem.id == pokemonID) {
-                this.props.setPokemonProfile(pokemonItem);
-            } 
-        })
+
+        // this.props.pokemons.map(pokemonItem => {
+        //     if (pokemonItem.id === pokemonID) {
+        //         this.props.setPokemonProfile(pokemonItem);
+        //     } 
+        // })
     }
 
     render() {
