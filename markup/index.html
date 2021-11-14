@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Pokedex</title>
+  </head>
+  <body>
+
+    <div id="root">
+
+      <header class="header">
+        <span class="logo-line"></span>
+        <h1 class="logo">Pokedex</h1>
+        <span class="logo-line"></span>
+      </header>
+
+      <main class="main">
+        <div class="container">
+
+          <div class="tabs-container">
+            <button class="tab tab-active" id="all">Все покемоны</button>
+            <button class="tab" id="catched">Пойманные</button>
+          </div> 
+
+          <div class="catalog">
+
+            <div class="card-small">
+              <div class="card-small-info">
+                <img src="../pokemons/108.png" class="card-small-picture" alt="Пикачу">
+                <p>Пикачу</p>
+              </div>
+              <button class="catch-button" disabled="disabled">Поймать!</button>
+            </div>
+
+            <div class="card-small">
+              <div class="card-small-info">
+                <img src="../pokemons/109.png" class="card-small-picture" alt="Пикачу">
+                <p>Пикачу</p>
+              </div>
+              <button class="catch-button" disabled="">Поймать!</button>
+            </div>
+
+            <div class="card-small">
+              <div class="card-small-info">
+                <img src="../pokemons/100.png" class="card-small-picture" alt="Пикачу">
+                <p>Пикачу</p>
+              </div>
+              <button class="catch-button" disabled="">Поймать!</button>
+            </div>
+
+            <div class="card-small">
+              <div class="card-small-info">
+                <img src="../pokemons/101.png" class="card-small-picture" alt="Пикачу">
+                <p>Пикачу</p>
+              </div>
+              <button class="catch-button" disabled="">Поймать!</button>
+            </div>
+
+            <div class="card-small">
+              <div class="card-small-info">
+                <img src="../pokemons/104.png" class="card-small-picture" alt="Пикачу">
+                <p>Очень длинное имя и отчество покемонища на несколько строк</p>
+              </div>
+              <button class="catch-button" disabled="disabled">Поймать!</button>
+            </div>
+
+            <div class="card-small">
+              <div class="card-small-info">
+                <img src="../pokemons/106.png" class="card-small-picture" alt="Пикачу">
+                <p>Пикачу</p>
+              </div>
+              <button class="catch-button" disabled="">Поймать!</button>
+            </div>
+
+            <div class="card-small">
+              <div class="card-small-info">
+                <img src="../pokemons/105.png" class="card-small-picture" alt="Пикачу">
+                <p>Пикачу</p>
+              </div>
+              <button class="catch-button" disabled="">Поймать!</button>
+            </div>
+
+            <div class="card-small">
+              <div class="card-small-info">
+                <img src="../pokemons/107.png" class="card-small-picture" alt="Пикачу">
+                <p>Пикачу</p>
+              </div>
+              <button class="catch-button" disabled="">Поймать!</button>
+            </div>
+
+            <div class="card-small">
+              <div class="card-small-info">
+                <img src="../pokemons/99.png" class="card-small-picture" alt="Пикачу">
+                <p>Пикачу</p>
+              </div>
+              <button class="catch-button" disabled="">Поймать!</button>
+            </div>
+
+            <div class="pagination">
+              <a href="#" class="to-start">Начало</a>
+              <a href="#" class="to-1">1</a>
+              <a href="#" class="to-2 active">2</a>
+              <a href="#" class="to-3">36</a>
+              <a href="#" class="to-4">4</a>
+              <a href="#" class="to-5">56</a>
+              <a href="#" class="to-6">6</a>
+              <a href="#" class="to-end">Конец</a>
+            </div>
+
+          </div>
+
+          <div class="card-large">
+
+            <button class="back">&larr;&nbsp;&nbsp;Вернуться к&nbsp;списку</button>
+
+            <div class="card-large-info">
+              <h2 class="pokemon-name">Пикачу</h2>
+              <div class="details">
+                <p><strong>id:</strong> 132465556</p>
+                <span class="separator"></span>
+                <p><strong>Пойман:</strong> <span class="catched">нет</span></p>
+              </div>
+              <img src="../pokemons/99.png" class="card-large-picture" alt="Пикачу">
+              </p>
+            </div>
+
+          </div>
+        
+        </div>
+      </main>
+
+    </div>
+
+    <script src="./bundle.js"></script>
+  </body>
+</html>
