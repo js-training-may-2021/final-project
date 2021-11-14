@@ -1,5 +1,13 @@
 # Final project
 
+
+
+
+**(!) LOCAL SERVER START: npx json-server --watch db.json --port 8000**
+
+
+
+
 Это последнее задание в курсе. Дедлайн - **24.06**!
 
 Для выполнения этого ДЗ Вам понадобятся следующие npm-пакеты:
