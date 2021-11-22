@@ -51,7 +51,7 @@ export default class AllPokemonsPage extends Component {
             return <PokemonCard name={pokemon.name} id={pokemon.id} key={pokemon.id} isCatched={pokemon.isCatched}/>
           })}
         </div>
-        {/* <Paginator next={this.next} prev={this.prev}/> */}
+        <Paginator currentPage={this.state.currentPage} goToPage={this.goToPage} next={this.next} prev={this.prev}/>
       </>
     )
   }

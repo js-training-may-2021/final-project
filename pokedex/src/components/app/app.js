@@ -9,7 +9,7 @@ export default class App extends Component {
     return (
       <Router>
         <Route exact path='/catched' component={CatchedPokemonsPage}/>
-        <Route exact path='/' component={({match}) => <AllPokemonsPage currentPage={1}/>}/>
+        <Route exact path='/' component={() => <AllPokemonsPage currentPage={1}/>}/>
         <Route exact path='/page/:page' component={({match}) => <AllPokemonsPage currentPage={match.params.page}/>}/>
         <Route path='/pokemons/:id' render={({match}) => <PokemonProfile id={match.params.id}/>}/>
       </Router>

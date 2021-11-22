@@ -26,30 +26,19 @@ export default class PokemonProfile extends Component {
 
   render() {
     this.getPokemon(this.props.id);
-    if (this.state.isCatched) {
-      return (
+    return (
         <>
           <Header/>
           <div className="pokemon-profile">
             <div className="pokemon-profile__info">
               <h1>Name: {this.state.name}</h1>
               <h3>ID: {this.state.id}</h3>
-              <h3>Catched: Yes</h3>
-              <h3>Catch Date: {this.state.catchDate}</h3>
-            </div>
-            <img src={`/pokemons/${this.state.id}.png`} alt={this.state.name}/>
-          </div>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <Header/>
-          <div className="pokemon-profile">
-            <div className="pokemon-profile__info">
-              <h1>Name: {this.state.name}</h1>
-              <h3>ID: {this.state.id}</h3>
-              <h3>Catched: No</h3>
+              {this.state.isCatched ? (
+                <>
+                  <h3>Catched: Yes</h3>
+                  <h3>Catch Date: {this.state.catchDate}</h3>
+                </>
+              ) : <h3>Catched: No</h3>}
             </div>
             <img src={`/pokemons/${this.state.id}.png`} alt={this.state.name}/>
           </div>
@@ -57,4 +46,3 @@ export default class PokemonProfile extends Component {
       )
     }
   }
-}
