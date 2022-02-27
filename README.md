@@ -5,8 +5,8 @@
 1. Start a server - there is a command "npm run server" for this.
 2. Start the project - "npm run start"
 
-The Pokedex has two main pages - All Pokemon and Captured Pokemon.
-You can click on the card of any Pokemon - its profile will open with the name, ID and date of catching. You can catch a Pokemon with a separate Catch button.
+The Pokedex has two main pages - All Pokemons and Catched Pokemons.
+You can click on the card of any Pokemon - its profile will open with the name, ID and date of catching. You can catch a Pokemon with a Catch button.
 There is also pagination.
 
 I used both class and function components, lifting state up and React Router. 
