@@ -40,7 +40,7 @@ export default class PokemonProfile extends Component {
                 </>
               ) : <h3>Catched: No</h3>}
             </div>
-            <img src={`/pokemons/${this.state.id}.png`} alt={this.state.name}/>
+            <img class="pokemon-img" src={`/pokemons/${this.state.id}.png`} alt={this.state.name}/>
           </div>
         </>
       )

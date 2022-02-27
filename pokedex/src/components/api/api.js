@@ -2,7 +2,7 @@ import {Component} from 'react';
 
 export default class PokemonApi extends Component {
   async getAllPokemons(page) {
-    const url = `http://localhost:3000/pokemons?_page=${page}&_limit=30`;
+    const url = `http://localhost:5000/pokemons?_page=${page}&_limit=30`;
     const data = await fetch(url);
 
     if (!data.ok) {
@@ -13,7 +13,7 @@ export default class PokemonApi extends Component {
   }
 
   async getCatchedPokemons(page) {
-    const url = `http://localhost:3000/pokemons?isCatched=true&_page=${page}&_limit=30`;
+    const url = `http://localhost:5000/pokemons?isCatched=true&_page=${page}&_limit=30`;
     const data = await fetch(url);
 
     if (!data.ok) {
@@ -24,7 +24,7 @@ export default class PokemonApi extends Component {
   }
 
   async getPokemon(id) {
-    const url = `http://localhost:3000/pokemons/${id}`
+    const url = `http://localhost:5000/pokemons/${id}`
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -35,7 +35,7 @@ export default class PokemonApi extends Component {
   }
 
   async catchPokemon(id) {
-    const url = `http://localhost:3000/pokemons/${id}`;
+    const url = `http://localhost:5000/pokemons/${id}`;
     const date = `${new Date().getHours()}:${new Date().getMinutes()}, ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`;
     await fetch(url, {
       method: 'PATCH',
@@ -47,7 +47,7 @@ export default class PokemonApi extends Component {
   }
 
   async setAsUncatched() {
-    const url = `http://localhost:3000/pokemons/1`;
+    const url = `http://localhost:5000/pokemons/1`;
     const response = await fetch(url);
 
     if (!response.ok) {
