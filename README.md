@@ -1,3 +1,7 @@
+### Pokedex
+
+![Preview](https://s1.hostingkartinok.com/uploads/images/2022/06/049c4c8bc376df0da96289c034bfc32c.gif "Preview")
+
 # Final project
 
 Это последнее задание в курсе. Дедлайн - **24.06**!
